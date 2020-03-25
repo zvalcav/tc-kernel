@@ -1,0 +1,2183 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 2
+#
+# Samples: 934  of event 'cycles:ppp'
+# Event count (approx.): 1340194764
+#
+# Children      Self  Command  Shared Object      Symbol                                 
+# ........  ........  .......  .................  .......................................
+#
+    99.98%     0.00%  tc       [kernel.kallsyms]  [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+                --99.74%--__sys_sendmsg
+                          handle_mm_fault
+                          mem_cgroup_commit_charge
+                          __alloc_pages_nodemask
+                          ___sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          rtnetlink_rcv
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          |          
+                           --99.74%--__check_object_size
+                                     kmem_cache_alloc_node
+                                     rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     qdisc_destroy
+                                     |          
+                                     |--50.81%--hfsc_destroy_qdisc
+                                     |          |          
+                                     |           --50.26%--hfsc_destroy_class
+                                     |                     |          
+                                     |                      --49.60%--qdisc_destroy
+                                     |                                |          
+                                     |                                |--44.70%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--2.78%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |           --0.83%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.74%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.57%--fq_codel_destroy
+                                     |                                |          |          
+                                     |                                |           --1.49%--kfree
+                                     |                                |                     |          
+                                     |                                |                      --1.21%--fq_codel_destroy
+                                     |                                |                                |          
+                                     |                                |                                 --1.07%--___cache_free
+                                     |                                |                                           |          
+                                     |                                |                                            --0.71%--slabs_destroy
+                                     |                                |                                                      slab_destroy
+                                     |                                |                                                      |          
+                                     |                                |                                                       --0.57%--free_hot_cold_page
+                                     |                                |          
+                                     |                                 --0.78%--kfree
+                                     |                                           |          
+                                     |                                            --0.57%--qdisc_destroy
+                                     |                                                      ___cache_free
+                                     |          
+                                      --48.93%--hfsc_reset_qdisc
+                                                |          
+                                                 --48.44%--qdisc_reset
+                                                           |          
+                                                           |--45.57%--fq_codel_reset
+                                                           |          |          
+                                                           |          |--3.67%--fq_codel_reset
+                                                           |          |          |          
+                                                           |          |           --1.14%--__irqentry_text_start
+                                                           |          |                     smp_apic_timer_interrupt
+                                                           |          |                     hrtimer_interrupt
+                                                           |          |                     |          
+                                                           |          |                      --1.00%--__hrtimer_run_queues
+                                                           |          |                                tick_sched_timer
+                                                           |          |                                |          
+                                                           |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                           |          |                                           update_process_times
+                                                           |          |                                           |          
+                                                           |          |                                            --0.78%--tick_sched_timer
+                                                           |          |                                                      scheduler_tick
+                                                           |          |                                                      |          
+                                                           |          |                                                       --0.64%--task_tick_fair
+                                                           |          |          
+                                                           |          |--0.73%--rtnl_kfree_skbs
+                                                           |          |          
+                                                           |           --0.72%--memset_erms
+                                                           |          
+                                                            --1.96%--rtnl_kfree_skbs
+
+    99.98%     0.00%  tc       [kernel.kallsyms]  [k] entry_SYSCALL_64_after_swapgs
+            |
+            ---entry_SYSCALL_64_after_swapgs
+               do_syscall_64
+               |          
+                --99.74%--__sys_sendmsg
+                          handle_mm_fault
+                          mem_cgroup_commit_charge
+                          __alloc_pages_nodemask
+                          ___sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          rtnetlink_rcv
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          |          
+                           --99.74%--__check_object_size
+                                     kmem_cache_alloc_node
+                                     rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     qdisc_destroy
+                                     |          
+                                     |--50.81%--hfsc_destroy_qdisc
+                                     |          |          
+                                     |           --50.26%--hfsc_destroy_class
+                                     |                     |          
+                                     |                      --49.60%--qdisc_destroy
+                                     |                                |          
+                                     |                                |--44.70%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--2.78%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |           --0.83%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.74%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.57%--fq_codel_destroy
+                                     |                                |          |          
+                                     |                                |           --1.49%--kfree
+                                     |                                |                     |          
+                                     |                                |                      --1.21%--fq_codel_destroy
+                                     |                                |                                |          
+                                     |                                |                                 --1.07%--___cache_free
+                                     |                                |                                           |          
+                                     |                                |                                            --0.71%--slabs_destroy
+                                     |                                |                                                      slab_destroy
+                                     |                                |                                                      |          
+                                     |                                |                                                       --0.57%--free_hot_cold_page
+                                     |                                |          
+                                     |                                 --0.78%--kfree
+                                     |                                           |          
+                                     |                                            --0.57%--qdisc_destroy
+                                     |                                                      ___cache_free
+                                     |          
+                                      --48.93%--hfsc_reset_qdisc
+                                                |          
+                                                 --48.44%--qdisc_reset
+                                                           |          
+                                                           |--45.57%--fq_codel_reset
+                                                           |          |          
+                                                           |          |--3.67%--fq_codel_reset
+                                                           |          |          |          
+                                                           |          |           --1.14%--__irqentry_text_start
+                                                           |          |                     smp_apic_timer_interrupt
+                                                           |          |                     hrtimer_interrupt
+                                                           |          |                     |          
+                                                           |          |                      --1.00%--__hrtimer_run_queues
+                                                           |          |                                tick_sched_timer
+                                                           |          |                                |          
+                                                           |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                           |          |                                           update_process_times
+                                                           |          |                                           |          
+                                                           |          |                                            --0.78%--tick_sched_timer
+                                                           |          |                                                      scheduler_tick
+                                                           |          |                                                      |          
+                                                           |          |                                                       --0.64%--task_tick_fair
+                                                           |          |          
+                                                           |          |--0.73%--rtnl_kfree_skbs
+                                                           |          |          
+                                                           |           --0.72%--memset_erms
+                                                           |          
+                                                            --1.96%--rtnl_kfree_skbs
+
+    99.79%     0.00%  tc       [kernel.kallsyms]  [k] __alloc_pages_nodemask
+            |
+            ---__alloc_pages_nodemask
+               |          
+                --99.74%--___sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          rtnetlink_rcv
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          |          
+                           --99.74%--__check_object_size
+                                     kmem_cache_alloc_node
+                                     rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     qdisc_destroy
+                                     |          
+                                     |--50.81%--hfsc_destroy_qdisc
+                                     |          |          
+                                     |           --50.26%--hfsc_destroy_class
+                                     |                     |          
+                                     |                      --49.60%--qdisc_destroy
+                                     |                                |          
+                                     |                                |--44.70%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--2.78%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |           --0.83%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.74%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.57%--fq_codel_destroy
+                                     |                                |          |          
+                                     |                                |           --1.49%--kfree
+                                     |                                |                     |          
+                                     |                                |                      --1.21%--fq_codel_destroy
+                                     |                                |                                |          
+                                     |                                |                                 --1.07%--___cache_free
+                                     |                                |                                           |          
+                                     |                                |                                            --0.71%--slabs_destroy
+                                     |                                |                                                      slab_destroy
+                                     |                                |                                                      |          
+                                     |                                |                                                       --0.57%--free_hot_cold_page
+                                     |                                |          
+                                     |                                 --0.78%--kfree
+                                     |                                           |          
+                                     |                                            --0.57%--qdisc_destroy
+                                     |                                                      ___cache_free
+                                     |          
+                                      --48.93%--hfsc_reset_qdisc
+                                                |          
+                                                 --48.44%--qdisc_reset
+                                                           |          
+                                                           |--45.57%--fq_codel_reset
+                                                           |          |          
+                                                           |          |--3.67%--fq_codel_reset
+                                                           |          |          |          
+                                                           |          |           --1.14%--__irqentry_text_start
+                                                           |          |                     smp_apic_timer_interrupt
+                                                           |          |                     hrtimer_interrupt
+                                                           |          |                     |          
+                                                           |          |                      --1.00%--__hrtimer_run_queues
+                                                           |          |                                tick_sched_timer
+                                                           |          |                                |          
+                                                           |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                           |          |                                           update_process_times
+                                                           |          |                                           |          
+                                                           |          |                                            --0.78%--tick_sched_timer
+                                                           |          |                                                      scheduler_tick
+                                                           |          |                                                      |          
+                                                           |          |                                                       --0.64%--task_tick_fair
+                                                           |          |          
+                                                           |          |--0.73%--rtnl_kfree_skbs
+                                                           |          |          
+                                                           |           --0.72%--memset_erms
+                                                           |          
+                                                            --1.96%--rtnl_kfree_skbs
+
+    99.79%     0.00%  tc       [kernel.kallsyms]  [k] handle_mm_fault
+            |
+            ---handle_mm_fault
+               |          
+                --99.74%--mem_cgroup_commit_charge
+                          __alloc_pages_nodemask
+                          ___sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          rtnetlink_rcv
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          |          
+                           --99.74%--__check_object_size
+                                     kmem_cache_alloc_node
+                                     rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     qdisc_destroy
+                                     |          
+                                     |--50.81%--hfsc_destroy_qdisc
+                                     |          |          
+                                     |           --50.26%--hfsc_destroy_class
+                                     |                     |          
+                                     |                      --49.60%--qdisc_destroy
+                                     |                                |          
+                                     |                                |--44.70%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--2.78%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |           --0.83%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.74%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.57%--fq_codel_destroy
+                                     |                                |          |          
+                                     |                                |           --1.49%--kfree
+                                     |                                |                     |          
+                                     |                                |                      --1.21%--fq_codel_destroy
+                                     |                                |                                |          
+                                     |                                |                                 --1.07%--___cache_free
+                                     |                                |                                           |          
+                                     |                                |                                            --0.71%--slabs_destroy
+                                     |                                |                                                      slab_destroy
+                                     |                                |                                                      |          
+                                     |                                |                                                       --0.57%--free_hot_cold_page
+                                     |                                |          
+                                     |                                 --0.78%--kfree
+                                     |                                           |          
+                                     |                                            --0.57%--qdisc_destroy
+                                     |                                                      ___cache_free
+                                     |          
+                                      --48.93%--hfsc_reset_qdisc
+                                                |          
+                                                 --48.44%--qdisc_reset
+                                                           |          
+                                                           |--45.57%--fq_codel_reset
+                                                           |          |          
+                                                           |          |--3.67%--fq_codel_reset
+                                                           |          |          |          
+                                                           |          |           --1.14%--__irqentry_text_start
+                                                           |          |                     smp_apic_timer_interrupt
+                                                           |          |                     hrtimer_interrupt
+                                                           |          |                     |          
+                                                           |          |                      --1.00%--__hrtimer_run_queues
+                                                           |          |                                tick_sched_timer
+                                                           |          |                                |          
+                                                           |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                           |          |                                           update_process_times
+                                                           |          |                                           |          
+                                                           |          |                                            --0.78%--tick_sched_timer
+                                                           |          |                                                      scheduler_tick
+                                                           |          |                                                      |          
+                                                           |          |                                                       --0.64%--task_tick_fair
+                                                           |          |          
+                                                           |          |--0.73%--rtnl_kfree_skbs
+                                                           |          |          
+                                                           |           --0.72%--memset_erms
+                                                           |          
+                                                            --1.96%--rtnl_kfree_skbs
+
+    99.76%     0.00%  tc       [unknown]          [k] 0x000000000000000c
+            |
+            ---0xc
+               |          
+                --99.74%--__libc_sendmsg
+                          entry_SYSCALL_64_after_swapgs
+                          do_syscall_64
+                          __sys_sendmsg
+                          handle_mm_fault
+                          mem_cgroup_commit_charge
+                          __alloc_pages_nodemask
+                          ___sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          rtnetlink_rcv
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          |          
+                           --99.74%--__check_object_size
+                                     kmem_cache_alloc_node
+                                     rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     qdisc_destroy
+                                     |          
+                                     |--50.81%--hfsc_destroy_qdisc
+                                     |          |          
+                                     |           --50.26%--hfsc_destroy_class
+                                     |                     |          
+                                     |                      --49.60%--qdisc_destroy
+                                     |                                |          
+                                     |                                |--44.70%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--2.78%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |           --0.83%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.74%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.57%--fq_codel_destroy
+                                     |                                |          |          
+                                     |                                |           --1.49%--kfree
+                                     |                                |                     |          
+                                     |                                |                      --1.21%--fq_codel_destroy
+                                     |                                |                                |          
+                                     |                                |                                 --1.07%--___cache_free
+                                     |                                |                                           |          
+                                     |                                |                                            --0.71%--slabs_destroy
+                                     |                                |                                                      slab_destroy
+                                     |                                |                                                      |          
+                                     |                                |                                                       --0.57%--free_hot_cold_page
+                                     |                                |          
+                                     |                                 --0.78%--kfree
+                                     |                                           |          
+                                     |                                            --0.57%--qdisc_destroy
+                                     |                                                      ___cache_free
+                                     |          
+                                      --48.93%--hfsc_reset_qdisc
+                                                |          
+                                                 --48.44%--qdisc_reset
+                                                           |          
+                                                           |--45.57%--fq_codel_reset
+                                                           |          |          
+                                                           |          |--3.67%--fq_codel_reset
+                                                           |          |          |          
+                                                           |          |           --1.14%--__irqentry_text_start
+                                                           |          |                     smp_apic_timer_interrupt
+                                                           |          |                     hrtimer_interrupt
+                                                           |          |                     |          
+                                                           |          |                      --1.00%--__hrtimer_run_queues
+                                                           |          |                                tick_sched_timer
+                                                           |          |                                |          
+                                                           |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                           |          |                                           update_process_times
+                                                           |          |                                           |          
+                                                           |          |                                            --0.78%--tick_sched_timer
+                                                           |          |                                                      scheduler_tick
+                                                           |          |                                                      |          
+                                                           |          |                                                       --0.64%--task_tick_fair
+                                                           |          |          
+                                                           |          |--0.73%--rtnl_kfree_skbs
+                                                           |          |          
+                                                           |           --0.72%--memset_erms
+                                                           |          
+                                                            --1.96%--rtnl_kfree_skbs
+
+    99.76%     0.00%  tc       [unknown]          [k] 0x676f1a4000000000
+            |
+            ---0x676f1a4000000000
+               0xc
+               |          
+                --99.74%--__libc_sendmsg
+                          entry_SYSCALL_64_after_swapgs
+                          do_syscall_64
+                          __sys_sendmsg
+                          handle_mm_fault
+                          mem_cgroup_commit_charge
+                          __alloc_pages_nodemask
+                          ___sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          rtnetlink_rcv
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          |          
+                           --99.74%--__check_object_size
+                                     kmem_cache_alloc_node
+                                     rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     qdisc_destroy
+                                     |          
+                                     |--50.81%--hfsc_destroy_qdisc
+                                     |          |          
+                                     |           --50.26%--hfsc_destroy_class
+                                     |                     |          
+                                     |                      --49.60%--qdisc_destroy
+                                     |                                |          
+                                     |                                |--44.70%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--2.78%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |           --0.83%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.74%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                |--1.57%--fq_codel_destroy
+                                     |                                |          |          
+                                     |                                |           --1.49%--kfree
+                                     |                                |                     |          
+                                     |                                |                      --1.21%--fq_codel_destroy
+                                     |                                |                                |          
+                                     |                                |                                 --1.07%--___cache_free
+                                     |                                |                                           |          
+                                     |                                |                                            --0.71%--slabs_destroy
+                                     |                                |                                                      slab_destroy
+                                     |                                |                                                      |          
+                                     |                                |                                                       --0.57%--free_hot_cold_page
+                                     |                                |          
+                                     |                                 --0.78%--kfree
+                                     |                                           |          
+                                     |                                            --0.57%--qdisc_destroy
+                                     |                                                      ___cache_free
+                                     |          
+                                      --48.93%--hfsc_reset_qdisc
+                                                |          
+                                                 --48.44%--qdisc_reset
+                                                           |          
+                                                           |--45.57%--fq_codel_reset
+                                                           |          |          
+                                                           |          |--3.67%--fq_codel_reset
+                                                           |          |          |          
+                                                           |          |           --1.14%--__irqentry_text_start
+                                                           |          |                     smp_apic_timer_interrupt
+                                                           |          |                     hrtimer_interrupt
+                                                           |          |                     |          
+                                                           |          |                      --1.00%--__hrtimer_run_queues
+                                                           |          |                                tick_sched_timer
+                                                           |          |                                |          
+                                                           |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                           |          |                                           update_process_times
+                                                           |          |                                           |          
+                                                           |          |                                            --0.78%--tick_sched_timer
+                                                           |          |                                                      scheduler_tick
+                                                           |          |                                                      |          
+                                                           |          |                                                       --0.64%--task_tick_fair
+                                                           |          |          
+                                                           |          |--0.73%--rtnl_kfree_skbs
+                                                           |          |          
+                                                           |           --0.72%--memset_erms
+                                                           |          
+                                                            --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] kmem_cache_alloc_node
+            |          
+             --99.74%--kmem_cache_alloc_node
+                       |          
+                        --99.74%--rtnetlink_rcv_msg
+                                  tc_get_qdisc
+                                  qdisc_graft
+                                  qdisc_destroy
+                                  |          
+                                  |--50.81%--hfsc_destroy_qdisc
+                                  |          |          
+                                  |           --50.26%--hfsc_destroy_class
+                                  |                     |          
+                                  |                      --49.60%--qdisc_destroy
+                                  |                                |          
+                                  |                                |--44.70%--fq_codel_reset
+                                  |                                |          |          
+                                  |                                |          |--2.78%--fq_codel_reset
+                                  |                                |          |          
+                                  |                                |           --0.83%--rtnl_kfree_skbs
+                                  |                                |          
+                                  |                                |--1.74%--rtnl_kfree_skbs
+                                  |                                |          
+                                  |                                |--1.57%--fq_codel_destroy
+                                  |                                |          |          
+                                  |                                |           --1.49%--kfree
+                                  |                                |                     |          
+                                  |                                |                      --1.21%--fq_codel_destroy
+                                  |                                |                                |          
+                                  |                                |                                 --1.07%--___cache_free
+                                  |                                |                                           |          
+                                  |                                |                                            --0.71%--slabs_destroy
+                                  |                                |                                                      slab_destroy
+                                  |                                |                                                      |          
+                                  |                                |                                                       --0.57%--free_hot_cold_page
+                                  |                                |          
+                                  |                                 --0.78%--kfree
+                                  |                                           |          
+                                  |                                            --0.57%--qdisc_destroy
+                                  |                                                      ___cache_free
+                                  |          
+                                   --48.93%--hfsc_reset_qdisc
+                                             |          
+                                              --48.44%--qdisc_reset
+                                                        |          
+                                                        |--45.57%--fq_codel_reset
+                                                        |          |          
+                                                        |          |--3.67%--fq_codel_reset
+                                                        |          |          |          
+                                                        |          |           --1.14%--__irqentry_text_start
+                                                        |          |                     smp_apic_timer_interrupt
+                                                        |          |                     hrtimer_interrupt
+                                                        |          |                     |          
+                                                        |          |                      --1.00%--__hrtimer_run_queues
+                                                        |          |                                tick_sched_timer
+                                                        |          |                                |          
+                                                        |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                        |          |                                           update_process_times
+                                                        |          |                                           |          
+                                                        |          |                                            --0.78%--tick_sched_timer
+                                                        |          |                                                      scheduler_tick
+                                                        |          |                                                      |          
+                                                        |          |                                                       --0.64%--task_tick_fair
+                                                        |          |          
+                                                        |          |--0.73%--rtnl_kfree_skbs
+                                                        |          |          
+                                                        |           --0.72%--memset_erms
+                                                        |          
+                                                         --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] rtnetlink_rcv_msg
+            |
+            ---rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] netlink_rcv_skb
+            |
+            ---netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] rtnetlink_rcv
+            |
+            ---rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] netlink_unicast
+            |
+            ---netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] netlink_sendmsg
+            |
+            ---netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] sock_sendmsg
+            |
+            ---sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] ___sys_sendmsg
+            |
+            ---___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] mem_cgroup_commit_charge
+            |
+            ---mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] __sys_sendmsg
+            |
+            ---__sys_sendmsg
+               handle_mm_fault
+               mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       libc-2.24.so       [.] __libc_sendmsg
+            |
+            ---__libc_sendmsg
+               entry_SYSCALL_64_after_swapgs
+               do_syscall_64
+               __sys_sendmsg
+               handle_mm_fault
+               mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --99.74%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--50.81%--hfsc_destroy_qdisc
+                          |          |          
+                          |           --50.26%--hfsc_destroy_class
+                          |                     |          
+                          |                      --49.60%--qdisc_destroy
+                          |                                |          
+                          |                                |--44.70%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--2.78%--fq_codel_reset
+                          |                                |          |          
+                          |                                |           --0.83%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.74%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                |--1.57%--fq_codel_destroy
+                          |                                |          |          
+                          |                                |           --1.49%--kfree
+                          |                                |                     |          
+                          |                                |                      --1.21%--fq_codel_destroy
+                          |                                |                                |          
+                          |                                |                                 --1.07%--___cache_free
+                          |                                |                                           |          
+                          |                                |                                            --0.71%--slabs_destroy
+                          |                                |                                                      slab_destroy
+                          |                                |                                                      |          
+                          |                                |                                                       --0.57%--free_hot_cold_page
+                          |                                |          
+                          |                                 --0.78%--kfree
+                          |                                           |          
+                          |                                            --0.57%--qdisc_destroy
+                          |                                                      ___cache_free
+                          |          
+                           --48.93%--hfsc_reset_qdisc
+                                     |          
+                                      --48.44%--qdisc_reset
+                                                |          
+                                                |--45.57%--fq_codel_reset
+                                                |          |          
+                                                |          |--3.67%--fq_codel_reset
+                                                |          |          |          
+                                                |          |           --1.14%--__irqentry_text_start
+                                                |          |                     smp_apic_timer_interrupt
+                                                |          |                     hrtimer_interrupt
+                                                |          |                     |          
+                                                |          |                      --1.00%--__hrtimer_run_queues
+                                                |          |                                tick_sched_timer
+                                                |          |                                |          
+                                                |          |                                 --0.92%--tick_sched_handle.isra.12
+                                                |          |                                           update_process_times
+                                                |          |                                           |          
+                                                |          |                                            --0.78%--tick_sched_timer
+                                                |          |                                                      scheduler_tick
+                                                |          |                                                      |          
+                                                |          |                                                       --0.64%--task_tick_fair
+                                                |          |          
+                                                |          |--0.73%--rtnl_kfree_skbs
+                                                |          |          
+                                                |           --0.72%--memset_erms
+                                                |          
+                                                 --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_graft
+            |
+            ---qdisc_graft
+               qdisc_destroy
+               |          
+               |--50.81%--hfsc_destroy_qdisc
+               |          |          
+               |           --50.26%--hfsc_destroy_class
+               |                     |          
+               |                      --49.60%--qdisc_destroy
+               |                                |          
+               |                                |--44.70%--fq_codel_reset
+               |                                |          |          
+               |                                |          |--2.78%--fq_codel_reset
+               |                                |          |          
+               |                                |           --0.83%--rtnl_kfree_skbs
+               |                                |          
+               |                                |--1.74%--rtnl_kfree_skbs
+               |                                |          
+               |                                |--1.57%--fq_codel_destroy
+               |                                |          |          
+               |                                |           --1.49%--kfree
+               |                                |                     |          
+               |                                |                      --1.21%--fq_codel_destroy
+               |                                |                                |          
+               |                                |                                 --1.07%--___cache_free
+               |                                |                                           |          
+               |                                |                                            --0.71%--slabs_destroy
+               |                                |                                                      slab_destroy
+               |                                |                                                      |          
+               |                                |                                                       --0.57%--free_hot_cold_page
+               |                                |          
+               |                                 --0.78%--kfree
+               |                                           |          
+               |                                            --0.57%--qdisc_destroy
+               |                                                      ___cache_free
+               |          
+                --48.93%--hfsc_reset_qdisc
+                          |          
+                           --48.44%--qdisc_reset
+                                     |          
+                                     |--45.57%--fq_codel_reset
+                                     |          |          
+                                     |          |--3.67%--fq_codel_reset
+                                     |          |          |          
+                                     |          |           --1.14%--__irqentry_text_start
+                                     |          |                     smp_apic_timer_interrupt
+                                     |          |                     hrtimer_interrupt
+                                     |          |                     |          
+                                     |          |                      --1.00%--__hrtimer_run_queues
+                                     |          |                                tick_sched_timer
+                                     |          |                                |          
+                                     |          |                                 --0.92%--tick_sched_handle.isra.12
+                                     |          |                                           update_process_times
+                                     |          |                                           |          
+                                     |          |                                            --0.78%--tick_sched_timer
+                                     |          |                                                      scheduler_tick
+                                     |          |                                                      |          
+                                     |          |                                                       --0.64%--task_tick_fair
+                                     |          |          
+                                     |          |--0.73%--rtnl_kfree_skbs
+                                     |          |          
+                                     |           --0.72%--memset_erms
+                                     |          
+                                      --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] tc_get_qdisc
+            |
+            ---tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--50.81%--hfsc_destroy_qdisc
+               |          |          
+               |           --50.26%--hfsc_destroy_class
+               |                     |          
+               |                      --49.60%--qdisc_destroy
+               |                                |          
+               |                                |--44.70%--fq_codel_reset
+               |                                |          |          
+               |                                |          |--2.78%--fq_codel_reset
+               |                                |          |          
+               |                                |           --0.83%--rtnl_kfree_skbs
+               |                                |          
+               |                                |--1.74%--rtnl_kfree_skbs
+               |                                |          
+               |                                |--1.57%--fq_codel_destroy
+               |                                |          |          
+               |                                |           --1.49%--kfree
+               |                                |                     |          
+               |                                |                      --1.21%--fq_codel_destroy
+               |                                |                                |          
+               |                                |                                 --1.07%--___cache_free
+               |                                |                                           |          
+               |                                |                                            --0.71%--slabs_destroy
+               |                                |                                                      slab_destroy
+               |                                |                                                      |          
+               |                                |                                                       --0.57%--free_hot_cold_page
+               |                                |          
+               |                                 --0.78%--kfree
+               |                                           |          
+               |                                            --0.57%--qdisc_destroy
+               |                                                      ___cache_free
+               |          
+                --48.93%--hfsc_reset_qdisc
+                          |          
+                           --48.44%--qdisc_reset
+                                     |          
+                                     |--45.57%--fq_codel_reset
+                                     |          |          
+                                     |          |--3.67%--fq_codel_reset
+                                     |          |          |          
+                                     |          |           --1.14%--__irqentry_text_start
+                                     |          |                     smp_apic_timer_interrupt
+                                     |          |                     hrtimer_interrupt
+                                     |          |                     |          
+                                     |          |                      --1.00%--__hrtimer_run_queues
+                                     |          |                                tick_sched_timer
+                                     |          |                                |          
+                                     |          |                                 --0.92%--tick_sched_handle.isra.12
+                                     |          |                                           update_process_times
+                                     |          |                                           |          
+                                     |          |                                            --0.78%--tick_sched_timer
+                                     |          |                                                      scheduler_tick
+                                     |          |                                                      |          
+                                     |          |                                                       --0.64%--task_tick_fair
+                                     |          |          
+                                     |          |--0.73%--rtnl_kfree_skbs
+                                     |          |          
+                                     |           --0.72%--memset_erms
+                                     |          
+                                      --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.00%  tc       [kernel.kallsyms]  [k] __check_object_size
+            |
+            ---__check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--50.81%--hfsc_destroy_qdisc
+               |          |          
+               |           --50.26%--hfsc_destroy_class
+               |                     |          
+               |                      --49.60%--qdisc_destroy
+               |                                |          
+               |                                |--44.70%--fq_codel_reset
+               |                                |          |          
+               |                                |          |--2.78%--fq_codel_reset
+               |                                |          |          
+               |                                |           --0.83%--rtnl_kfree_skbs
+               |                                |          
+               |                                |--1.74%--rtnl_kfree_skbs
+               |                                |          
+               |                                |--1.57%--fq_codel_destroy
+               |                                |          |          
+               |                                |           --1.49%--kfree
+               |                                |                     |          
+               |                                |                      --1.21%--fq_codel_destroy
+               |                                |                                |          
+               |                                |                                 --1.07%--___cache_free
+               |                                |                                           |          
+               |                                |                                            --0.71%--slabs_destroy
+               |                                |                                                      slab_destroy
+               |                                |                                                      |          
+               |                                |                                                       --0.57%--free_hot_cold_page
+               |                                |          
+               |                                 --0.78%--kfree
+               |                                           |          
+               |                                            --0.57%--qdisc_destroy
+               |                                                      ___cache_free
+               |          
+                --48.93%--hfsc_reset_qdisc
+                          |          
+                           --48.44%--qdisc_reset
+                                     |          
+                                     |--45.57%--fq_codel_reset
+                                     |          |          
+                                     |          |--3.67%--fq_codel_reset
+                                     |          |          |          
+                                     |          |           --1.14%--__irqentry_text_start
+                                     |          |                     smp_apic_timer_interrupt
+                                     |          |                     hrtimer_interrupt
+                                     |          |                     |          
+                                     |          |                      --1.00%--__hrtimer_run_queues
+                                     |          |                                tick_sched_timer
+                                     |          |                                |          
+                                     |          |                                 --0.92%--tick_sched_handle.isra.12
+                                     |          |                                           update_process_times
+                                     |          |                                           |          
+                                     |          |                                            --0.78%--tick_sched_timer
+                                     |          |                                                      scheduler_tick
+                                     |          |                                                      |          
+                                     |          |                                                       --0.64%--task_tick_fair
+                                     |          |          
+                                     |          |--0.73%--rtnl_kfree_skbs
+                                     |          |          
+                                     |           --0.72%--memset_erms
+                                     |          
+                                      --1.96%--rtnl_kfree_skbs
+
+    99.74%     0.74%  tc       [kernel.kallsyms]  [k] qdisc_destroy
+            |          
+            |--99.00%--qdisc_destroy
+            |          |          
+            |          |--50.07%--hfsc_destroy_qdisc
+            |          |          |          
+            |          |           --49.53%--hfsc_destroy_class
+            |          |                     |          
+            |          |                      --48.86%--qdisc_destroy
+            |          |                                |          
+            |          |                                |--44.70%--fq_codel_reset
+            |          |                                |          |          
+            |          |                                |          |--2.78%--fq_codel_reset
+            |          |                                |          |          
+            |          |                                |           --0.83%--rtnl_kfree_skbs
+            |          |                                |          
+            |          |                                |--1.74%--rtnl_kfree_skbs
+            |          |                                |          
+            |          |                                |--1.57%--fq_codel_destroy
+            |          |                                |          |          
+            |          |                                |           --1.49%--kfree
+            |          |                                |                     |          
+            |          |                                |                      --1.21%--fq_codel_destroy
+            |          |                                |                                |          
+            |          |                                |                                 --1.07%--___cache_free
+            |          |                                |                                           |          
+            |          |                                |                                            --0.71%--slabs_destroy
+            |          |                                |                                                      slab_destroy
+            |          |                                |                                                      |          
+            |          |                                |                                                       --0.57%--free_hot_cold_page
+            |          |                                |          
+            |          |                                 --0.78%--kfree
+            |          |                                           |          
+            |          |                                            --0.57%--qdisc_destroy
+            |          |                                                      ___cache_free
+            |          |          
+            |           --48.93%--hfsc_reset_qdisc
+            |                     |          
+            |                      --48.44%--qdisc_reset
+            |                                |          
+            |                                |--45.57%--fq_codel_reset
+            |                                |          |          
+            |                                |          |--3.67%--fq_codel_reset
+            |                                |          |          |          
+            |                                |          |           --1.14%--__irqentry_text_start
+            |                                |          |                     smp_apic_timer_interrupt
+            |                                |          |                     hrtimer_interrupt
+            |                                |          |                     |          
+            |                                |          |                      --1.00%--__hrtimer_run_queues
+            |                                |          |                                tick_sched_timer
+            |                                |          |                                |          
+            |                                |          |                                 --0.92%--tick_sched_handle.isra.12
+            |                                |          |                                           update_process_times
+            |                                |          |                                           |          
+            |                                |          |                                            --0.78%--tick_sched_timer
+            |                                |          |                                                      scheduler_tick
+            |                                |          |                                                      |          
+            |                                |          |                                                       --0.64%--task_tick_fair
+            |                                |          |          
+            |                                |          |--0.73%--rtnl_kfree_skbs
+            |                                |          |          
+            |                                |           --0.72%--memset_erms
+            |                                |          
+            |                                 --1.96%--rtnl_kfree_skbs
+            |          
+             --0.74%--0x676f1a4000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_swapgs
+                       do_syscall_64
+                       __sys_sendmsg
+                       handle_mm_fault
+                       mem_cgroup_commit_charge
+                       __alloc_pages_nodemask
+                       ___sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       rtnetlink_rcv
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       __check_object_size
+                       kmem_cache_alloc_node
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_destroy_qdisc
+                       hfsc_destroy_class
+                       qdisc_destroy
+
+    90.27%    86.51%  tc       [kernel.kallsyms]  [k] fq_codel_reset
+            |          
+            |--86.51%--0x676f1a4000000000
+            |          0xc
+            |          __libc_sendmsg
+            |          entry_SYSCALL_64_after_swapgs
+            |          do_syscall_64
+            |          __sys_sendmsg
+            |          handle_mm_fault
+            |          mem_cgroup_commit_charge
+            |          __alloc_pages_nodemask
+            |          ___sys_sendmsg
+            |          sock_sendmsg
+            |          netlink_sendmsg
+            |          netlink_unicast
+            |          rtnetlink_rcv
+            |          netlink_rcv_skb
+            |          rtnetlink_rcv_msg
+            |          __check_object_size
+            |          kmem_cache_alloc_node
+            |          rtnetlink_rcv_msg
+            |          tc_get_qdisc
+            |          qdisc_graft
+            |          qdisc_destroy
+            |          |          
+            |          |--43.52%--hfsc_destroy_qdisc
+            |          |          hfsc_destroy_class
+            |          |          qdisc_destroy
+            |          |          fq_codel_reset
+            |          |          |          
+            |          |           --2.78%--fq_codel_reset
+            |          |          
+            |           --42.99%--hfsc_reset_qdisc
+            |                     qdisc_reset
+            |                     fq_codel_reset
+            |                     |          
+            |                      --2.54%--fq_codel_reset
+            |          
+             --3.76%--fq_codel_reset
+                       |          
+                       |--1.56%--rtnl_kfree_skbs
+                       |          
+                       |--1.14%--fq_codel_reset
+                       |          __irqentry_text_start
+                       |          smp_apic_timer_interrupt
+                       |          hrtimer_interrupt
+                       |          |          
+                       |           --1.00%--__hrtimer_run_queues
+                       |                     tick_sched_timer
+                       |                     |          
+                       |                      --0.92%--tick_sched_handle.isra.12
+                       |                                update_process_times
+                       |                                |          
+                       |                                 --0.78%--tick_sched_timer
+                       |                                           scheduler_tick
+                       |                                           |          
+                       |                                            --0.64%--task_tick_fair
+                       |          
+                        --1.07%--memset_erms
+
+    50.81%     0.39%  tc       [kernel.kallsyms]  [k] hfsc_destroy_qdisc
+            |          
+             --50.41%--hfsc_destroy_qdisc
+                       |          
+                        --50.26%--hfsc_destroy_class
+                                  |          
+                                   --49.60%--qdisc_destroy
+                                             |          
+                                             |--44.70%--fq_codel_reset
+                                             |          |          
+                                             |          |--2.78%--fq_codel_reset
+                                             |          |          
+                                             |           --0.83%--rtnl_kfree_skbs
+                                             |          
+                                             |--1.74%--rtnl_kfree_skbs
+                                             |          
+                                             |--1.57%--fq_codel_destroy
+                                             |          |          
+                                             |           --1.49%--kfree
+                                             |                     |          
+                                             |                      --1.21%--fq_codel_destroy
+                                             |                                |          
+                                             |                                 --1.07%--___cache_free
+                                             |                                           |          
+                                             |                                            --0.71%--slabs_destroy
+                                             |                                                      slab_destroy
+                                             |                                                      |          
+                                             |                                                       --0.57%--free_hot_cold_page
+                                             |          
+                                              --0.78%--kfree
+                                                        |          
+                                                         --0.57%--qdisc_destroy
+                                                                   ___cache_free
+
+    50.26%     0.00%  tc       [kernel.kallsyms]  [k] hfsc_destroy_class
+            |
+            ---hfsc_destroy_class
+               |          
+                --49.60%--qdisc_destroy
+                          |          
+                          |--44.70%--fq_codel_reset
+                          |          |          
+                          |          |--2.78%--fq_codel_reset
+                          |          |          
+                          |           --0.83%--rtnl_kfree_skbs
+                          |          
+                          |--1.74%--rtnl_kfree_skbs
+                          |          
+                          |--1.57%--fq_codel_destroy
+                          |          |          
+                          |           --1.49%--kfree
+                          |                     |          
+                          |                      --1.21%--fq_codel_destroy
+                          |                                |          
+                          |                                 --1.07%--___cache_free
+                          |                                           |          
+                          |                                            --0.71%--slabs_destroy
+                          |                                                      slab_destroy
+                          |                                                      |          
+                          |                                                       --0.57%--free_hot_cold_page
+                          |          
+                           --0.78%--kfree
+                                     |          
+                                      --0.57%--qdisc_destroy
+                                                ___cache_free
+
+    48.93%     0.49%  tc       [kernel.kallsyms]  [k] hfsc_reset_qdisc
+            |          
+             --48.44%--hfsc_reset_qdisc
+                       qdisc_reset
+                       |          
+                       |--45.57%--fq_codel_reset
+                       |          |          
+                       |          |--3.67%--fq_codel_reset
+                       |          |          |          
+                       |          |           --1.14%--__irqentry_text_start
+                       |          |                     smp_apic_timer_interrupt
+                       |          |                     hrtimer_interrupt
+                       |          |                     |          
+                       |          |                      --1.00%--__hrtimer_run_queues
+                       |          |                                tick_sched_timer
+                       |          |                                |          
+                       |          |                                 --0.92%--tick_sched_handle.isra.12
+                       |          |                                           update_process_times
+                       |          |                                           |          
+                       |          |                                            --0.78%--tick_sched_timer
+                       |          |                                                      scheduler_tick
+                       |          |                                                      |          
+                       |          |                                                       --0.64%--task_tick_fair
+                       |          |          
+                       |          |--0.73%--rtnl_kfree_skbs
+                       |          |          
+                       |           --0.72%--memset_erms
+                       |          
+                        --1.96%--rtnl_kfree_skbs
+
+    48.44%     0.71%  tc       [kernel.kallsyms]  [k] qdisc_reset
+            |          
+            |--47.74%--qdisc_reset
+            |          |          
+            |          |--45.57%--fq_codel_reset
+            |          |          |          
+            |          |          |--3.67%--fq_codel_reset
+            |          |          |          |          
+            |          |          |           --1.14%--__irqentry_text_start
+            |          |          |                     smp_apic_timer_interrupt
+            |          |          |                     hrtimer_interrupt
+            |          |          |                     |          
+            |          |          |                      --1.00%--__hrtimer_run_queues
+            |          |          |                                tick_sched_timer
+            |          |          |                                |          
+            |          |          |                                 --0.92%--tick_sched_handle.isra.12
+            |          |          |                                           update_process_times
+            |          |          |                                           |          
+            |          |          |                                            --0.78%--tick_sched_timer
+            |          |          |                                                      scheduler_tick
+            |          |          |                                                      |          
+            |          |          |                                                       --0.64%--task_tick_fair
+            |          |          |          
+            |          |          |--0.73%--rtnl_kfree_skbs
+            |          |          |          
+            |          |           --0.72%--memset_erms
+            |          |          
+            |           --1.96%--rtnl_kfree_skbs
+            |          
+             --0.71%--0x676f1a4000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_swapgs
+                       do_syscall_64
+                       __sys_sendmsg
+                       handle_mm_fault
+                       mem_cgroup_commit_charge
+                       __alloc_pages_nodemask
+                       ___sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       rtnetlink_rcv
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       __check_object_size
+                       kmem_cache_alloc_node
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_reset_qdisc
+                       qdisc_reset
+
+     5.25%     5.25%  tc       [kernel.kallsyms]  [k] rtnl_kfree_skbs
+            |
+            ---0x676f1a4000000000
+               0xc
+               __libc_sendmsg
+               entry_SYSCALL_64_after_swapgs
+               do_syscall_64
+               __sys_sendmsg
+               handle_mm_fault
+               mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--2.68%--hfsc_reset_qdisc
+               |          qdisc_reset
+               |          |          
+               |          |--1.96%--rtnl_kfree_skbs
+               |          |          
+               |           --0.73%--fq_codel_reset
+               |                     rtnl_kfree_skbs
+               |          
+                --2.57%--hfsc_destroy_qdisc
+                          hfsc_destroy_class
+                          qdisc_destroy
+                          |          
+                          |--1.74%--rtnl_kfree_skbs
+                          |          
+                           --0.83%--fq_codel_reset
+                                     rtnl_kfree_skbs
+
+     2.42%     0.42%  tc       [kernel.kallsyms]  [k] kfree
+            |          
+             --1.99%--kfree
+                       |          
+                       |--1.21%--fq_codel_destroy
+                       |          |          
+                       |           --1.07%--___cache_free
+                       |                     |          
+                       |                      --0.71%--slabs_destroy
+                       |                                slab_destroy
+                       |                                |          
+                       |                                 --0.57%--free_hot_cold_page
+                       |          
+                        --0.57%--qdisc_destroy
+                                  ___cache_free
+
+     1.99%     0.07%  tc       [kernel.kallsyms]  [k] ___cache_free
+            |          
+             --1.92%--___cache_free
+                       |          
+                        --1.50%--slabs_destroy
+                                  slab_destroy
+                                  |          
+                                   --0.86%--free_hot_cold_page
+
+     1.57%     0.08%  tc       [kernel.kallsyms]  [k] fq_codel_destroy
+            |          
+             --1.49%--fq_codel_destroy
+                       kfree
+                       |          
+                        --1.21%--fq_codel_destroy
+                                  |          
+                                   --1.07%--___cache_free
+                                             |          
+                                              --0.71%--slabs_destroy
+                                                        slab_destroy
+                                                        |          
+                                                         --0.57%--free_hot_cold_page
+
+     1.50%     0.00%  tc       [kernel.kallsyms]  [k] slab_destroy
+            |
+            ---slab_destroy
+               |          
+                --0.86%--free_hot_cold_page
+
+     1.50%     0.00%  tc       [kernel.kallsyms]  [k] slabs_destroy
+            |
+            ---slabs_destroy
+               |          
+                --1.36%--slab_destroy
+                          |          
+                           --0.72%--free_hot_cold_page
+
+     1.21%     0.00%  tc       [kernel.kallsyms]  [k] smp_apic_timer_interrupt
+            |
+            ---smp_apic_timer_interrupt
+               hrtimer_interrupt
+               |          
+                --1.07%--__hrtimer_run_queues
+                          tick_sched_timer
+                          |          
+                           --1.00%--tick_sched_handle.isra.12
+                                     update_process_times
+                                     |          
+                                      --0.78%--tick_sched_timer
+                                                scheduler_tick
+                                                |          
+                                                 --0.64%--task_tick_fair
+
+     1.21%     0.00%  tc       [kernel.kallsyms]  [k] __irqentry_text_start
+            |
+            ---__irqentry_text_start
+               smp_apic_timer_interrupt
+               hrtimer_interrupt
+               |          
+                --1.07%--__hrtimer_run_queues
+                          tick_sched_timer
+                          |          
+                           --1.00%--tick_sched_handle.isra.12
+                                     update_process_times
+                                     |          
+                                      --0.78%--tick_sched_timer
+                                                scheduler_tick
+                                                |          
+                                                 --0.64%--task_tick_fair
+
+     1.21%     0.07%  tc       [kernel.kallsyms]  [k] hrtimer_interrupt
+            |          
+             --1.14%--hrtimer_interrupt
+                       |          
+                        --1.07%--__hrtimer_run_queues
+                                  tick_sched_timer
+                                  |          
+                                   --1.00%--tick_sched_handle.isra.12
+                                             update_process_times
+                                             |          
+                                              --0.78%--tick_sched_timer
+                                                        scheduler_tick
+                                                        |          
+                                                         --0.64%--task_tick_fair
+
+     1.07%     1.07%  tc       [kernel.kallsyms]  [k] memset_erms
+            |
+            ---0x676f1a4000000000
+               0xc
+               __libc_sendmsg
+               entry_SYSCALL_64_after_swapgs
+               do_syscall_64
+               __sys_sendmsg
+               handle_mm_fault
+               mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+                --0.72%--hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+                          memset_erms
+
+     1.07%     0.00%  tc       [kernel.kallsyms]  [k] tick_sched_timer
+            |
+            ---tick_sched_timer
+               |          
+                --1.00%--tick_sched_handle.isra.12
+                          update_process_times
+                          |          
+                           --0.78%--tick_sched_timer
+                                     scheduler_tick
+                                     |          
+                                      --0.64%--task_tick_fair
+
+     1.07%     0.00%  tc       [kernel.kallsyms]  [k] __hrtimer_run_queues
+            |
+            ---__hrtimer_run_queues
+               tick_sched_timer
+               |          
+                --1.00%--tick_sched_handle.isra.12
+                          update_process_times
+                          |          
+                           --0.78%--tick_sched_timer
+                                     scheduler_tick
+                                     |          
+                                      --0.64%--task_tick_fair
+
+     1.00%     0.00%  tc       [kernel.kallsyms]  [k] update_process_times
+            |
+            ---update_process_times
+               |          
+                --0.78%--tick_sched_timer
+                          scheduler_tick
+                          |          
+                           --0.64%--task_tick_fair
+
+     1.00%     0.00%  tc       [kernel.kallsyms]  [k] tick_sched_handle.isra.12
+            |
+            ---tick_sched_handle.isra.12
+               update_process_times
+               |          
+                --0.78%--tick_sched_timer
+                          scheduler_tick
+                          |          
+                           --0.64%--task_tick_fair
+
+     0.86%     0.43%  tc       [kernel.kallsyms]  [k] free_hot_cold_page
+     0.78%     0.00%  tc       [kernel.kallsyms]  [k] scheduler_tick
+            |
+            ---scheduler_tick
+               |          
+                --0.64%--task_tick_fair
+
+     0.64%     0.14%  tc       [kernel.kallsyms]  [k] task_tick_fair
+     0.49%     0.42%  tc       [kernel.kallsyms]  [k] __free_pages_ok
+     0.44%     0.44%  tc       [kernel.kallsyms]  [k] __list_del_entry
+     0.43%     0.21%  tc       [kernel.kallsyms]  [k] free_pcppages_bulk
+     0.43%     0.07%  tc       [kernel.kallsyms]  [k] free_block
+     0.39%     0.39%  tc       [kernel.kallsyms]  [k] __call_rcu.constprop.70
+     0.29%     0.00%  tc       [kernel.kallsyms]  [k] list_del
+     0.28%     0.00%  tc       [kernel.kallsyms]  [k] arch_perf_update_userpage
+     0.28%     0.00%  tc       [kernel.kallsyms]  [k] update_curr
+     0.28%     0.28%  tc       [kernel.kallsyms]  [k] intel_pstate_update_util
+     0.28%     0.07%  tc       [kernel.kallsyms]  [k] gen_kill_estimator
+     0.22%     0.14%  tc       [kernel.kallsyms]  [k] qdisc_reset_queue
+     0.21%     0.21%  tc       [kernel.kallsyms]  [k] update_cfs_shares
+     0.21%     0.21%  tc       [kernel.kallsyms]  [k] _raw_spin_lock_bh
+     0.15%     0.15%  tc       [kernel.kallsyms]  [k] kmem_freepages.isra.49
+     0.14%     0.00%  tc       [kernel.kallsyms]  [k] account_system_time
+     0.14%     0.14%  tc       [kernel.kallsyms]  [k] cpuacct_account_field
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] unlink_file_vma
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] free_pgtables
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] unmap_region
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] __vma_rb_erase
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] do_munmap
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] mmap_region
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] perf_event_mmap
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] cap_mmap_addr
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] do_mmap
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] cap_mmap_file
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] security_mmap_file
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] vm_mmap_pgoff
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] sys_mmap_pgoff
+     0.12%     0.12%  tc       [kernel.kallsyms]  [k] vma_interval_tree_remove
+     0.12%     0.00%  tc       ld-2.24.so         [.] mmap64
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] _raw_spin_lock
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] perf_event_task_tick
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] x86_pmu_disable
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] irq_work_tick
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] native_write_msr
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] lapic_next_deadline
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] clockevents_program_event
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] ktime_get
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] free_one_page
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] __list_add
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] tcf_destroy_chain
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] __mod_zone_page_state
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] unmap_vmas
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] exit_mmap
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] __netlink_sendskb
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] mmput
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] do_exit
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] do_group_exit
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] __wake_up_parent
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] unmap_page_range
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] alloc_pages_current
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __pmd_alloc
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] perf_iterate_sb
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __do_page_fault
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] vma_link
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] page_fault
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __clear_user
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] load_elf_binary
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] search_binary_handler
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] do_execveat_common.isra.37
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] sys_execve
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] memcg_kmem_charge
+     0.04%     0.00%  tc       [unknown]          [k] 0x00007fed0d098647
+     0.02%     0.02%  tc       tc                 [.] rtnl_talk
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.17
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] perf_event_exec
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] setup_new_exec
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] load_elf_binary
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] __check_object_size
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] copy_strings.isra.25
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] search_binary_handler
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] do_execveat_common.isra.37
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] sys_execve
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] do_syscall_64
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] entry_SYSCALL_64_after_swapgs
+     0.00%     0.00%  perf_4.  [unknown]          [k] 0x00007fed0d098647
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] ghes_copy_tofrom_phys
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __alloc_skb
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] netlink_ack
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] apei_read
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.17
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __perf_event_task_sched_in
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __perf_event_task_sched_out
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __switch_to
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] finish_task_switch
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __schedule
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] _cond_resched
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] ghes_notify_nmi
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] native_write_msr
+
+
+#
+# (Tip: Save output of perf stat using: perf stat record <target workload>)
+#

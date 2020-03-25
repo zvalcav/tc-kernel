@@ -1,0 +1,585 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 45
+#
+# Samples: 30K of event 'cycles:ppp'
+# Event count (approx.): 24230709106425
+#
+# Children      Self  Command  Shared Object      Symbol                                     
+# ........  ........  .......  .................  ...........................................
+#
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+                --100.00%--__sys_sendmsg
+                          handle_mm_fault
+                          mem_cgroup_commit_charge
+                          __alloc_pages_nodemask
+                          ___sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          rtnetlink_rcv
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          __check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                           --99.83%--qdisc_destroy
+                                     hfsc_reset_qdisc
+                                     qdisc_reset
+                                     fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] entry_SYSCALL_64_after_swapgs
+            |
+            ---entry_SYSCALL_64_after_swapgs
+               do_syscall_64
+               |          
+                --100.00%--__sys_sendmsg
+                          handle_mm_fault
+                          mem_cgroup_commit_charge
+                          __alloc_pages_nodemask
+                          ___sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          rtnetlink_rcv
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          __check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                           --99.83%--qdisc_destroy
+                                     hfsc_reset_qdisc
+                                     qdisc_reset
+                                     fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] rtnetlink_rcv_msg
+            |
+            ---rtnetlink_rcv_msg
+               |          
+                --100.00%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                           --99.83%--qdisc_destroy
+                                     hfsc_reset_qdisc
+                                     qdisc_reset
+                                     fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] netlink_rcv_skb
+            |
+            ---netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --100.00%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                           --99.83%--qdisc_destroy
+                                     hfsc_reset_qdisc
+                                     qdisc_reset
+                                     fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] rtnetlink_rcv
+            |
+            ---rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --100.00%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                           --99.83%--qdisc_destroy
+                                     hfsc_reset_qdisc
+                                     qdisc_reset
+                                     fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] netlink_unicast
+            |
+            ---netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --100.00%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                           --99.83%--qdisc_destroy
+                                     hfsc_reset_qdisc
+                                     qdisc_reset
+                                     fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] netlink_sendmsg
+            |
+            ---netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --100.00%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                           --99.83%--qdisc_destroy
+                                     hfsc_reset_qdisc
+                                     qdisc_reset
+                                     fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] sock_sendmsg
+            |
+            ---sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               |          
+                --100.00%--__check_object_size
+                          kmem_cache_alloc_node
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                           --99.83%--qdisc_destroy
+                                     hfsc_reset_qdisc
+                                     qdisc_reset
+                                     fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_graft
+            |
+            ---qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] tc_get_qdisc
+            |
+            ---tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] kmem_cache_alloc_node
+            |
+            ---kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] __check_object_size
+            |
+            ---__check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] ___sys_sendmsg
+            |
+            ---___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] __alloc_pages_nodemask
+            |
+            ---__alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] mem_cgroup_commit_charge
+            |
+            ---mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] handle_mm_fault
+            |
+            ---handle_mm_fault
+               mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] __sys_sendmsg
+            |
+            ---__sys_sendmsg
+               handle_mm_fault
+               mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       libc-2.24.so       [.] __libc_sendmsg
+            |
+            ---__libc_sendmsg
+               entry_SYSCALL_64_after_swapgs
+               do_syscall_64
+               __sys_sendmsg
+               handle_mm_fault
+               mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [unknown]          [k] 0x000000000000000c
+            |
+            ---0xc
+               __libc_sendmsg
+               entry_SYSCALL_64_after_swapgs
+               do_syscall_64
+               __sys_sendmsg
+               handle_mm_fault
+               mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [unknown]          [k] 0xa8f1ba0000000000
+            |
+            ---0xa8f1ba0000000000
+               0xc
+               __libc_sendmsg
+               entry_SYSCALL_64_after_swapgs
+               do_syscall_64
+               __sys_sendmsg
+               handle_mm_fault
+               mem_cgroup_commit_charge
+               __alloc_pages_nodemask
+               ___sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               rtnetlink_rcv
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               __check_object_size
+               kmem_cache_alloc_node
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+                --99.83%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_reset
+            |          
+             --100.00%--qdisc_reset
+                       |          
+                        --99.83%--fq_codel_reset
+
+   100.00%     0.00%  tc       [kernel.kallsyms]  [k] hfsc_reset_qdisc
+            |          
+             --100.00%--hfsc_reset_qdisc
+                       |          
+                        --100.00%--qdisc_reset
+                                  |          
+                                   --99.99%--fq_codel_reset
+
+    99.99%    99.98%  tc       [kernel.kallsyms]  [k] fq_codel_reset
+            |          
+             --99.98%--0xa8f1ba0000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_swapgs
+                       do_syscall_64
+                       __sys_sendmsg
+                       handle_mm_fault
+                       mem_cgroup_commit_charge
+                       __alloc_pages_nodemask
+                       ___sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       rtnetlink_rcv
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       __check_object_size
+                       kmem_cache_alloc_node
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       |          
+                        --99.83%--qdisc_destroy
+                                  hfsc_reset_qdisc
+                                  qdisc_reset
+                                  fq_codel_reset
+
+    99.83%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_destroy
+            |
+            ---qdisc_destroy
+               hfsc_reset_qdisc
+               qdisc_reset
+               fq_codel_reset
+
+     0.17%     0.00%  tc       [kernel.kallsyms]  [k] dev_deactivate
+     0.17%     0.00%  tc       [kernel.kallsyms]  [k] dev_deactivate_many
+     0.17%     0.00%  tc       [kernel.kallsyms]  [k] dev_deactivate_queue.constprop.26
+     0.01%     0.01%  tc       [kernel.kallsyms]  [k] rtnl_kfree_skbs
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] memset_erms
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_reset_queue
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] smp_apic_timer_interrupt
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __irqentry_text_start
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] hrtimer_interrupt
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __hrtimer_run_queues
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] tick_sched_timer
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] update_process_times
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] tick_sched_handle.isra.12
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] scheduler_tick
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] task_tick_fair
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] perf_event_task_tick
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] update_cfs_shares
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __x86_indirect_thunk_rax
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] update_curr
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] rtnl_is_locked
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] memset
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] kfree_skb
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] account_system_time
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] cpuacct_account_field
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] rcu_check_callbacks
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] enqueue_hrtimer
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] timerqueue_add
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __local_bh_enable_ip
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] do_softirq.part.18
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __remove_hrtimer
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_write_msr
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] arch_perf_update_userpage
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] clockevents_program_event
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __softirqentry_text_start
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] do_softirq_own_stack
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] perf_pmu_disable.part.89
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] intel_pstate_update_util
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] _raw_spin_lock
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] lapic_next_deadline
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] trigger_load_balance
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.17
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] x86_pmu_disable
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] net_rx_action
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] ixgbe_poll
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] mmap_region
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] do_mmap
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] cap_mmap_file
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] security_mmap_file
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] vm_mmap_pgoff
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __snmp6_fill_stats64.isra.43
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] inet6_fill_ifla6_attrs
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] inet6_fill_link_af
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] rtnl_fill_ifinfo
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __perf_event__output_id_sample
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] kmem_cache_alloc
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __alloc_skb
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] netlink_dump
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __netlink_dump_start
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] rtnl_dump_ifinfo
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] SYSC_sendto
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __do_page_fault
+     0.00%     0.00%  tc       libc-2.24.so       [.] __libc_send
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] snmp_get_cpu_field
+     0.00%     0.00%  tc       [unknown]          [k] 0000000000000000
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] vma_link
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] sys_mmap_pgoff
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] vma_interval_tree_insert
+     0.00%     0.00%  tc       ld-2.24.so         [.] mmap64
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] timerqueue_del
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] get_target_pstate_use_performance
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] clear_buddies
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] hrtimer_active
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] irq_work_tick
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] hrtimer_forward
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_smp_send_reschedule
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] ret_from_intr
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] account_entity_dequeue
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] ixgbe_clean_rx_irq
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] intel_pmu_pebs_enable_all
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __queue_work
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] delayed_work_timer_fn
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] call_timer_fn
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] run_timer_softirq
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] read_tsc
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] insert_work
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] cpuacct_charge
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] elf_map
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] load_elf_binary
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] search_binary_handler
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] do_execveat_common.isra.37
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] sys_execve
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] xfs_file_mmap
+     0.00%     0.00%  tc       [unknown]          [k] 0x00007f2dd5ba8647
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] synchronize_net
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.17
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] perf_event_exec
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] setup_new_exec
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] load_elf_binary
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] __check_object_size
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] copy_strings.isra.25
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] search_binary_handler
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] do_execveat_common.isra.37
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] sys_execve
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] do_syscall_64
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] entry_SYSCALL_64_after_swapgs
+     0.00%     0.00%  perf_4.  [unknown]          [k] 0x00007f2dd5ba8647
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] native_write_msr
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __perf_event_task_sched_in
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __perf_event_task_sched_out
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __switch_to
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] finish_task_switch
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __schedule
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] schedule
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] _synchronize_rcu_expedited.constprop.74
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] autoremove_wake_function
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] sync_sched_exp_handler
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] wait_rcu_exp_gp
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_flush_tlb_single
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] _cond_resched
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] acpi_os_read_memory
+     0.00%     0.00%  perf_4.  [kernel.kallsyms]  [k] ghes_notify_nmi
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_sched_clock
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] intel_pmu_handle_irq
+
+
+#
+# (Tip: Order by the overhead of source file name and line number: perf report -s srcline)
+#

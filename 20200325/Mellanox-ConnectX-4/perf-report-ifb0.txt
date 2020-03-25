@@ -1,0 +1,1378 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 3
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 1357195753
+#
+# Children      Self  Command  Shared Object      Symbol                                   
+# ........  ........  .......  .................  .........................................
+#
+    99.79%     0.00%  tc       [kernel.kallsyms]  [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+                --99.65%--__sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--52.44%--hfsc_destroy_qdisc
+                          |          |          
+                          |          |--50.42%--hfsc_destroy_class
+                          |          |          |          
+                          |          |           --49.70%--qdisc_destroy
+                          |          |                     |          
+                          |          |                     |--44.11%--fq_codel_reset
+                          |          |                     |          |          
+                          |          |                     |          |--3.99%--codel_vars_init
+                          |          |                     |          |          
+                          |          |                     |          |--1.91%--rtnl_kfree_skbs
+                          |          |                     |          |          
+                          |          |                     |           --0.52%--memset_erms
+                          |          |                     |          
+                          |          |                     |--3.55%--fq_codel_destroy
+                          |          |                     |          |          
+                          |          |                     |           --3.08%--tcf_block_put
+                          |          |                     |                     |          
+                          |          |                     |                     |--1.57%--tcf_block_put_ext
+                          |          |                     |                     |          |          
+                          |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+                          |          |                     |                     |                     |          
+                          |          |                     |                     |                      --0.68%--mutex_lock
+                          |          |                     |                     |          
+                          |          |                     |                      --0.61%--__tcf_block_put
+                          |          |                     |          
+                          |          |                      --1.48%--__free_pages_ok
+                          |          |          
+                          |           --1.44%--tcf_block_put
+                          |          
+                           --47.22%--hfsc_reset_qdisc
+                                     |          
+                                      --46.92%--qdisc_reset
+                                                |          
+                                                 --45.63%--fq_codel_reset
+                                                           |          
+                                                           |--3.06%--codel_vars_init
+                                                           |          
+                                                           |--1.35%--rtnl_kfree_skbs
+                                                           |          
+                                                            --0.81%--memset_erms
+
+    99.79%     0.00%  tc       [kernel.kallsyms]  [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+                --99.65%--__sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--52.44%--hfsc_destroy_qdisc
+                          |          |          
+                          |          |--50.42%--hfsc_destroy_class
+                          |          |          |          
+                          |          |           --49.70%--qdisc_destroy
+                          |          |                     |          
+                          |          |                     |--44.11%--fq_codel_reset
+                          |          |                     |          |          
+                          |          |                     |          |--3.99%--codel_vars_init
+                          |          |                     |          |          
+                          |          |                     |          |--1.91%--rtnl_kfree_skbs
+                          |          |                     |          |          
+                          |          |                     |           --0.52%--memset_erms
+                          |          |                     |          
+                          |          |                     |--3.55%--fq_codel_destroy
+                          |          |                     |          |          
+                          |          |                     |           --3.08%--tcf_block_put
+                          |          |                     |                     |          
+                          |          |                     |                     |--1.57%--tcf_block_put_ext
+                          |          |                     |                     |          |          
+                          |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+                          |          |                     |                     |                     |          
+                          |          |                     |                     |                      --0.68%--mutex_lock
+                          |          |                     |                     |          
+                          |          |                     |                      --0.61%--__tcf_block_put
+                          |          |                     |          
+                          |          |                      --1.48%--__free_pages_ok
+                          |          |          
+                          |           --1.44%--tcf_block_put
+                          |          
+                           --47.22%--hfsc_reset_qdisc
+                                     |          
+                                      --46.92%--qdisc_reset
+                                                |          
+                                                 --45.63%--fq_codel_reset
+                                                           |          
+                                                           |--3.06%--codel_vars_init
+                                                           |          
+                                                           |--1.35%--rtnl_kfree_skbs
+                                                           |          
+                                                            --0.81%--memset_erms
+
+    99.78%     0.00%  tc       [unknown]          [k] 0xedf56bb000000000
+            |
+            ---0xedf56bb000000000
+               0xc
+               __libc_sendmsg
+               |          
+                --99.65%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--52.44%--hfsc_destroy_qdisc
+                          |          |          
+                          |          |--50.42%--hfsc_destroy_class
+                          |          |          |          
+                          |          |           --49.70%--qdisc_destroy
+                          |          |                     |          
+                          |          |                     |--44.11%--fq_codel_reset
+                          |          |                     |          |          
+                          |          |                     |          |--3.99%--codel_vars_init
+                          |          |                     |          |          
+                          |          |                     |          |--1.91%--rtnl_kfree_skbs
+                          |          |                     |          |          
+                          |          |                     |           --0.52%--memset_erms
+                          |          |                     |          
+                          |          |                     |--3.55%--fq_codel_destroy
+                          |          |                     |          |          
+                          |          |                     |           --3.08%--tcf_block_put
+                          |          |                     |                     |          
+                          |          |                     |                     |--1.57%--tcf_block_put_ext
+                          |          |                     |                     |          |          
+                          |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+                          |          |                     |                     |                     |          
+                          |          |                     |                     |                      --0.68%--mutex_lock
+                          |          |                     |                     |          
+                          |          |                     |                      --0.61%--__tcf_block_put
+                          |          |                     |          
+                          |          |                      --1.48%--__free_pages_ok
+                          |          |          
+                          |           --1.44%--tcf_block_put
+                          |          
+                           --47.22%--hfsc_reset_qdisc
+                                     |          
+                                      --46.92%--qdisc_reset
+                                                |          
+                                                 --45.63%--fq_codel_reset
+                                                           |          
+                                                           |--3.06%--codel_vars_init
+                                                           |          
+                                                           |--1.35%--rtnl_kfree_skbs
+                                                           |          
+                                                            --0.81%--memset_erms
+
+    99.78%     0.00%  tc       [unknown]          [k] 0x000000000000000c
+            |
+            ---0xc
+               __libc_sendmsg
+               |          
+                --99.65%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--52.44%--hfsc_destroy_qdisc
+                          |          |          
+                          |          |--50.42%--hfsc_destroy_class
+                          |          |          |          
+                          |          |           --49.70%--qdisc_destroy
+                          |          |                     |          
+                          |          |                     |--44.11%--fq_codel_reset
+                          |          |                     |          |          
+                          |          |                     |          |--3.99%--codel_vars_init
+                          |          |                     |          |          
+                          |          |                     |          |--1.91%--rtnl_kfree_skbs
+                          |          |                     |          |          
+                          |          |                     |           --0.52%--memset_erms
+                          |          |                     |          
+                          |          |                     |--3.55%--fq_codel_destroy
+                          |          |                     |          |          
+                          |          |                     |           --3.08%--tcf_block_put
+                          |          |                     |                     |          
+                          |          |                     |                     |--1.57%--tcf_block_put_ext
+                          |          |                     |                     |          |          
+                          |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+                          |          |                     |                     |                     |          
+                          |          |                     |                     |                      --0.68%--mutex_lock
+                          |          |                     |                     |          
+                          |          |                     |                      --0.61%--__tcf_block_put
+                          |          |                     |          
+                          |          |                      --1.48%--__free_pages_ok
+                          |          |          
+                          |           --1.44%--tcf_block_put
+                          |          
+                           --47.22%--hfsc_reset_qdisc
+                                     |          
+                                      --46.92%--qdisc_reset
+                                                |          
+                                                 --45.63%--fq_codel_reset
+                                                           |          
+                                                           |--3.06%--codel_vars_init
+                                                           |          
+                                                           |--1.35%--rtnl_kfree_skbs
+                                                           |          
+                                                            --0.81%--memset_erms
+
+    99.78%     0.00%  tc       libc-2.24.so       [.] __libc_sendmsg
+            |
+            ---__libc_sendmsg
+               |          
+                --99.65%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--52.44%--hfsc_destroy_qdisc
+                          |          |          
+                          |          |--50.42%--hfsc_destroy_class
+                          |          |          |          
+                          |          |           --49.70%--qdisc_destroy
+                          |          |                     |          
+                          |          |                     |--44.11%--fq_codel_reset
+                          |          |                     |          |          
+                          |          |                     |          |--3.99%--codel_vars_init
+                          |          |                     |          |          
+                          |          |                     |          |--1.91%--rtnl_kfree_skbs
+                          |          |                     |          |          
+                          |          |                     |           --0.52%--memset_erms
+                          |          |                     |          
+                          |          |                     |--3.55%--fq_codel_destroy
+                          |          |                     |          |          
+                          |          |                     |           --3.08%--tcf_block_put
+                          |          |                     |                     |          
+                          |          |                     |                     |--1.57%--tcf_block_put_ext
+                          |          |                     |                     |          |          
+                          |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+                          |          |                     |                     |                     |          
+                          |          |                     |                     |                      --0.68%--mutex_lock
+                          |          |                     |                     |          
+                          |          |                     |                      --0.61%--__tcf_block_put
+                          |          |                     |          
+                          |          |                      --1.48%--__free_pages_ok
+                          |          |          
+                          |           --1.44%--tcf_block_put
+                          |          
+                           --47.22%--hfsc_reset_qdisc
+                                     |          
+                                      --46.92%--qdisc_reset
+                                                |          
+                                                 --45.63%--fq_codel_reset
+                                                           |          
+                                                           |--3.06%--codel_vars_init
+                                                           |          
+                                                           |--1.35%--rtnl_kfree_skbs
+                                                           |          
+                                                            --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] __sys_sendmsg
+            |
+            ---__sys_sendmsg
+               ___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] ___sys_sendmsg
+            |
+            ---___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] ____sys_sendmsg
+            |
+            ---____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    99.65%     0.09%  tc       [kernel.kallsyms]  [k] qdisc_destroy
+            |          
+             --99.56%--qdisc_destroy
+                       |          
+                       |--52.35%--hfsc_destroy_qdisc
+                       |          |          
+                       |          |--50.33%--hfsc_destroy_class
+                       |          |          |          
+                       |          |           --49.61%--qdisc_destroy
+                       |          |                     |          
+                       |          |                     |--44.11%--fq_codel_reset
+                       |          |                     |          |          
+                       |          |                     |          |--3.99%--codel_vars_init
+                       |          |                     |          |          
+                       |          |                     |          |--1.91%--rtnl_kfree_skbs
+                       |          |                     |          |          
+                       |          |                     |           --0.52%--memset_erms
+                       |          |                     |          
+                       |          |                     |--3.55%--fq_codel_destroy
+                       |          |                     |          |          
+                       |          |                     |           --3.08%--tcf_block_put
+                       |          |                     |                     |          
+                       |          |                     |                     |--1.57%--tcf_block_put_ext
+                       |          |                     |                     |          |          
+                       |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+                       |          |                     |                     |                     |          
+                       |          |                     |                     |                      --0.68%--mutex_lock
+                       |          |                     |                     |          
+                       |          |                     |                      --0.61%--__tcf_block_put
+                       |          |                     |          
+                       |          |                      --1.48%--__free_pages_ok
+                       |          |          
+                       |           --1.44%--tcf_block_put
+                       |          
+                        --47.22%--hfsc_reset_qdisc
+                                  |          
+                                   --46.92%--qdisc_reset
+                                             |          
+                                              --45.63%--fq_codel_reset
+                                                        |          
+                                                        |--3.06%--codel_vars_init
+                                                        |          
+                                                        |--1.35%--rtnl_kfree_skbs
+                                                        |          
+                                                         --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] sock_sendmsg
+            |
+            ---sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] netlink_sendmsg
+            |
+            ---netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] netlink_unicast
+            |
+            ---netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] netlink_rcv_skb
+            |
+            ---netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] rtnetlink_rcv_msg
+            |
+            ---rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] tc_get_qdisc
+            |
+            ---tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    99.65%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_graft
+            |
+            ---qdisc_graft
+               qdisc_destroy
+               |          
+               |--52.44%--hfsc_destroy_qdisc
+               |          |          
+               |          |--50.42%--hfsc_destroy_class
+               |          |          |          
+               |          |           --49.70%--qdisc_destroy
+               |          |                     |          
+               |          |                     |--44.11%--fq_codel_reset
+               |          |                     |          |          
+               |          |                     |          |--3.99%--codel_vars_init
+               |          |                     |          |          
+               |          |                     |          |--1.91%--rtnl_kfree_skbs
+               |          |                     |          |          
+               |          |                     |           --0.52%--memset_erms
+               |          |                     |          
+               |          |                     |--3.55%--fq_codel_destroy
+               |          |                     |          |          
+               |          |                     |           --3.08%--tcf_block_put
+               |          |                     |                     |          
+               |          |                     |                     |--1.57%--tcf_block_put_ext
+               |          |                     |                     |          |          
+               |          |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+               |          |                     |                     |                     |          
+               |          |                     |                     |                      --0.68%--mutex_lock
+               |          |                     |                     |          
+               |          |                     |                      --0.61%--__tcf_block_put
+               |          |                     |          
+               |          |                      --1.48%--__free_pages_ok
+               |          |          
+               |           --1.44%--tcf_block_put
+               |          
+                --47.22%--hfsc_reset_qdisc
+                          |          
+                           --46.92%--qdisc_reset
+                                     |          
+                                      --45.63%--fq_codel_reset
+                                                |          
+                                                |--3.06%--codel_vars_init
+                                                |          
+                                                |--1.35%--rtnl_kfree_skbs
+                                                |          
+                                                 --0.81%--memset_erms
+
+    89.74%    70.88%  tc       [kernel.kallsyms]  [k] fq_codel_reset
+            |          
+            |--70.88%--0xedf56bb000000000
+            |          0xc
+            |          __libc_sendmsg
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          __sys_sendmsg
+            |          ___sys_sendmsg
+            |          ____sys_sendmsg
+            |          sock_sendmsg
+            |          netlink_sendmsg
+            |          netlink_unicast
+            |          netlink_rcv_skb
+            |          rtnetlink_rcv_msg
+            |          tc_get_qdisc
+            |          qdisc_graft
+            |          qdisc_destroy
+            |          |          
+            |          |--35.60%--hfsc_reset_qdisc
+            |          |          qdisc_reset
+            |          |          fq_codel_reset
+            |          |          |          
+            |          |           --0.75%--rtnl_kfree_skbs
+            |          |          
+            |           --35.27%--hfsc_destroy_qdisc
+            |                     hfsc_destroy_class
+            |                     qdisc_destroy
+            |                     fq_codel_reset
+            |                     |          
+            |                     |--1.00%--rtnl_kfree_skbs
+            |                     |          
+            |                      --0.70%--codel_vars_init
+            |          
+             --18.86%--fq_codel_reset
+                       |          
+                       |--6.34%--codel_vars_init
+                       |          
+                       |--1.51%--rtnl_kfree_skbs
+                       |          
+                        --1.33%--memset_erms
+
+    52.44%     0.38%  tc       [kernel.kallsyms]  [k] hfsc_destroy_qdisc
+            |          
+             --52.06%--hfsc_destroy_qdisc
+                       |          
+                       |--50.42%--hfsc_destroy_class
+                       |          |          
+                       |           --49.70%--qdisc_destroy
+                       |                     |          
+                       |                     |--44.11%--fq_codel_reset
+                       |                     |          |          
+                       |                     |          |--3.99%--codel_vars_init
+                       |                     |          |          
+                       |                     |          |--1.91%--rtnl_kfree_skbs
+                       |                     |          |          
+                       |                     |           --0.52%--memset_erms
+                       |                     |          
+                       |                     |--3.55%--fq_codel_destroy
+                       |                     |          |          
+                       |                     |           --3.08%--tcf_block_put
+                       |                     |                     |          
+                       |                     |                     |--1.57%--tcf_block_put_ext
+                       |                     |                     |          |          
+                       |                     |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+                       |                     |                     |                     |          
+                       |                     |                     |                      --0.68%--mutex_lock
+                       |                     |                     |          
+                       |                     |                      --0.61%--__tcf_block_put
+                       |                     |          
+                       |                      --1.48%--__free_pages_ok
+                       |          
+                        --1.44%--tcf_block_put
+
+    50.42%     0.00%  tc       [kernel.kallsyms]  [k] hfsc_destroy_class
+            |
+            ---hfsc_destroy_class
+               |          
+                --49.70%--qdisc_destroy
+                          |          
+                          |--44.11%--fq_codel_reset
+                          |          |          
+                          |          |--3.99%--codel_vars_init
+                          |          |          
+                          |          |--1.91%--rtnl_kfree_skbs
+                          |          |          
+                          |           --0.52%--memset_erms
+                          |          
+                          |--3.55%--fq_codel_destroy
+                          |          |          
+                          |           --3.08%--tcf_block_put
+                          |                     |          
+                          |                     |--1.57%--tcf_block_put_ext
+                          |                     |          |          
+                          |                     |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+                          |                     |                     |          
+                          |                     |                      --0.68%--mutex_lock
+                          |                     |          
+                          |                      --0.61%--__tcf_block_put
+                          |          
+                           --1.48%--__free_pages_ok
+
+    47.22%     0.29%  tc       [kernel.kallsyms]  [k] hfsc_reset_qdisc
+            |          
+             --46.92%--hfsc_reset_qdisc
+                       qdisc_reset
+                       |          
+                        --45.63%--fq_codel_reset
+                                  |          
+                                  |--3.06%--codel_vars_init
+                                  |          
+                                  |--1.35%--rtnl_kfree_skbs
+                                  |          
+                                   --0.81%--memset_erms
+
+    46.92%     1.23%  tc       [kernel.kallsyms]  [k] qdisc_reset
+            |          
+            |--45.69%--qdisc_reset
+            |          |          
+            |           --45.63%--fq_codel_reset
+            |                     |          
+            |                     |--3.06%--codel_vars_init
+            |                     |          
+            |                     |--1.35%--rtnl_kfree_skbs
+            |                     |          
+            |                      --0.81%--memset_erms
+            |          
+             --1.23%--0xedf56bb000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_reset_qdisc
+                       qdisc_reset
+
+    12.39%    11.69%  tc       [kernel.kallsyms]  [k] codel_vars_init
+            |          
+            |--11.69%--0xedf56bb000000000
+            |          0xc
+            |          __libc_sendmsg
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          __sys_sendmsg
+            |          ___sys_sendmsg
+            |          ____sys_sendmsg
+            |          sock_sendmsg
+            |          netlink_sendmsg
+            |          netlink_unicast
+            |          netlink_rcv_skb
+            |          rtnetlink_rcv_msg
+            |          tc_get_qdisc
+            |          qdisc_graft
+            |          qdisc_destroy
+            |          |          
+            |          |--6.33%--hfsc_reset_qdisc
+            |          |          qdisc_reset
+            |          |          fq_codel_reset
+            |          |          |          
+            |          |           --3.06%--codel_vars_init
+            |          |          
+            |           --5.36%--hfsc_destroy_qdisc
+            |                     hfsc_destroy_class
+            |                     qdisc_destroy
+            |                     fq_codel_reset
+            |                     |          
+            |                      --3.28%--codel_vars_init
+            |          
+             --0.70%--codel_vars_init
+
+     7.47%     5.71%  tc       [kernel.kallsyms]  [k] rtnl_kfree_skbs
+            |          
+            |--5.71%--0xedf56bb000000000
+            |          0xc
+            |          __libc_sendmsg
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          __sys_sendmsg
+            |          ___sys_sendmsg
+            |          ____sys_sendmsg
+            |          sock_sendmsg
+            |          netlink_sendmsg
+            |          netlink_unicast
+            |          netlink_rcv_skb
+            |          rtnetlink_rcv_msg
+            |          tc_get_qdisc
+            |          qdisc_graft
+            |          qdisc_destroy
+            |          |          
+            |          |--2.96%--hfsc_destroy_qdisc
+            |          |          hfsc_destroy_class
+            |          |          qdisc_destroy
+            |          |          fq_codel_reset
+            |          |          |          
+            |          |           --0.91%--rtnl_kfree_skbs
+            |          |          
+            |           --2.75%--hfsc_reset_qdisc
+            |                     qdisc_reset
+            |                     fq_codel_reset
+            |                     |          
+            |                      --0.59%--rtnl_kfree_skbs
+            |          
+             --1.76%--rtnl_kfree_skbs
+
+     4.52%     1.53%  tc       [kernel.kallsyms]  [k] tcf_block_put
+            |          
+            |--2.99%--tcf_block_put
+            |          |          
+            |          |--1.92%--tcf_block_put_ext
+            |          |          |          
+            |          |           --1.12%--tcf_chain0_head_change_cb_del.isra.46
+            |          |                     |          
+            |          |                      --0.68%--mutex_lock
+            |          |          
+            |           --1.00%--__tcf_block_put
+            |          
+             --1.53%--0xedf56bb000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_destroy_qdisc
+                       |          
+                       |--0.83%--hfsc_destroy_class
+                       |          qdisc_destroy
+                       |          fq_codel_destroy
+                       |          tcf_block_put
+                       |          
+                        --0.70%--tcf_block_put
+
+     3.55%     0.07%  tc       [kernel.kallsyms]  [k] fq_codel_destroy
+            |          
+             --3.48%--fq_codel_destroy
+                       |          
+                        --3.08%--tcf_block_put
+                                  |          
+                                  |--1.57%--tcf_block_put_ext
+                                  |          |          
+                                  |           --0.88%--tcf_chain0_head_change_cb_del.isra.46
+                                  |                     |          
+                                  |                      --0.68%--mutex_lock
+                                  |          
+                                   --0.61%--__tcf_block_put
+
+     1.92%     0.00%  tc       [kernel.kallsyms]  [k] tcf_block_put_ext
+            |
+            ---tcf_block_put_ext
+               |          
+                --1.12%--tcf_chain0_head_change_cb_del.isra.46
+                          |          
+                           --0.68%--mutex_lock
+
+     1.61%     1.35%  tc       [kernel.kallsyms]  [k] __free_pages_ok
+            |          
+             --1.35%--0xedf56bb000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_destroy_qdisc
+                       hfsc_destroy_class
+                       qdisc_destroy
+                       __free_pages_ok
+
+     1.33%     1.33%  tc       [kernel.kallsyms]  [k] memset_erms
+            |
+            ---0xedf56bb000000000
+               0xc
+               __libc_sendmsg
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               __sys_sendmsg
+               ___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--0.81%--hfsc_reset_qdisc
+               |          qdisc_reset
+               |          fq_codel_reset
+               |          memset_erms
+               |          
+                --0.52%--hfsc_destroy_qdisc
+                          hfsc_destroy_class
+                          qdisc_destroy
+                          fq_codel_reset
+                          memset_erms
+
+     1.12%     0.08%  tc       [kernel.kallsyms]  [k] tcf_chain0_head_change_cb_del.isra.46
+            |          
+             --1.04%--tcf_chain0_head_change_cb_del.isra.46
+                       |          
+                        --0.68%--mutex_lock
+
+     1.00%     0.55%  tc       [kernel.kallsyms]  [k] __tcf_block_put
+            |          
+             --0.55%--0xedf56bb000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_destroy_qdisc
+                       hfsc_destroy_class
+                       qdisc_destroy
+                       fq_codel_destroy
+                       tcf_block_put
+                       __tcf_block_put
+
+     0.80%     0.68%  tc       [kernel.kallsyms]  [k] mutex_lock
+            |          
+             --0.68%--0xedf56bb000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_destroy_qdisc
+                       hfsc_destroy_class
+                       qdisc_destroy
+                       fq_codel_destroy
+                       tcf_block_put
+                       tcf_block_put_ext
+                       tcf_chain0_head_change_cb_del.isra.46
+                       mutex_lock
+
+     0.66%     0.60%  tc       [kernel.kallsyms]  [k] kfree
+            |          
+             --0.60%--0xedf56bb000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_destroy_qdisc
+
+     0.46%     0.07%  tc       [kernel.kallsyms]  [k] qdisc_put.part.49
+     0.44%     0.31%  tc       [kernel.kallsyms]  [k] __slab_free
+     0.42%     0.42%  tc       [kernel.kallsyms]  [k] __list_del_entry_valid
+     0.39%     0.39%  tc       [kernel.kallsyms]  [k] refcount_sub_and_test_checked
+     0.39%     0.19%  tc       [kernel.kallsyms]  [k] __call_rcu
+     0.36%     0.36%  tc       [kernel.kallsyms]  [k] tcf_block_owner_del
+     0.34%     0.07%  tc       [kernel.kallsyms]  [k] tcf_block_offload_unbind.isra.45
+     0.27%     0.27%  tc       [kernel.kallsyms]  [k] free_one_page
+     0.22%     0.22%  tc       [kernel.kallsyms]  [k] flow_indr_block_dev_lookup
+     0.22%     0.00%  tc       [kernel.kallsyms]  [k] tc_indr_block_call.isra.43
+     0.22%     0.00%  tc       [kernel.kallsyms]  [k] flow_indr_block_call
+     0.20%     0.20%  tc       [kernel.kallsyms]  [k] module_put
+     0.20%     0.20%  tc       [kernel.kallsyms]  [k] rcu_segcblist_enqueue
+     0.17%     0.05%  tc       [kernel.kallsyms]  [k] _cond_resched
+     0.14%     0.00%  tc       [kernel.kallsyms]  [k] put_cpu_partial
+     0.14%     0.00%  tc       [kernel.kallsyms]  [k] unfreeze_partials.isra.79
+     0.13%     0.00%  tc       [kernel.kallsyms]  [k] apic_timer_interrupt
+     0.13%     0.00%  tc       [kernel.kallsyms]  [k] smp_apic_timer_interrupt
+     0.12%     0.12%  tc       [kernel.kallsyms]  [k] rcu_all_qs
+     0.12%     0.00%  tc       [kernel.kallsyms]  [k] refcount_dec_and_mutex_lock
+     0.11%     0.04%  tc       [kernel.kallsyms]  [k] __do_page_fault
+     0.11%     0.00%  tc       [kernel.kallsyms]  [k] page_fault
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] gen_kill_estimator
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] ksoftirqd_running
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] irq_exit
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] unmap_page_range
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] __x64_sys_exit_group
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] do_group_exit
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] do_exit
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] mmput
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] exit_mmap
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] unmap_vmas
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] scheduler_tick
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] hrtimer_interrupt
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] __hrtimer_run_queues
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] tick_sched_timer
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] tick_sched_handle
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] update_process_times
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] _raw_spin_lock_irqsave
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] mod_node_page_state
+     0.06%     0.00%  tc       [kernel.kallsyms]  [k] handle_mm_fault
+     0.06%     0.00%  tc       [kernel.kallsyms]  [k] __handle_mm_fault
+     0.06%     0.06%  tc       [kernel.kallsyms]  [k] qdisc_put
+     0.06%     0.06%  tc       [kernel.kallsyms]  [k] qdisc_reset_queue
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] down_write
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] alloc_set_pte
+     0.04%     0.00%  tc       [unknown]          [k] 0x0000000000000040
+     0.04%     0.00%  tc       ld-2.24.so         [.] _dl_sysdep_start
+     0.04%     0.00%  tc       ld-2.24.so         [.] dl_main
+     0.04%     0.00%  tc       libm-2.24.so       [.] __ceilf
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] filemap_map_pages
+     0.04%     0.00%  tc       [unknown]          [k] 0000000000000000
+     0.04%     0.00%  tc       libc-2.24.so       [.] __libc_recvmsg
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __sys_recvmsg
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] ___sys_recvmsg
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] ____sys_recvmsg
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] netlink_recvmsg
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] skb_copy_datagram_iter
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __skb_datagram_iter
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] _copy_to_iter
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] copyout
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] copy_user_enhanced_fast_string
+     0.04%     0.04%  tc       ld-2.24.so         [.] _dl_cache_libcmp
+     0.04%     0.00%  tc       ld-2.24.so         [.] _dl_map_object
+     0.02%     0.02%  tc       [kernel.kallsyms]  [k] page_counter_try_charge
+     0.02%     0.00%  tc       [unknown]          [k] 0x00007f1519014647
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] __x64_sys_execve
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] __do_execve_file.isra.37
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] search_binary_handler
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] load_elf_binary
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] __clear_user
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] __pmd_alloc
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] __alloc_pages_nodemask
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] __memcg_kmem_charge
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] __memcg_kmem_charge_memcg
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_write_msr
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __sched_text_start
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] finish_task_switch
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __perf_event_task_sched_in
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.30
+     0.00%     0.00%  perf     [unknown]          [k] 0x00007f1519014647
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] entry_SYSCALL_64_after_hwframe
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] do_syscall_64
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] __x64_sys_execve
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] __do_execve_file.isra.37
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] search_binary_handler
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] load_elf_binary
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] setup_new_exec
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_flush_tlb_one_user
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] perf_iterate_sb
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] perf_event_comm
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] native_write_msr
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] perf_event_exec
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.30
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] native_flush_tlb_one_user
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] apei_check_gar
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] native_sched_clock
+
+
+#
+# (Tip: To browse sample contexts use perf report --sample 10 and select in context menu)
+#

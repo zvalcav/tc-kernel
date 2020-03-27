@@ -1,0 +1,2277 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles'
+# Event count (approx.): 2122326684
+#
+# Children      Self  Command  Shared Object      Symbol                                   
+# ........  ........  .......  .................  .........................................
+#
+    99.96%     0.00%  tc       [kernel.kallsyms]  [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+                --99.71%--__sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--51.44%--hfsc_reset_qdisc
+                          |          |          
+                          |           --50.80%--qdisc_reset
+                          |                     |          
+                          |                     |--48.58%--fq_codel_reset
+                          |                     |          |          
+                          |                     |          |--2.43%--codel_vars_init
+                          |                     |          |          
+                          |                     |          |--1.75%--apic_timer_interrupt
+                          |                     |          |          |          
+                          |                     |          |           --1.70%--smp_apic_timer_interrupt
+                          |                     |          |                     hrtimer_interrupt
+                          |                     |          |                     |          
+                          |                     |          |                      --1.62%--__hrtimer_run_queues
+                          |                     |          |                                |          
+                          |                     |          |                                 --1.45%--tick_sched_timer
+                          |                     |          |                                           tick_sched_handle
+                          |                     |          |                                           |          
+                          |                     |          |                                            --1.41%--update_process_times
+                          |                     |          |                                                      |          
+                          |                     |          |                                                       --1.15%--irq_work_run_list
+                          |                     |          |                                                                 |          
+                          |                     |          |                                                                  --1.02%--__wake_up_common_lock
+                          |                     |          |                                                                            |          
+                          |                     |          |                                                                             --0.98%--__wake_up_common
+                          |                     |          |                                                                                       |          
+                          |                     |          |                                                                                        --0.94%--autoremove_wake_function
+                          |                     |          |                                                                                                  |          
+                          |                     |          |                                                                                                   --0.85%--try_to_wake_up
+                          |                     |          |          
+                          |                     |          |--1.45%--rtnl_kfree_skbs
+                          |                     |          |          
+                          |                     |           --0.94%--memset_erms
+                          |                     |          
+                          |                      --1.32%--printk
+                          |                                |          
+                          |                                 --1.23%--vprintk_emit
+                          |                                           |          
+                          |                                            --0.72%--vprintk_store
+                          |          
+                           --48.28%--hfsc_destroy_qdisc
+                                     |          
+                                     |--45.95%--hfsc_destroy_class
+                                     |          |          
+                                     |           --45.44%--qdisc_destroy
+                                     |                     |          
+                                     |                     |--39.66%--fq_codel_reset
+                                     |                     |          |          
+                                     |                     |           --1.85%--rtnl_kfree_skbs
+                                     |                     |          
+                                     |                     |--2.21%--fq_codel_destroy
+                                     |                     |          |          
+                                     |                     |           --1.49%--tcf_block_put
+                                     |                     |                     |          
+                                     |                     |                      --0.64%--tcf_block_put_ext
+                                     |                     |          
+                                     |                     |--2.08%--printk
+                                     |                     |          |          
+                                     |                     |           --2.04%--vprintk_emit
+                                     |                     |                     |          
+                                     |                     |                      --1.36%--vprintk_store
+                                     |                     |                                |          
+                                     |                     |                                |--0.68%--vscnprintf
+                                     |                     |                                |          vsnprintf
+                                     |                     |                                |          
+                                     |                     |                                 --0.51%--cont_flush
+                                     |                     |                                           log_store.constprop.20
+                                     |                     |          
+                                     |                      --0.72%--__free_pages_ok
+                                     |          
+                                      --1.42%--tcf_block_put
+                                                |          
+                                                |--0.62%--__tcf_block_put
+                                                |          
+                                                 --0.54%--tcf_block_put_ext
+
+    99.96%     0.00%  tc       [kernel.kallsyms]  [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+                --99.71%--__sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--51.44%--hfsc_reset_qdisc
+                          |          |          
+                          |           --50.80%--qdisc_reset
+                          |                     |          
+                          |                     |--48.58%--fq_codel_reset
+                          |                     |          |          
+                          |                     |          |--2.43%--codel_vars_init
+                          |                     |          |          
+                          |                     |          |--1.75%--apic_timer_interrupt
+                          |                     |          |          |          
+                          |                     |          |           --1.70%--smp_apic_timer_interrupt
+                          |                     |          |                     hrtimer_interrupt
+                          |                     |          |                     |          
+                          |                     |          |                      --1.62%--__hrtimer_run_queues
+                          |                     |          |                                |          
+                          |                     |          |                                 --1.45%--tick_sched_timer
+                          |                     |          |                                           tick_sched_handle
+                          |                     |          |                                           |          
+                          |                     |          |                                            --1.41%--update_process_times
+                          |                     |          |                                                      |          
+                          |                     |          |                                                       --1.15%--irq_work_run_list
+                          |                     |          |                                                                 |          
+                          |                     |          |                                                                  --1.02%--__wake_up_common_lock
+                          |                     |          |                                                                            |          
+                          |                     |          |                                                                             --0.98%--__wake_up_common
+                          |                     |          |                                                                                       |          
+                          |                     |          |                                                                                        --0.94%--autoremove_wake_function
+                          |                     |          |                                                                                                  |          
+                          |                     |          |                                                                                                   --0.85%--try_to_wake_up
+                          |                     |          |          
+                          |                     |          |--1.45%--rtnl_kfree_skbs
+                          |                     |          |          
+                          |                     |           --0.94%--memset_erms
+                          |                     |          
+                          |                      --1.32%--printk
+                          |                                |          
+                          |                                 --1.23%--vprintk_emit
+                          |                                           |          
+                          |                                            --0.72%--vprintk_store
+                          |          
+                           --48.28%--hfsc_destroy_qdisc
+                                     |          
+                                     |--45.95%--hfsc_destroy_class
+                                     |          |          
+                                     |           --45.44%--qdisc_destroy
+                                     |                     |          
+                                     |                     |--39.66%--fq_codel_reset
+                                     |                     |          |          
+                                     |                     |           --1.85%--rtnl_kfree_skbs
+                                     |                     |          
+                                     |                     |--2.21%--fq_codel_destroy
+                                     |                     |          |          
+                                     |                     |           --1.49%--tcf_block_put
+                                     |                     |                     |          
+                                     |                     |                      --0.64%--tcf_block_put_ext
+                                     |                     |          
+                                     |                     |--2.08%--printk
+                                     |                     |          |          
+                                     |                     |           --2.04%--vprintk_emit
+                                     |                     |                     |          
+                                     |                     |                      --1.36%--vprintk_store
+                                     |                     |                                |          
+                                     |                     |                                |--0.68%--vscnprintf
+                                     |                     |                                |          vsnprintf
+                                     |                     |                                |          
+                                     |                     |                                 --0.51%--cont_flush
+                                     |                     |                                           log_store.constprop.20
+                                     |                     |          
+                                     |                      --0.72%--__free_pages_ok
+                                     |          
+                                      --1.42%--tcf_block_put
+                                                |          
+                                                |--0.62%--__tcf_block_put
+                                                |          
+                                                 --0.54%--tcf_block_put_ext
+
+    99.76%     0.00%  tc       [unknown]          [k] 0xdb5d78e000000000
+            |
+            ---0xdb5d78e000000000
+               0xc
+               __libc_sendmsg
+               |          
+                --99.71%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--51.44%--hfsc_reset_qdisc
+                          |          |          
+                          |           --50.80%--qdisc_reset
+                          |                     |          
+                          |                     |--48.58%--fq_codel_reset
+                          |                     |          |          
+                          |                     |          |--2.43%--codel_vars_init
+                          |                     |          |          
+                          |                     |          |--1.75%--apic_timer_interrupt
+                          |                     |          |          |          
+                          |                     |          |           --1.70%--smp_apic_timer_interrupt
+                          |                     |          |                     hrtimer_interrupt
+                          |                     |          |                     |          
+                          |                     |          |                      --1.62%--__hrtimer_run_queues
+                          |                     |          |                                |          
+                          |                     |          |                                 --1.45%--tick_sched_timer
+                          |                     |          |                                           tick_sched_handle
+                          |                     |          |                                           |          
+                          |                     |          |                                            --1.41%--update_process_times
+                          |                     |          |                                                      |          
+                          |                     |          |                                                       --1.15%--irq_work_run_list
+                          |                     |          |                                                                 |          
+                          |                     |          |                                                                  --1.02%--__wake_up_common_lock
+                          |                     |          |                                                                            |          
+                          |                     |          |                                                                             --0.98%--__wake_up_common
+                          |                     |          |                                                                                       |          
+                          |                     |          |                                                                                        --0.94%--autoremove_wake_function
+                          |                     |          |                                                                                                  |          
+                          |                     |          |                                                                                                   --0.85%--try_to_wake_up
+                          |                     |          |          
+                          |                     |          |--1.45%--rtnl_kfree_skbs
+                          |                     |          |          
+                          |                     |           --0.94%--memset_erms
+                          |                     |          
+                          |                      --1.32%--printk
+                          |                                |          
+                          |                                 --1.23%--vprintk_emit
+                          |                                           |          
+                          |                                            --0.72%--vprintk_store
+                          |          
+                           --48.28%--hfsc_destroy_qdisc
+                                     |          
+                                     |--45.95%--hfsc_destroy_class
+                                     |          |          
+                                     |           --45.44%--qdisc_destroy
+                                     |                     |          
+                                     |                     |--39.66%--fq_codel_reset
+                                     |                     |          |          
+                                     |                     |           --1.85%--rtnl_kfree_skbs
+                                     |                     |          
+                                     |                     |--2.21%--fq_codel_destroy
+                                     |                     |          |          
+                                     |                     |           --1.49%--tcf_block_put
+                                     |                     |                     |          
+                                     |                     |                      --0.64%--tcf_block_put_ext
+                                     |                     |          
+                                     |                     |--2.08%--printk
+                                     |                     |          |          
+                                     |                     |           --2.04%--vprintk_emit
+                                     |                     |                     |          
+                                     |                     |                      --1.36%--vprintk_store
+                                     |                     |                                |          
+                                     |                     |                                |--0.68%--vscnprintf
+                                     |                     |                                |          vsnprintf
+                                     |                     |                                |          
+                                     |                     |                                 --0.51%--cont_flush
+                                     |                     |                                           log_store.constprop.20
+                                     |                     |          
+                                     |                      --0.72%--__free_pages_ok
+                                     |          
+                                      --1.42%--tcf_block_put
+                                                |          
+                                                |--0.62%--__tcf_block_put
+                                                |          
+                                                 --0.54%--tcf_block_put_ext
+
+    99.76%     0.00%  tc       [unknown]          [k] 0x000000000000000c
+            |
+            ---0xc
+               __libc_sendmsg
+               |          
+                --99.71%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--51.44%--hfsc_reset_qdisc
+                          |          |          
+                          |           --50.80%--qdisc_reset
+                          |                     |          
+                          |                     |--48.58%--fq_codel_reset
+                          |                     |          |          
+                          |                     |          |--2.43%--codel_vars_init
+                          |                     |          |          
+                          |                     |          |--1.75%--apic_timer_interrupt
+                          |                     |          |          |          
+                          |                     |          |           --1.70%--smp_apic_timer_interrupt
+                          |                     |          |                     hrtimer_interrupt
+                          |                     |          |                     |          
+                          |                     |          |                      --1.62%--__hrtimer_run_queues
+                          |                     |          |                                |          
+                          |                     |          |                                 --1.45%--tick_sched_timer
+                          |                     |          |                                           tick_sched_handle
+                          |                     |          |                                           |          
+                          |                     |          |                                            --1.41%--update_process_times
+                          |                     |          |                                                      |          
+                          |                     |          |                                                       --1.15%--irq_work_run_list
+                          |                     |          |                                                                 |          
+                          |                     |          |                                                                  --1.02%--__wake_up_common_lock
+                          |                     |          |                                                                            |          
+                          |                     |          |                                                                             --0.98%--__wake_up_common
+                          |                     |          |                                                                                       |          
+                          |                     |          |                                                                                        --0.94%--autoremove_wake_function
+                          |                     |          |                                                                                                  |          
+                          |                     |          |                                                                                                   --0.85%--try_to_wake_up
+                          |                     |          |          
+                          |                     |          |--1.45%--rtnl_kfree_skbs
+                          |                     |          |          
+                          |                     |           --0.94%--memset_erms
+                          |                     |          
+                          |                      --1.32%--printk
+                          |                                |          
+                          |                                 --1.23%--vprintk_emit
+                          |                                           |          
+                          |                                            --0.72%--vprintk_store
+                          |          
+                           --48.28%--hfsc_destroy_qdisc
+                                     |          
+                                     |--45.95%--hfsc_destroy_class
+                                     |          |          
+                                     |           --45.44%--qdisc_destroy
+                                     |                     |          
+                                     |                     |--39.66%--fq_codel_reset
+                                     |                     |          |          
+                                     |                     |           --1.85%--rtnl_kfree_skbs
+                                     |                     |          
+                                     |                     |--2.21%--fq_codel_destroy
+                                     |                     |          |          
+                                     |                     |           --1.49%--tcf_block_put
+                                     |                     |                     |          
+                                     |                     |                      --0.64%--tcf_block_put_ext
+                                     |                     |          
+                                     |                     |--2.08%--printk
+                                     |                     |          |          
+                                     |                     |           --2.04%--vprintk_emit
+                                     |                     |                     |          
+                                     |                     |                      --1.36%--vprintk_store
+                                     |                     |                                |          
+                                     |                     |                                |--0.68%--vscnprintf
+                                     |                     |                                |          vsnprintf
+                                     |                     |                                |          
+                                     |                     |                                 --0.51%--cont_flush
+                                     |                     |                                           log_store.constprop.20
+                                     |                     |          
+                                     |                      --0.72%--__free_pages_ok
+                                     |          
+                                      --1.42%--tcf_block_put
+                                                |          
+                                                |--0.62%--__tcf_block_put
+                                                |          
+                                                 --0.54%--tcf_block_put_ext
+
+    99.76%     0.00%  tc       libc-2.24.so       [.] __libc_sendmsg
+            |
+            ---__libc_sendmsg
+               |          
+                --99.71%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          qdisc_destroy
+                          |          
+                          |--51.44%--hfsc_reset_qdisc
+                          |          |          
+                          |           --50.80%--qdisc_reset
+                          |                     |          
+                          |                     |--48.58%--fq_codel_reset
+                          |                     |          |          
+                          |                     |          |--2.43%--codel_vars_init
+                          |                     |          |          
+                          |                     |          |--1.75%--apic_timer_interrupt
+                          |                     |          |          |          
+                          |                     |          |           --1.70%--smp_apic_timer_interrupt
+                          |                     |          |                     hrtimer_interrupt
+                          |                     |          |                     |          
+                          |                     |          |                      --1.62%--__hrtimer_run_queues
+                          |                     |          |                                |          
+                          |                     |          |                                 --1.45%--tick_sched_timer
+                          |                     |          |                                           tick_sched_handle
+                          |                     |          |                                           |          
+                          |                     |          |                                            --1.41%--update_process_times
+                          |                     |          |                                                      |          
+                          |                     |          |                                                       --1.15%--irq_work_run_list
+                          |                     |          |                                                                 |          
+                          |                     |          |                                                                  --1.02%--__wake_up_common_lock
+                          |                     |          |                                                                            |          
+                          |                     |          |                                                                             --0.98%--__wake_up_common
+                          |                     |          |                                                                                       |          
+                          |                     |          |                                                                                        --0.94%--autoremove_wake_function
+                          |                     |          |                                                                                                  |          
+                          |                     |          |                                                                                                   --0.85%--try_to_wake_up
+                          |                     |          |          
+                          |                     |          |--1.45%--rtnl_kfree_skbs
+                          |                     |          |          
+                          |                     |           --0.94%--memset_erms
+                          |                     |          
+                          |                      --1.32%--printk
+                          |                                |          
+                          |                                 --1.23%--vprintk_emit
+                          |                                           |          
+                          |                                            --0.72%--vprintk_store
+                          |          
+                           --48.28%--hfsc_destroy_qdisc
+                                     |          
+                                     |--45.95%--hfsc_destroy_class
+                                     |          |          
+                                     |           --45.44%--qdisc_destroy
+                                     |                     |          
+                                     |                     |--39.66%--fq_codel_reset
+                                     |                     |          |          
+                                     |                     |           --1.85%--rtnl_kfree_skbs
+                                     |                     |          
+                                     |                     |--2.21%--fq_codel_destroy
+                                     |                     |          |          
+                                     |                     |           --1.49%--tcf_block_put
+                                     |                     |                     |          
+                                     |                     |                      --0.64%--tcf_block_put_ext
+                                     |                     |          
+                                     |                     |--2.08%--printk
+                                     |                     |          |          
+                                     |                     |           --2.04%--vprintk_emit
+                                     |                     |                     |          
+                                     |                     |                      --1.36%--vprintk_store
+                                     |                     |                                |          
+                                     |                     |                                |--0.68%--vscnprintf
+                                     |                     |                                |          vsnprintf
+                                     |                     |                                |          
+                                     |                     |                                 --0.51%--cont_flush
+                                     |                     |                                           log_store.constprop.20
+                                     |                     |          
+                                     |                      --0.72%--__free_pages_ok
+                                     |          
+                                      --1.42%--tcf_block_put
+                                                |          
+                                                |--0.62%--__tcf_block_put
+                                                |          
+                                                 --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] __sys_sendmsg
+            |
+            ---__sys_sendmsg
+               ___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] ___sys_sendmsg
+            |
+            ---___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] ____sys_sendmsg
+            |
+            ---____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] sock_sendmsg
+            |
+            ---sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] netlink_sendmsg
+            |
+            ---netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] netlink_unicast
+            |
+            ---netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] netlink_rcv_skb
+            |
+            ---netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] rtnetlink_rcv_msg
+            |
+            ---rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] tc_get_qdisc
+            |
+            ---tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_graft
+            |
+            ---qdisc_graft
+               qdisc_destroy
+               |          
+               |--51.44%--hfsc_reset_qdisc
+               |          |          
+               |           --50.80%--qdisc_reset
+               |                     |          
+               |                     |--48.58%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--2.43%--codel_vars_init
+               |                     |          |          
+               |                     |          |--1.75%--apic_timer_interrupt
+               |                     |          |          |          
+               |                     |          |           --1.70%--smp_apic_timer_interrupt
+               |                     |          |                     hrtimer_interrupt
+               |                     |          |                     |          
+               |                     |          |                      --1.62%--__hrtimer_run_queues
+               |                     |          |                                |          
+               |                     |          |                                 --1.45%--tick_sched_timer
+               |                     |          |                                           tick_sched_handle
+               |                     |          |                                           |          
+               |                     |          |                                            --1.41%--update_process_times
+               |                     |          |                                                      |          
+               |                     |          |                                                       --1.15%--irq_work_run_list
+               |                     |          |                                                                 |          
+               |                     |          |                                                                  --1.02%--__wake_up_common_lock
+               |                     |          |                                                                            |          
+               |                     |          |                                                                             --0.98%--__wake_up_common
+               |                     |          |                                                                                       |          
+               |                     |          |                                                                                        --0.94%--autoremove_wake_function
+               |                     |          |                                                                                                  |          
+               |                     |          |                                                                                                   --0.85%--try_to_wake_up
+               |                     |          |          
+               |                     |          |--1.45%--rtnl_kfree_skbs
+               |                     |          |          
+               |                     |           --0.94%--memset_erms
+               |                     |          
+               |                      --1.32%--printk
+               |                                |          
+               |                                 --1.23%--vprintk_emit
+               |                                           |          
+               |                                            --0.72%--vprintk_store
+               |          
+                --48.28%--hfsc_destroy_qdisc
+                          |          
+                          |--45.95%--hfsc_destroy_class
+                          |          |          
+                          |           --45.44%--qdisc_destroy
+                          |                     |          
+                          |                     |--39.66%--fq_codel_reset
+                          |                     |          |          
+                          |                     |           --1.85%--rtnl_kfree_skbs
+                          |                     |          
+                          |                     |--2.21%--fq_codel_destroy
+                          |                     |          |          
+                          |                     |           --1.49%--tcf_block_put
+                          |                     |                     |          
+                          |                     |                      --0.64%--tcf_block_put_ext
+                          |                     |          
+                          |                     |--2.08%--printk
+                          |                     |          |          
+                          |                     |           --2.04%--vprintk_emit
+                          |                     |                     |          
+                          |                     |                      --1.36%--vprintk_store
+                          |                     |                                |          
+                          |                     |                                |--0.68%--vscnprintf
+                          |                     |                                |          vsnprintf
+                          |                     |                                |          
+                          |                     |                                 --0.51%--cont_flush
+                          |                     |                                           log_store.constprop.20
+                          |                     |          
+                          |                      --0.72%--__free_pages_ok
+                          |          
+                           --1.42%--tcf_block_put
+                                     |          
+                                     |--0.62%--__tcf_block_put
+                                     |          
+                                      --0.54%--tcf_block_put_ext
+
+    99.71%     0.08%  tc       [kernel.kallsyms]  [k] qdisc_destroy
+            |          
+             --99.63%--qdisc_destroy
+                       |          
+                       |--51.44%--hfsc_reset_qdisc
+                       |          |          
+                       |           --50.80%--qdisc_reset
+                       |                     |          
+                       |                     |--48.58%--fq_codel_reset
+                       |                     |          |          
+                       |                     |          |--2.43%--codel_vars_init
+                       |                     |          |          
+                       |                     |          |--1.75%--apic_timer_interrupt
+                       |                     |          |          |          
+                       |                     |          |           --1.70%--smp_apic_timer_interrupt
+                       |                     |          |                     hrtimer_interrupt
+                       |                     |          |                     |          
+                       |                     |          |                      --1.62%--__hrtimer_run_queues
+                       |                     |          |                                |          
+                       |                     |          |                                 --1.45%--tick_sched_timer
+                       |                     |          |                                           tick_sched_handle
+                       |                     |          |                                           |          
+                       |                     |          |                                            --1.41%--update_process_times
+                       |                     |          |                                                      |          
+                       |                     |          |                                                       --1.15%--irq_work_run_list
+                       |                     |          |                                                                 |          
+                       |                     |          |                                                                  --1.02%--__wake_up_common_lock
+                       |                     |          |                                                                            |          
+                       |                     |          |                                                                             --0.98%--__wake_up_common
+                       |                     |          |                                                                                       |          
+                       |                     |          |                                                                                        --0.94%--autoremove_wake_function
+                       |                     |          |                                                                                                  |          
+                       |                     |          |                                                                                                   --0.85%--try_to_wake_up
+                       |                     |          |          
+                       |                     |          |--1.45%--rtnl_kfree_skbs
+                       |                     |          |          
+                       |                     |           --0.94%--memset_erms
+                       |                     |          
+                       |                      --1.32%--printk
+                       |                                |          
+                       |                                 --1.23%--vprintk_emit
+                       |                                           |          
+                       |                                            --0.72%--vprintk_store
+                       |          
+                        --48.19%--hfsc_destroy_qdisc
+                                  |          
+                                  |--45.87%--hfsc_destroy_class
+                                  |          |          
+                                  |           --45.36%--qdisc_destroy
+                                  |                     |          
+                                  |                     |--39.66%--fq_codel_reset
+                                  |                     |          |          
+                                  |                     |           --1.85%--rtnl_kfree_skbs
+                                  |                     |          
+                                  |                     |--2.21%--fq_codel_destroy
+                                  |                     |          |          
+                                  |                     |           --1.49%--tcf_block_put
+                                  |                     |                     |          
+                                  |                     |                      --0.64%--tcf_block_put_ext
+                                  |                     |          
+                                  |                     |--2.08%--printk
+                                  |                     |          |          
+                                  |                     |           --2.04%--vprintk_emit
+                                  |                     |                     |          
+                                  |                     |                      --1.36%--vprintk_store
+                                  |                     |                                |          
+                                  |                     |                                |--0.68%--vscnprintf
+                                  |                     |                                |          vsnprintf
+                                  |                     |                                |          
+                                  |                     |                                 --0.51%--cont_flush
+                                  |                     |                                           log_store.constprop.20
+                                  |                     |          
+                                  |                      --0.72%--__free_pages_ok
+                                  |          
+                                   --1.42%--tcf_block_put
+                                             |          
+                                             |--0.62%--__tcf_block_put
+                                             |          
+                                              --0.54%--tcf_block_put_ext
+
+    88.25%    75.82%  tc       [kernel.kallsyms]  [k] fq_codel_reset
+            |          
+            |--75.82%--0xdb5d78e000000000
+            |          0xc
+            |          __libc_sendmsg
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          __sys_sendmsg
+            |          ___sys_sendmsg
+            |          ____sys_sendmsg
+            |          sock_sendmsg
+            |          netlink_sendmsg
+            |          netlink_unicast
+            |          netlink_rcv_skb
+            |          rtnetlink_rcv_msg
+            |          tc_get_qdisc
+            |          qdisc_graft
+            |          qdisc_destroy
+            |          |          
+            |          |--38.99%--hfsc_reset_qdisc
+            |          |          qdisc_reset
+            |          |          fq_codel_reset
+            |          |          |          
+            |          |           --0.68%--rtnl_kfree_skbs
+            |          |          
+            |           --36.82%--hfsc_destroy_qdisc
+            |                     hfsc_destroy_class
+            |                     qdisc_destroy
+            |                     fq_codel_reset
+            |                     |          
+            |                      --1.13%--rtnl_kfree_skbs
+            |          
+             --12.43%--fq_codel_reset
+                       |          
+                       |--2.34%--codel_vars_init
+                       |          
+                       |--2.00%--apic_timer_interrupt
+                       |          smp_apic_timer_interrupt
+                       |          |          
+                       |           --1.79%--hrtimer_interrupt
+                       |                     |          
+                       |                      --1.70%--__hrtimer_run_queues
+                       |                                |          
+                       |                                 --1.53%--tick_sched_timer
+                       |                                           tick_sched_handle
+                       |                                           |          
+                       |                                            --1.49%--update_process_times
+                       |                                                      |          
+                       |                                                       --1.15%--irq_work_run_list
+                       |                                                                 |          
+                       |                                                                  --1.02%--__wake_up_common_lock
+                       |                                                                            |          
+                       |                                                                             --0.98%--__wake_up_common
+                       |                                                                                       |          
+                       |                                                                                        --0.94%--autoremove_wake_function
+                       |                                                                                                  |          
+                       |                                                                                                   --0.85%--try_to_wake_up
+                       |          
+                       |--1.48%--rtnl_kfree_skbs
+                       |          
+                        --0.94%--memset_erms
+
+    51.44%     0.60%  tc       [kernel.kallsyms]  [k] hfsc_reset_qdisc
+            |          
+            |--50.84%--hfsc_reset_qdisc
+            |          |          
+            |           --50.80%--qdisc_reset
+            |                     |          
+            |                     |--48.58%--fq_codel_reset
+            |                     |          |          
+            |                     |          |--2.43%--codel_vars_init
+            |                     |          |          
+            |                     |          |--1.75%--apic_timer_interrupt
+            |                     |          |          |          
+            |                     |          |           --1.70%--smp_apic_timer_interrupt
+            |                     |          |                     hrtimer_interrupt
+            |                     |          |                     |          
+            |                     |          |                      --1.62%--__hrtimer_run_queues
+            |                     |          |                                |          
+            |                     |          |                                 --1.45%--tick_sched_timer
+            |                     |          |                                           tick_sched_handle
+            |                     |          |                                           |          
+            |                     |          |                                            --1.41%--update_process_times
+            |                     |          |                                                      |          
+            |                     |          |                                                       --1.15%--irq_work_run_list
+            |                     |          |                                                                 |          
+            |                     |          |                                                                  --1.02%--__wake_up_common_lock
+            |                     |          |                                                                            |          
+            |                     |          |                                                                             --0.98%--__wake_up_common
+            |                     |          |                                                                                       |          
+            |                     |          |                                                                                        --0.94%--autoremove_wake_function
+            |                     |          |                                                                                                  |          
+            |                     |          |                                                                                                   --0.85%--try_to_wake_up
+            |                     |          |          
+            |                     |          |--1.45%--rtnl_kfree_skbs
+            |                     |          |          
+            |                     |           --0.94%--memset_erms
+            |                     |          
+            |                      --1.32%--printk
+            |                                |          
+            |                                 --1.23%--vprintk_emit
+            |                                           |          
+            |                                            --0.72%--vprintk_store
+            |          
+             --0.60%--0xdb5d78e000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_reset_qdisc
+
+    50.80%     0.64%  tc       [kernel.kallsyms]  [k] qdisc_reset
+            |          
+            |--50.16%--qdisc_reset
+            |          |          
+            |          |--48.58%--fq_codel_reset
+            |          |          |          
+            |          |          |--2.43%--codel_vars_init
+            |          |          |          
+            |          |          |--1.75%--apic_timer_interrupt
+            |          |          |          |          
+            |          |          |           --1.70%--smp_apic_timer_interrupt
+            |          |          |                     hrtimer_interrupt
+            |          |          |                     |          
+            |          |          |                      --1.62%--__hrtimer_run_queues
+            |          |          |                                |          
+            |          |          |                                 --1.45%--tick_sched_timer
+            |          |          |                                           tick_sched_handle
+            |          |          |                                           |          
+            |          |          |                                            --1.41%--update_process_times
+            |          |          |                                                      |          
+            |          |          |                                                       --1.15%--irq_work_run_list
+            |          |          |                                                                 |          
+            |          |          |                                                                  --1.02%--__wake_up_common_lock
+            |          |          |                                                                            |          
+            |          |          |                                                                             --0.98%--__wake_up_common
+            |          |          |                                                                                       |          
+            |          |          |                                                                                        --0.94%--autoremove_wake_function
+            |          |          |                                                                                                  |          
+            |          |          |                                                                                                   --0.85%--try_to_wake_up
+            |          |          |          
+            |          |          |--1.45%--rtnl_kfree_skbs
+            |          |          |          
+            |          |           --0.94%--memset_erms
+            |          |          
+            |           --1.32%--printk
+            |                     |          
+            |                      --1.23%--vprintk_emit
+            |                                |          
+            |                                 --0.72%--vprintk_store
+            |          
+             --0.64%--0xdb5d78e000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_reset_qdisc
+                       qdisc_reset
+
+    48.28%     0.65%  tc       [kernel.kallsyms]  [k] hfsc_destroy_qdisc
+            |          
+            |--47.62%--hfsc_destroy_qdisc
+            |          |          
+            |          |--45.95%--hfsc_destroy_class
+            |          |          |          
+            |          |           --45.44%--qdisc_destroy
+            |          |                     |          
+            |          |                     |--39.66%--fq_codel_reset
+            |          |                     |          |          
+            |          |                     |           --1.85%--rtnl_kfree_skbs
+            |          |                     |          
+            |          |                     |--2.21%--fq_codel_destroy
+            |          |                     |          |          
+            |          |                     |           --1.49%--tcf_block_put
+            |          |                     |                     |          
+            |          |                     |                      --0.64%--tcf_block_put_ext
+            |          |                     |          
+            |          |                     |--2.08%--printk
+            |          |                     |          |          
+            |          |                     |           --2.04%--vprintk_emit
+            |          |                     |                     |          
+            |          |                     |                      --1.36%--vprintk_store
+            |          |                     |                                |          
+            |          |                     |                                |--0.68%--vscnprintf
+            |          |                     |                                |          vsnprintf
+            |          |                     |                                |          
+            |          |                     |                                 --0.51%--cont_flush
+            |          |                     |                                           log_store.constprop.20
+            |          |                     |          
+            |          |                      --0.72%--__free_pages_ok
+            |          |          
+            |           --1.42%--tcf_block_put
+            |                     |          
+            |                     |--0.62%--__tcf_block_put
+            |                     |          
+            |                      --0.54%--tcf_block_put_ext
+            |          
+             --0.65%--0xdb5d78e000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_destroy_qdisc
+
+    45.95%     0.09%  tc       [kernel.kallsyms]  [k] hfsc_destroy_class
+            |          
+             --45.87%--hfsc_destroy_class
+                       |          
+                        --45.44%--qdisc_destroy
+                                  |          
+                                  |--39.66%--fq_codel_reset
+                                  |          |          
+                                  |           --1.85%--rtnl_kfree_skbs
+                                  |          
+                                  |--2.21%--fq_codel_destroy
+                                  |          |          
+                                  |           --1.49%--tcf_block_put
+                                  |                     |          
+                                  |                      --0.64%--tcf_block_put_ext
+                                  |          
+                                  |--2.08%--printk
+                                  |          |          
+                                  |           --2.04%--vprintk_emit
+                                  |                     |          
+                                  |                      --1.36%--vprintk_store
+                                  |                                |          
+                                  |                                |--0.68%--vscnprintf
+                                  |                                |          vsnprintf
+                                  |                                |          
+                                  |                                 --0.51%--cont_flush
+                                  |                                           log_store.constprop.20
+                                  |          
+                                   --0.72%--__free_pages_ok
+
+     7.43%     5.57%  tc       [kernel.kallsyms]  [k] rtnl_kfree_skbs
+            |          
+            |--5.57%--0xdb5d78e000000000
+            |          0xc
+            |          __libc_sendmsg
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          __sys_sendmsg
+            |          ___sys_sendmsg
+            |          ____sys_sendmsg
+            |          sock_sendmsg
+            |          netlink_sendmsg
+            |          netlink_unicast
+            |          netlink_rcv_skb
+            |          rtnetlink_rcv_msg
+            |          tc_get_qdisc
+            |          qdisc_graft
+            |          qdisc_destroy
+            |          |          
+            |          |--3.07%--hfsc_reset_qdisc
+            |          |          qdisc_reset
+            |          |          fq_codel_reset
+            |          |          |          
+            |          |           --0.72%--rtnl_kfree_skbs
+            |          |          
+            |           --2.50%--hfsc_destroy_qdisc
+            |                     hfsc_destroy_class
+            |                     qdisc_destroy
+            |                     fq_codel_reset
+            |                     |          
+            |                      --0.72%--rtnl_kfree_skbs
+            |          
+             --1.86%--rtnl_kfree_skbs
+
+     3.88%     3.79%  tc       [kernel.kallsyms]  [k] codel_vars_init
+            |          
+             --3.79%--0xdb5d78e000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_reset_qdisc
+                       qdisc_reset
+                       fq_codel_reset
+                       |          
+                        --2.34%--codel_vars_init
+
+     3.40%     0.04%  tc       [kernel.kallsyms]  [k] printk
+            |          
+             --3.36%--printk
+                       |          
+                        --3.27%--vprintk_emit
+                                  |          
+                                   --2.08%--vprintk_store
+                                             |          
+                                             |--1.02%--vscnprintf
+                                             |          vsnprintf
+                                             |          |          
+                                             |           --0.72%--format_decode
+                                             |          
+                                              --0.77%--cont_flush
+                                                        |          
+                                                         --0.72%--log_store.constprop.20
+
+     3.27%     0.30%  tc       [kernel.kallsyms]  [k] vprintk_emit
+            |          
+             --2.97%--vprintk_emit
+                       |          
+                        --2.08%--vprintk_store
+                                  |          
+                                  |--1.02%--vscnprintf
+                                  |          vsnprintf
+                                  |          |          
+                                  |           --0.72%--format_decode
+                                  |          
+                                   --0.77%--cont_flush
+                                             |          
+                                              --0.72%--log_store.constprop.20
+
+     2.95%     0.46%  tc       [kernel.kallsyms]  [k] tcf_block_put
+            |          
+             --2.49%--tcf_block_put
+                       |          
+                       |--1.18%--tcf_block_put_ext
+                       |          
+                        --1.09%--__tcf_block_put
+                                  |          
+                                   --0.64%--tcf_block_offload_unbind.isra.45
+
+     2.35%     0.00%  tc       [kernel.kallsyms]  [k] apic_timer_interrupt
+            |
+            ---apic_timer_interrupt
+               |          
+                --2.27%--smp_apic_timer_interrupt
+                          |          
+                           --2.06%--hrtimer_interrupt
+                                     |          
+                                      --1.97%--__hrtimer_run_queues
+                                                |          
+                                                 --1.80%--tick_sched_timer
+                                                           tick_sched_handle
+                                                           |          
+                                                            --1.76%--update_process_times
+                                                                      |          
+                                                                       --1.28%--irq_work_run_list
+                                                                                 |          
+                                                                                  --1.15%--__wake_up_common_lock
+                                                                                            |          
+                                                                                             --1.11%--__wake_up_common
+                                                                                                       |          
+                                                                                                        --1.06%--autoremove_wake_function
+                                                                                                                  |          
+                                                                                                                   --0.98%--try_to_wake_up
+
+     2.27%     0.00%  tc       [kernel.kallsyms]  [k] smp_apic_timer_interrupt
+            |
+            ---smp_apic_timer_interrupt
+               |          
+                --2.06%--hrtimer_interrupt
+                          |          
+                           --1.97%--__hrtimer_run_queues
+                                     |          
+                                      --1.80%--tick_sched_timer
+                                                tick_sched_handle
+                                                |          
+                                                 --1.76%--update_process_times
+                                                           |          
+                                                            --1.28%--irq_work_run_list
+                                                                      |          
+                                                                       --1.15%--__wake_up_common_lock
+                                                                                 |          
+                                                                                  --1.11%--__wake_up_common
+                                                                                            |          
+                                                                                             --1.06%--autoremove_wake_function
+                                                                                                       |          
+                                                                                                        --0.98%--try_to_wake_up
+
+     2.21%     0.04%  tc       [kernel.kallsyms]  [k] fq_codel_destroy
+            |          
+             --2.17%--fq_codel_destroy
+                       |          
+                        --1.49%--tcf_block_put
+                                  |          
+                                   --0.64%--tcf_block_put_ext
+
+     2.08%     0.17%  tc       [kernel.kallsyms]  [k] vprintk_store
+            |          
+             --1.91%--vprintk_store
+                       |          
+                       |--1.02%--vscnprintf
+                       |          vsnprintf
+                       |          |          
+                       |           --0.72%--format_decode
+                       |          
+                        --0.77%--cont_flush
+                                  |          
+                                   --0.72%--log_store.constprop.20
+
+     2.06%     0.09%  tc       [kernel.kallsyms]  [k] hrtimer_interrupt
+            |          
+             --1.97%--hrtimer_interrupt
+                       __hrtimer_run_queues
+                       |          
+                        --1.80%--tick_sched_timer
+                                  tick_sched_handle
+                                  |          
+                                   --1.76%--update_process_times
+                                             |          
+                                              --1.28%--irq_work_run_list
+                                                        |          
+                                                         --1.15%--__wake_up_common_lock
+                                                                   |          
+                                                                    --1.11%--__wake_up_common
+                                                                              |          
+                                                                               --1.06%--autoremove_wake_function
+                                                                                         |          
+                                                                                          --0.98%--try_to_wake_up
+
+     1.97%     0.09%  tc       [kernel.kallsyms]  [k] __hrtimer_run_queues
+            |          
+             --1.89%--__hrtimer_run_queues
+                       |          
+                        --1.80%--tick_sched_timer
+                                  tick_sched_handle
+                                  |          
+                                   --1.76%--update_process_times
+                                             |          
+                                              --1.28%--irq_work_run_list
+                                                        |          
+                                                         --1.15%--__wake_up_common_lock
+                                                                   |          
+                                                                    --1.11%--__wake_up_common
+                                                                              |          
+                                                                               --1.06%--autoremove_wake_function
+                                                                                         |          
+                                                                                          --0.98%--try_to_wake_up
+
+     1.80%     0.00%  tc       [kernel.kallsyms]  [k] tick_sched_timer
+            |
+            ---tick_sched_timer
+               tick_sched_handle
+               |          
+                --1.76%--update_process_times
+                          |          
+                           --1.28%--irq_work_run_list
+                                     |          
+                                      --1.15%--__wake_up_common_lock
+                                                |          
+                                                 --1.11%--__wake_up_common
+                                                           |          
+                                                            --1.06%--autoremove_wake_function
+                                                                      |          
+                                                                       --0.98%--try_to_wake_up
+
+     1.80%     0.00%  tc       [kernel.kallsyms]  [k] tick_sched_handle
+            |
+            ---tick_sched_handle
+               |          
+                --1.76%--update_process_times
+                          |          
+                           --1.28%--irq_work_run_list
+                                     |          
+                                      --1.15%--__wake_up_common_lock
+                                                |          
+                                                 --1.11%--__wake_up_common
+                                                           |          
+                                                            --1.06%--autoremove_wake_function
+                                                                      |          
+                                                                       --0.98%--try_to_wake_up
+
+     1.76%     0.04%  tc       [kernel.kallsyms]  [k] update_process_times
+            |          
+             --1.72%--update_process_times
+                       |          
+                        --1.28%--irq_work_run_list
+                                  |          
+                                   --1.15%--__wake_up_common_lock
+                                             |          
+                                              --1.11%--__wake_up_common
+                                                        |          
+                                                         --1.06%--autoremove_wake_function
+                                                                   |          
+                                                                    --0.98%--try_to_wake_up
+
+     1.28%     0.13%  tc       [kernel.kallsyms]  [k] irq_work_run_list
+            |          
+             --1.15%--irq_work_run_list
+                       __wake_up_common_lock
+                       |          
+                        --1.11%--__wake_up_common
+                                  |          
+                                   --1.06%--autoremove_wake_function
+                                             |          
+                                              --0.98%--try_to_wake_up
+
+     1.18%     0.00%  tc       [kernel.kallsyms]  [k] tcf_block_put_ext
+            |
+            ---tcf_block_put_ext
+
+     1.15%     1.06%  tc       [kernel.kallsyms]  [k] kfree
+            |          
+             --1.06%--0xdb5d78e000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_destroy_qdisc
+                       |          
+                        --0.81%--hfsc_destroy_class
+                                  qdisc_destroy
+
+     1.15%     0.04%  tc       [kernel.kallsyms]  [k] __wake_up_common_lock
+            |          
+             --1.11%--__wake_up_common_lock
+                       __wake_up_common
+                       |          
+                        --1.06%--autoremove_wake_function
+                                  |          
+                                   --0.98%--try_to_wake_up
+
+     1.11%     0.04%  tc       [kernel.kallsyms]  [k] __wake_up_common
+            |          
+             --1.06%--__wake_up_common
+                       autoremove_wake_function
+                       |          
+                        --0.98%--try_to_wake_up
+
+     1.09%     0.18%  tc       [kernel.kallsyms]  [k] __tcf_block_put
+            |          
+             --0.90%--__tcf_block_put
+                       |          
+                        --0.64%--tcf_block_offload_unbind.isra.45
+
+     1.06%     0.00%  tc       [kernel.kallsyms]  [k] autoremove_wake_function
+            |
+            ---autoremove_wake_function
+               |          
+                --0.98%--try_to_wake_up
+
+     1.06%     0.04%  tc       [kernel.kallsyms]  [k] vscnprintf
+            |          
+             --1.02%--vscnprintf
+                       vsnprintf
+                       |          
+                        --0.72%--format_decode
+
+     1.02%     0.13%  tc       [kernel.kallsyms]  [k] vsnprintf
+            |          
+             --0.89%--vsnprintf
+                       |          
+                        --0.72%--format_decode
+
+     0.98%     0.00%  tc       [kernel.kallsyms]  [k] try_to_wake_up
+            |
+            ---try_to_wake_up
+
+     0.94%     0.85%  tc       [kernel.kallsyms]  [k] memset_erms
+            |          
+             --0.85%--0xdb5d78e000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_reset_qdisc
+                       qdisc_reset
+                       fq_codel_reset
+                       memset_erms
+
+     0.85%     0.59%  tc       [kernel.kallsyms]  [k] __free_pages_ok
+            |          
+             --0.59%--0xdb5d78e000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       qdisc_destroy
+                       hfsc_destroy_qdisc
+                       hfsc_destroy_class
+                       qdisc_destroy
+
+     0.77%     0.04%  tc       [kernel.kallsyms]  [k] cont_flush
+            |          
+             --0.72%--cont_flush
+                       log_store.constprop.20
+
+     0.72%     0.09%  tc       [kernel.kallsyms]  [k] log_store.constprop.20
+            |          
+             --0.64%--log_store.constprop.20
+
+     0.72%     0.72%  tc       [kernel.kallsyms]  [k] format_decode
+            |
+            ---0xdb5d78e000000000
+               0xc
+               __libc_sendmsg
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               __sys_sendmsg
+               ___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+
+     0.64%     0.04%  tc       [kernel.kallsyms]  [k] tcf_block_offload_unbind.isra.45
+            |          
+             --0.60%--tcf_block_offload_unbind.isra.45
+
+     0.47%     0.17%  tc       [kernel.kallsyms]  [k] console_unlock
+     0.47%     0.38%  tc       [kernel.kallsyms]  [k] select_task_rq_fair
+     0.47%     0.47%  tc       [kernel.kallsyms]  [k] log_make_free_space
+     0.44%     0.40%  tc       [kernel.kallsyms]  [k] tcf_block_owner_del
+     0.35%     0.17%  tc       [kernel.kallsyms]  [k] __call_rcu
+     0.35%     0.09%  tc       [kernel.kallsyms]  [k] tcf_chain0_head_change_cb_del.isra.46
+     0.34%     0.30%  tc       [kernel.kallsyms]  [k] __slab_free
+     0.34%     0.00%  tc       [kernel.kallsyms]  [k] _raw_spin_lock
+     0.30%     0.30%  tc       [kernel.kallsyms]  [k] native_queued_spin_lock_slowpath
+     0.26%     0.26%  tc       [kernel.kallsyms]  [k] __list_del_entry_valid
+     0.26%     0.13%  tc       [kernel.kallsyms]  [k] tc_indr_block_call.isra.43
+     0.26%     0.09%  tc       [kernel.kallsyms]  [k] tcf_block_offload_cmd.isra.42
+     0.26%     0.21%  tc       [kernel.kallsyms]  [k] mutex_unlock
+     0.26%     0.21%  tc       [kernel.kallsyms]  [k] free_one_page
+     0.26%     0.21%  tc       [kernel.kallsyms]  [k] qdisc_reset_queue
+     0.25%     0.21%  tc       [kernel.kallsyms]  [k] memcpy_erms
+     0.25%     0.00%  tc       [kernel.kallsyms]  [k] scheduler_tick
+     0.21%     0.21%  tc       [kernel.kallsyms]  [k] _raw_spin_lock_irqsave
+     0.21%     0.21%  tc       [kernel.kallsyms]  [k] qdisc_put
+     0.21%     0.21%  tc       [kernel.kallsyms]  [k] check_preempt_curr
+     0.21%     0.00%  tc       [kernel.kallsyms]  [k] ttwu_do_wakeup
+     0.21%     0.21%  tc       [kernel.kallsyms]  [k] gen_kill_estimator
+     0.21%     0.04%  tc       [kernel.kallsyms]  [k] enqueue_task_fair
+     0.21%     0.00%  tc       [kernel.kallsyms]  [k] ttwu_do_activate
+     0.21%     0.00%  tc       [kernel.kallsyms]  [k] activate_task
+     0.21%     0.04%  tc       [kernel.kallsyms]  [k] task_tick_fair
+     0.18%     0.18%  tc       [kernel.kallsyms]  [k] rcu_segcblist_enqueue
+     0.18%     0.05%  tc       [kernel.kallsyms]  [k] put_cpu_partial
+     0.17%     0.04%  tc       [kernel.kallsyms]  [k] __up_console_sem.isra.13
+     0.17%     0.09%  tc       [kernel.kallsyms]  [k] __down_trylock_console_sem.isra.14
+     0.17%     0.00%  tc       [kernel.kallsyms]  [k] enqueue_entity
+     0.17%     0.00%  tc       [kernel.kallsyms]  [k] irq_exit
+     0.17%     0.00%  tc       [kernel.kallsyms]  [k] __softirqentry_text_start
+     0.17%     0.00%  tc       [kernel.kallsyms]  [k] rcu_core
+     0.13%     0.09%  tc       [kernel.kallsyms]  [k] mutex_lock
+     0.13%     0.04%  tc       [kernel.kallsyms]  [k] cont_add
+     0.13%     0.04%  tc       [kernel.kallsyms]  [k] __printk_safe_exit
+     0.13%     0.09%  tc       [kernel.kallsyms]  [k] update_curr
+     0.13%     0.04%  tc       [kernel.kallsyms]  [k] update_load_avg
+     0.13%     0.04%  tc       [kernel.kallsyms]  [k] unfreeze_partials.isra.79
+     0.10%     0.10%  tc       [kernel.kallsyms]  [k] run_local_timers
+     0.09%     0.00%  tc       [kernel.kallsyms]  [k] tlb_finish_mmu
+     0.09%     0.00%  tc       [kernel.kallsyms]  [k] tlb_flush_mmu
+     0.09%     0.09%  tc       [kernel.kallsyms]  [k] tcf_block_setup
+     0.09%     0.00%  tc       [kernel.kallsyms]  [k] _cond_resched
+     0.09%     0.04%  tc       [kernel.kallsyms]  [k] refcount_dec_and_mutex_lock
+     0.09%     0.09%  tc       [kernel.kallsyms]  [k] igb_setup_tc
+     0.09%     0.09%  tc       [kernel.kallsyms]  [k] rcu_all_qs
+     0.09%     0.00%  tc       [kernel.kallsyms]  [k] down_write
+     0.09%     0.09%  tc       [kernel.kallsyms]  [k] flow_block_cb_setup_simple
+     0.09%     0.04%  tc       [kernel.kallsyms]  [k] up
+     0.09%     0.09%  tc       [kernel.kallsyms]  [k] mod_node_page_state
+     0.09%     0.09%  tc       [kernel.kallsyms]  [k] qdisc_hash_del
+     0.09%     0.00%  tc       [kernel.kallsyms]  [k] down_trylock
+     0.08%     0.04%  tc       [kernel.kallsyms]  [k] number
+     0.08%     0.08%  tc       [kernel.kallsyms]  [k] __update_load_avg_se
+     0.08%     0.04%  tc       [kernel.kallsyms]  [k] kvfree
+     0.08%     0.08%  tc       [kernel.kallsyms]  [k] rcu_cblist_dequeue
+     0.06%     0.00%  tc       ld-2.24.so         [.] _dl_map_object
+     0.06%     0.00%  tc       ld-2.24.so         [.] open64
+     0.06%     0.00%  tc       [kernel.kallsyms]  [k] do_sys_open
+     0.06%     0.00%  tc       [kernel.kallsyms]  [k] do_filp_open
+     0.06%     0.00%  tc       [kernel.kallsyms]  [k] path_openat
+     0.06%     0.00%  tc       [kernel.kallsyms]  [k] may_open
+     0.06%     0.00%  tc       [kernel.kallsyms]  [k] security_inode_permission
+     0.06%     0.00%  tc       [kernel.kallsyms]  [k] selinux_inode_permission
+     0.05%     0.05%  tc       [kernel.kallsyms]  [k] free_pages_and_swap_cache
+     0.05%     0.00%  tc       [unknown]          [k] 0x0000000000000040
+     0.05%     0.00%  tc       ld-2.24.so         [.] _dl_sysdep_start
+     0.05%     0.00%  tc       ld-2.24.so         [.] munmap
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] __x64_sys_munmap
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] __vm_munmap
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] __do_munmap
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] unmap_region
+     0.05%     0.00%  tc       [unknown]          [k] 0x00007f6b72a85647
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] __x64_sys_execve
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] __do_execve_file.isra.37
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] search_binary_handler
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] load_elf_binary
+     0.05%     0.00%  tc       [unknown]          [k] 0000000000000000
+     0.05%     0.00%  tc       libc-2.24.so       [.] __libc_recvmsg
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] __sys_recvmsg
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] ___sys_recvmsg
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] ____sys_recvmsg
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] netlink_recvmsg
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] netlink_dump
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] rtnl_dump_ifinfo
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] rtnl_fill_ifinfo
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] rtnl_xdp_report_one
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] __dev_xdp_query
+     0.05%     0.00%  tc       [kernel.kallsyms]  [k] mlx5e_xdp
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] refcount_dec_not_one
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] flow_indr_block_dev_lookup
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] flow_indr_block_call
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] console_trylock.part.15
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] vprintk_default
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] update_cfs_rq_h_load
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] rb_next
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __remove_hrtimer
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] timerqueue_del
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] refcount_sub_and_test_checked
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_put.part.49
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] native_sched_clock
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] sched_clock_cpu
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] sched_clock
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] _raw_spin_unlock_irqrestore
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] find_next_bit
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] select_idle_sibling
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] cpumask_next_wrap
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] interrupt_entry
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] native_apic_mem_write
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] qdisc_free
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] rcu_sched_clock_irq
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] irq_work_queue
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] up_write
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] memcpy
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] free_unref_page_prepare.part.71
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] free_unref_page
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] vprintk_func
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] account_system_index_time
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] account_entity_enqueue
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] default_wake_function
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] release_pages
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __x64_sys_exit_group
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] do_group_exit
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] do_exit
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] mmput
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] exit_mmap
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] timerqueue_add
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] enqueue_hrtimer
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] perf_event_task_tick
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] put_dec_trunc8
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] retint_kernel
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] run_posix_cpu_timers
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] memset
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] cpuacct_charge
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] blk_mq_sched_try_insert_merge
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __clear_user
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] page_fault
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __do_page_fault
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] handle_mm_fault
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __handle_mm_fault
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __do_fault
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __xfs_filemap_fault
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] filemap_fault
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __do_page_cache_readahead
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] read_pages
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] blk_finish_plug
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] blk_flush_plug_list
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] blk_mq_flush_plug_list
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] blk_mq_sched_insert_requests
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] dd_insert_requests
+     0.04%     0.04%  tc       [kernel.kallsyms]  [k] reweight_entity
+     0.01%     0.01%  tc       [kernel.kallsyms]  [k] install_exec_creds
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] native_write_msr
+     0.00%     0.00%  perf     [unknown]          [k] 0x00007f6b72a85647
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] entry_SYSCALL_64_after_hwframe
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] do_syscall_64
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] __x64_sys_execve
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] __do_execve_file.isra.37
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] search_binary_handler
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] load_elf_binary
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] setup_new_exec
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] perf_event_exec
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.30
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_write_msr
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __sched_text_start
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] finish_task_switch
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __perf_event_task_sched_in
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.30
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] native_flush_tlb_one_user
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_flush_tlb_one_user
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] perf_sample_event_took
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] native_sched_clock
+
+
+#
+# (Tip: Use parent filter to see specific call path: perf report -p <regex>)
+#

@@ -1,0 +1,1921 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 8
+#
+# Samples: 2K of event 'cycles'
+# Event count (approx.): 2748538822
+#
+# Children      Self  Command  Shared Object      Symbol                                   
+# ........  ........  .......  .................  .........................................
+#
+    99.92%     0.00%  tc       [unknown]          [k] 0xd66c28d000000000
+            |
+            ---0xd66c28d000000000
+               0xc
+               __libc_sendmsg
+               |          
+                --99.85%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          |          
+                           --99.82%--rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     |          
+                                     |--51.26%--qdisc_destroy
+                                     |          |          
+                                     |          |--26.41%--hfsc_destroy_qdisc
+                                     |          |          |          
+                                     |          |          |--25.21%--hfsc_destroy_class
+                                     |          |          |          |          
+                                     |          |          |           --24.97%--qdisc_destroy
+                                     |          |          |                     |          
+                                     |          |          |                     |--22.58%--fq_codel_reset
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                                     |          |          |                     |          
+                                     |          |          |                     |--0.99%--fq_codel_destroy
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --0.82%--tcf_block_put
+                                     |          |          |                     |                     |          
+                                     |          |          |                     |                      --0.58%--tcf_block_put_ext
+                                     |          |          |                     |          
+                                     |          |          |                      --0.58%--printk
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.55%--vprintk_emit
+                                     |          |          |          
+                                     |          |           --0.65%--tcf_block_put
+                                     |          |          
+                                     |           --24.85%--hfsc_reset_qdisc
+                                     |                     |          
+                                     |                      --24.78%--qdisc_reset
+                                     |                                |          
+                                     |                                |--23.36%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--1.22%--codel_vars_init
+                                     |                                |          |          
+                                     |                                |           --0.79%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                 --1.01%--printk
+                                     |                                           |          
+                                     |                                            --0.91%--vprintk_emit
+                                     |                                                      |          
+                                     |                                                       --0.61%--_raw_spin_lock
+                                     |          
+                                      --48.52%--dev_deactivate
+                                                dev_deactivate_many
+                                                |          
+                                                |--25.08%--qdisc_reset
+                                                |          hfsc_reset_qdisc
+                                                |          |          
+                                                |           --24.76%--qdisc_reset
+                                                |                     |          
+                                                |                     |--23.98%--fq_codel_reset
+                                                |                     |          |          
+                                                |                     |          |--1.08%--codel_vars_init
+                                                |                     |          |          
+                                                |                     |           --0.56%--rtnl_kfree_skbs
+                                                |                     |          
+                                                |                      --0.61%--printk
+                                                |                                |          
+                                                |                                 --0.54%--vprintk_emit
+                                                |          
+                                                 --23.44%--dev_deactivate_queue.constprop.57
+                                                           qdisc_reset
+                                                           hfsc_reset_qdisc
+                                                           |          
+                                                            --23.26%--qdisc_reset
+                                                                      |          
+                                                                      |--22.13%--fq_codel_reset
+                                                                      |          |          
+                                                                      |           --0.81%--codel_vars_init
+                                                                      |          
+                                                                       --0.87%--printk
+                                                                                 |          
+                                                                                  --0.86%--vprintk_emit
+
+    99.92%     0.00%  tc       [unknown]          [k] 0x000000000000000c
+            |
+            ---0xc
+               __libc_sendmsg
+               |          
+                --99.85%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          |          
+                           --99.82%--rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     |          
+                                     |--51.26%--qdisc_destroy
+                                     |          |          
+                                     |          |--26.41%--hfsc_destroy_qdisc
+                                     |          |          |          
+                                     |          |          |--25.21%--hfsc_destroy_class
+                                     |          |          |          |          
+                                     |          |          |           --24.97%--qdisc_destroy
+                                     |          |          |                     |          
+                                     |          |          |                     |--22.58%--fq_codel_reset
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                                     |          |          |                     |          
+                                     |          |          |                     |--0.99%--fq_codel_destroy
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --0.82%--tcf_block_put
+                                     |          |          |                     |                     |          
+                                     |          |          |                     |                      --0.58%--tcf_block_put_ext
+                                     |          |          |                     |          
+                                     |          |          |                      --0.58%--printk
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.55%--vprintk_emit
+                                     |          |          |          
+                                     |          |           --0.65%--tcf_block_put
+                                     |          |          
+                                     |           --24.85%--hfsc_reset_qdisc
+                                     |                     |          
+                                     |                      --24.78%--qdisc_reset
+                                     |                                |          
+                                     |                                |--23.36%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--1.22%--codel_vars_init
+                                     |                                |          |          
+                                     |                                |           --0.79%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                 --1.01%--printk
+                                     |                                           |          
+                                     |                                            --0.91%--vprintk_emit
+                                     |                                                      |          
+                                     |                                                       --0.61%--_raw_spin_lock
+                                     |          
+                                      --48.52%--dev_deactivate
+                                                dev_deactivate_many
+                                                |          
+                                                |--25.08%--qdisc_reset
+                                                |          hfsc_reset_qdisc
+                                                |          |          
+                                                |           --24.76%--qdisc_reset
+                                                |                     |          
+                                                |                     |--23.98%--fq_codel_reset
+                                                |                     |          |          
+                                                |                     |          |--1.08%--codel_vars_init
+                                                |                     |          |          
+                                                |                     |           --0.56%--rtnl_kfree_skbs
+                                                |                     |          
+                                                |                      --0.61%--printk
+                                                |                                |          
+                                                |                                 --0.54%--vprintk_emit
+                                                |          
+                                                 --23.44%--dev_deactivate_queue.constprop.57
+                                                           qdisc_reset
+                                                           hfsc_reset_qdisc
+                                                           |          
+                                                            --23.26%--qdisc_reset
+                                                                      |          
+                                                                      |--22.13%--fq_codel_reset
+                                                                      |          |          
+                                                                      |           --0.81%--codel_vars_init
+                                                                      |          
+                                                                       --0.87%--printk
+                                                                                 |          
+                                                                                  --0.86%--vprintk_emit
+
+    99.92%     0.00%  tc       libc-2.24.so       [.] __libc_sendmsg
+            |
+            ---__libc_sendmsg
+               |          
+                --99.85%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          |          
+                           --99.82%--rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     |          
+                                     |--51.26%--qdisc_destroy
+                                     |          |          
+                                     |          |--26.41%--hfsc_destroy_qdisc
+                                     |          |          |          
+                                     |          |          |--25.21%--hfsc_destroy_class
+                                     |          |          |          |          
+                                     |          |          |           --24.97%--qdisc_destroy
+                                     |          |          |                     |          
+                                     |          |          |                     |--22.58%--fq_codel_reset
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                                     |          |          |                     |          
+                                     |          |          |                     |--0.99%--fq_codel_destroy
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --0.82%--tcf_block_put
+                                     |          |          |                     |                     |          
+                                     |          |          |                     |                      --0.58%--tcf_block_put_ext
+                                     |          |          |                     |          
+                                     |          |          |                      --0.58%--printk
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.55%--vprintk_emit
+                                     |          |          |          
+                                     |          |           --0.65%--tcf_block_put
+                                     |          |          
+                                     |           --24.85%--hfsc_reset_qdisc
+                                     |                     |          
+                                     |                      --24.78%--qdisc_reset
+                                     |                                |          
+                                     |                                |--23.36%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--1.22%--codel_vars_init
+                                     |                                |          |          
+                                     |                                |           --0.79%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                 --1.01%--printk
+                                     |                                           |          
+                                     |                                            --0.91%--vprintk_emit
+                                     |                                                      |          
+                                     |                                                       --0.61%--_raw_spin_lock
+                                     |          
+                                      --48.52%--dev_deactivate
+                                                dev_deactivate_many
+                                                |          
+                                                |--25.08%--qdisc_reset
+                                                |          hfsc_reset_qdisc
+                                                |          |          
+                                                |           --24.76%--qdisc_reset
+                                                |                     |          
+                                                |                     |--23.98%--fq_codel_reset
+                                                |                     |          |          
+                                                |                     |          |--1.08%--codel_vars_init
+                                                |                     |          |          
+                                                |                     |           --0.56%--rtnl_kfree_skbs
+                                                |                     |          
+                                                |                      --0.61%--printk
+                                                |                                |          
+                                                |                                 --0.54%--vprintk_emit
+                                                |          
+                                                 --23.44%--dev_deactivate_queue.constprop.57
+                                                           qdisc_reset
+                                                           hfsc_reset_qdisc
+                                                           |          
+                                                            --23.26%--qdisc_reset
+                                                                      |          
+                                                                      |--22.13%--fq_codel_reset
+                                                                      |          |          
+                                                                      |           --0.81%--codel_vars_init
+                                                                      |          
+                                                                       --0.87%--printk
+                                                                                 |          
+                                                                                  --0.86%--vprintk_emit
+
+    99.88%     0.00%  tc       [kernel.kallsyms]  [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+                --99.85%--__sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          |          
+                           --99.82%--rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     |          
+                                     |--51.26%--qdisc_destroy
+                                     |          |          
+                                     |          |--26.41%--hfsc_destroy_qdisc
+                                     |          |          |          
+                                     |          |          |--25.21%--hfsc_destroy_class
+                                     |          |          |          |          
+                                     |          |          |           --24.97%--qdisc_destroy
+                                     |          |          |                     |          
+                                     |          |          |                     |--22.58%--fq_codel_reset
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                                     |          |          |                     |          
+                                     |          |          |                     |--0.99%--fq_codel_destroy
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --0.82%--tcf_block_put
+                                     |          |          |                     |                     |          
+                                     |          |          |                     |                      --0.58%--tcf_block_put_ext
+                                     |          |          |                     |          
+                                     |          |          |                      --0.58%--printk
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.55%--vprintk_emit
+                                     |          |          |          
+                                     |          |           --0.65%--tcf_block_put
+                                     |          |          
+                                     |           --24.85%--hfsc_reset_qdisc
+                                     |                     |          
+                                     |                      --24.78%--qdisc_reset
+                                     |                                |          
+                                     |                                |--23.36%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--1.22%--codel_vars_init
+                                     |                                |          |          
+                                     |                                |           --0.79%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                 --1.01%--printk
+                                     |                                           |          
+                                     |                                            --0.91%--vprintk_emit
+                                     |                                                      |          
+                                     |                                                       --0.61%--_raw_spin_lock
+                                     |          
+                                      --48.52%--dev_deactivate
+                                                dev_deactivate_many
+                                                |          
+                                                |--25.08%--qdisc_reset
+                                                |          hfsc_reset_qdisc
+                                                |          |          
+                                                |           --24.76%--qdisc_reset
+                                                |                     |          
+                                                |                     |--23.98%--fq_codel_reset
+                                                |                     |          |          
+                                                |                     |          |--1.08%--codel_vars_init
+                                                |                     |          |          
+                                                |                     |           --0.56%--rtnl_kfree_skbs
+                                                |                     |          
+                                                |                      --0.61%--printk
+                                                |                                |          
+                                                |                                 --0.54%--vprintk_emit
+                                                |          
+                                                 --23.44%--dev_deactivate_queue.constprop.57
+                                                           qdisc_reset
+                                                           hfsc_reset_qdisc
+                                                           |          
+                                                            --23.26%--qdisc_reset
+                                                                      |          
+                                                                      |--22.13%--fq_codel_reset
+                                                                      |          |          
+                                                                      |           --0.81%--codel_vars_init
+                                                                      |          
+                                                                       --0.87%--printk
+                                                                                 |          
+                                                                                  --0.86%--vprintk_emit
+
+    99.88%     0.00%  tc       [kernel.kallsyms]  [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+                --99.85%--__sys_sendmsg
+                          ___sys_sendmsg
+                          ____sys_sendmsg
+                          sock_sendmsg
+                          netlink_sendmsg
+                          netlink_unicast
+                          netlink_rcv_skb
+                          |          
+                           --99.82%--rtnetlink_rcv_msg
+                                     tc_get_qdisc
+                                     qdisc_graft
+                                     |          
+                                     |--51.26%--qdisc_destroy
+                                     |          |          
+                                     |          |--26.41%--hfsc_destroy_qdisc
+                                     |          |          |          
+                                     |          |          |--25.21%--hfsc_destroy_class
+                                     |          |          |          |          
+                                     |          |          |           --24.97%--qdisc_destroy
+                                     |          |          |                     |          
+                                     |          |          |                     |--22.58%--fq_codel_reset
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                                     |          |          |                     |          
+                                     |          |          |                     |--0.99%--fq_codel_destroy
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --0.82%--tcf_block_put
+                                     |          |          |                     |                     |          
+                                     |          |          |                     |                      --0.58%--tcf_block_put_ext
+                                     |          |          |                     |          
+                                     |          |          |                      --0.58%--printk
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.55%--vprintk_emit
+                                     |          |          |          
+                                     |          |           --0.65%--tcf_block_put
+                                     |          |          
+                                     |           --24.85%--hfsc_reset_qdisc
+                                     |                     |          
+                                     |                      --24.78%--qdisc_reset
+                                     |                                |          
+                                     |                                |--23.36%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--1.22%--codel_vars_init
+                                     |                                |          |          
+                                     |                                |           --0.79%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                 --1.01%--printk
+                                     |                                           |          
+                                     |                                            --0.91%--vprintk_emit
+                                     |                                                      |          
+                                     |                                                       --0.61%--_raw_spin_lock
+                                     |          
+                                      --48.52%--dev_deactivate
+                                                dev_deactivate_many
+                                                |          
+                                                |--25.08%--qdisc_reset
+                                                |          hfsc_reset_qdisc
+                                                |          |          
+                                                |           --24.76%--qdisc_reset
+                                                |                     |          
+                                                |                     |--23.98%--fq_codel_reset
+                                                |                     |          |          
+                                                |                     |          |--1.08%--codel_vars_init
+                                                |                     |          |          
+                                                |                     |           --0.56%--rtnl_kfree_skbs
+                                                |                     |          
+                                                |                      --0.61%--printk
+                                                |                                |          
+                                                |                                 --0.54%--vprintk_emit
+                                                |          
+                                                 --23.44%--dev_deactivate_queue.constprop.57
+                                                           qdisc_reset
+                                                           hfsc_reset_qdisc
+                                                           |          
+                                                            --23.26%--qdisc_reset
+                                                                      |          
+                                                                      |--22.13%--fq_codel_reset
+                                                                      |          |          
+                                                                      |           --0.81%--codel_vars_init
+                                                                      |          
+                                                                       --0.87%--printk
+                                                                                 |          
+                                                                                  --0.86%--vprintk_emit
+
+    99.88%     0.00%  tc       [kernel.kallsyms]  [k] sock_sendmsg
+            |
+            ---sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               |          
+                --99.84%--rtnetlink_rcv_msg
+                          |          
+                           --99.82%--tc_get_qdisc
+                                     qdisc_graft
+                                     |          
+                                     |--51.26%--qdisc_destroy
+                                     |          |          
+                                     |          |--26.41%--hfsc_destroy_qdisc
+                                     |          |          |          
+                                     |          |          |--25.21%--hfsc_destroy_class
+                                     |          |          |          |          
+                                     |          |          |           --24.97%--qdisc_destroy
+                                     |          |          |                     |          
+                                     |          |          |                     |--22.58%--fq_codel_reset
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                                     |          |          |                     |          
+                                     |          |          |                     |--0.99%--fq_codel_destroy
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --0.82%--tcf_block_put
+                                     |          |          |                     |                     |          
+                                     |          |          |                     |                      --0.58%--tcf_block_put_ext
+                                     |          |          |                     |          
+                                     |          |          |                      --0.58%--printk
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.55%--vprintk_emit
+                                     |          |          |          
+                                     |          |           --0.65%--tcf_block_put
+                                     |          |          
+                                     |           --24.85%--hfsc_reset_qdisc
+                                     |                     |          
+                                     |                      --24.78%--qdisc_reset
+                                     |                                |          
+                                     |                                |--23.36%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--1.22%--codel_vars_init
+                                     |                                |          |          
+                                     |                                |           --0.79%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                 --1.01%--printk
+                                     |                                           |          
+                                     |                                            --0.91%--vprintk_emit
+                                     |                                                      |          
+                                     |                                                       --0.61%--_raw_spin_lock
+                                     |          
+                                      --48.52%--dev_deactivate
+                                                dev_deactivate_many
+                                                |          
+                                                |--25.08%--qdisc_reset
+                                                |          hfsc_reset_qdisc
+                                                |          |          
+                                                |           --24.76%--qdisc_reset
+                                                |                     |          
+                                                |                     |--23.98%--fq_codel_reset
+                                                |                     |          |          
+                                                |                     |          |--1.08%--codel_vars_init
+                                                |                     |          |          
+                                                |                     |           --0.56%--rtnl_kfree_skbs
+                                                |                     |          
+                                                |                      --0.61%--printk
+                                                |                                |          
+                                                |                                 --0.54%--vprintk_emit
+                                                |          
+                                                 --23.44%--dev_deactivate_queue.constprop.57
+                                                           qdisc_reset
+                                                           hfsc_reset_qdisc
+                                                           |          
+                                                            --23.26%--qdisc_reset
+                                                                      |          
+                                                                      |--22.13%--fq_codel_reset
+                                                                      |          |          
+                                                                      |           --0.81%--codel_vars_init
+                                                                      |          
+                                                                       --0.87%--printk
+                                                                                 |          
+                                                                                  --0.86%--vprintk_emit
+
+    99.88%     0.00%  tc       [kernel.kallsyms]  [k] netlink_sendmsg
+            |
+            ---netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               |          
+                --99.84%--rtnetlink_rcv_msg
+                          |          
+                           --99.82%--tc_get_qdisc
+                                     qdisc_graft
+                                     |          
+                                     |--51.26%--qdisc_destroy
+                                     |          |          
+                                     |          |--26.41%--hfsc_destroy_qdisc
+                                     |          |          |          
+                                     |          |          |--25.21%--hfsc_destroy_class
+                                     |          |          |          |          
+                                     |          |          |           --24.97%--qdisc_destroy
+                                     |          |          |                     |          
+                                     |          |          |                     |--22.58%--fq_codel_reset
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                                     |          |          |                     |          
+                                     |          |          |                     |--0.99%--fq_codel_destroy
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --0.82%--tcf_block_put
+                                     |          |          |                     |                     |          
+                                     |          |          |                     |                      --0.58%--tcf_block_put_ext
+                                     |          |          |                     |          
+                                     |          |          |                      --0.58%--printk
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.55%--vprintk_emit
+                                     |          |          |          
+                                     |          |           --0.65%--tcf_block_put
+                                     |          |          
+                                     |           --24.85%--hfsc_reset_qdisc
+                                     |                     |          
+                                     |                      --24.78%--qdisc_reset
+                                     |                                |          
+                                     |                                |--23.36%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--1.22%--codel_vars_init
+                                     |                                |          |          
+                                     |                                |           --0.79%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                 --1.01%--printk
+                                     |                                           |          
+                                     |                                            --0.91%--vprintk_emit
+                                     |                                                      |          
+                                     |                                                       --0.61%--_raw_spin_lock
+                                     |          
+                                      --48.52%--dev_deactivate
+                                                dev_deactivate_many
+                                                |          
+                                                |--25.08%--qdisc_reset
+                                                |          hfsc_reset_qdisc
+                                                |          |          
+                                                |           --24.76%--qdisc_reset
+                                                |                     |          
+                                                |                     |--23.98%--fq_codel_reset
+                                                |                     |          |          
+                                                |                     |          |--1.08%--codel_vars_init
+                                                |                     |          |          
+                                                |                     |           --0.56%--rtnl_kfree_skbs
+                                                |                     |          
+                                                |                      --0.61%--printk
+                                                |                                |          
+                                                |                                 --0.54%--vprintk_emit
+                                                |          
+                                                 --23.44%--dev_deactivate_queue.constprop.57
+                                                           qdisc_reset
+                                                           hfsc_reset_qdisc
+                                                           |          
+                                                            --23.26%--qdisc_reset
+                                                                      |          
+                                                                      |--22.13%--fq_codel_reset
+                                                                      |          |          
+                                                                      |           --0.81%--codel_vars_init
+                                                                      |          
+                                                                       --0.87%--printk
+                                                                                 |          
+                                                                                  --0.86%--vprintk_emit
+
+    99.88%     0.00%  tc       [kernel.kallsyms]  [k] netlink_unicast
+            |
+            ---netlink_unicast
+               netlink_rcv_skb
+               |          
+                --99.84%--rtnetlink_rcv_msg
+                          |          
+                           --99.82%--tc_get_qdisc
+                                     qdisc_graft
+                                     |          
+                                     |--51.26%--qdisc_destroy
+                                     |          |          
+                                     |          |--26.41%--hfsc_destroy_qdisc
+                                     |          |          |          
+                                     |          |          |--25.21%--hfsc_destroy_class
+                                     |          |          |          |          
+                                     |          |          |           --24.97%--qdisc_destroy
+                                     |          |          |                     |          
+                                     |          |          |                     |--22.58%--fq_codel_reset
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                                     |          |          |                     |          
+                                     |          |          |                     |--0.99%--fq_codel_destroy
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --0.82%--tcf_block_put
+                                     |          |          |                     |                     |          
+                                     |          |          |                     |                      --0.58%--tcf_block_put_ext
+                                     |          |          |                     |          
+                                     |          |          |                      --0.58%--printk
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.55%--vprintk_emit
+                                     |          |          |          
+                                     |          |           --0.65%--tcf_block_put
+                                     |          |          
+                                     |           --24.85%--hfsc_reset_qdisc
+                                     |                     |          
+                                     |                      --24.78%--qdisc_reset
+                                     |                                |          
+                                     |                                |--23.36%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--1.22%--codel_vars_init
+                                     |                                |          |          
+                                     |                                |           --0.79%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                 --1.01%--printk
+                                     |                                           |          
+                                     |                                            --0.91%--vprintk_emit
+                                     |                                                      |          
+                                     |                                                       --0.61%--_raw_spin_lock
+                                     |          
+                                      --48.52%--dev_deactivate
+                                                dev_deactivate_many
+                                                |          
+                                                |--25.08%--qdisc_reset
+                                                |          hfsc_reset_qdisc
+                                                |          |          
+                                                |           --24.76%--qdisc_reset
+                                                |                     |          
+                                                |                     |--23.98%--fq_codel_reset
+                                                |                     |          |          
+                                                |                     |          |--1.08%--codel_vars_init
+                                                |                     |          |          
+                                                |                     |           --0.56%--rtnl_kfree_skbs
+                                                |                     |          
+                                                |                      --0.61%--printk
+                                                |                                |          
+                                                |                                 --0.54%--vprintk_emit
+                                                |          
+                                                 --23.44%--dev_deactivate_queue.constprop.57
+                                                           qdisc_reset
+                                                           hfsc_reset_qdisc
+                                                           |          
+                                                            --23.26%--qdisc_reset
+                                                                      |          
+                                                                      |--22.13%--fq_codel_reset
+                                                                      |          |          
+                                                                      |           --0.81%--codel_vars_init
+                                                                      |          
+                                                                       --0.87%--printk
+                                                                                 |          
+                                                                                  --0.86%--vprintk_emit
+
+    99.88%     0.00%  tc       [kernel.kallsyms]  [k] netlink_rcv_skb
+            |
+            ---netlink_rcv_skb
+               |          
+                --99.84%--rtnetlink_rcv_msg
+                          |          
+                           --99.82%--tc_get_qdisc
+                                     qdisc_graft
+                                     |          
+                                     |--51.26%--qdisc_destroy
+                                     |          |          
+                                     |          |--26.41%--hfsc_destroy_qdisc
+                                     |          |          |          
+                                     |          |          |--25.21%--hfsc_destroy_class
+                                     |          |          |          |          
+                                     |          |          |           --24.97%--qdisc_destroy
+                                     |          |          |                     |          
+                                     |          |          |                     |--22.58%--fq_codel_reset
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                                     |          |          |                     |          
+                                     |          |          |                     |--0.99%--fq_codel_destroy
+                                     |          |          |                     |          |          
+                                     |          |          |                     |           --0.82%--tcf_block_put
+                                     |          |          |                     |                     |          
+                                     |          |          |                     |                      --0.58%--tcf_block_put_ext
+                                     |          |          |                     |          
+                                     |          |          |                      --0.58%--printk
+                                     |          |          |                                |          
+                                     |          |          |                                 --0.55%--vprintk_emit
+                                     |          |          |          
+                                     |          |           --0.65%--tcf_block_put
+                                     |          |          
+                                     |           --24.85%--hfsc_reset_qdisc
+                                     |                     |          
+                                     |                      --24.78%--qdisc_reset
+                                     |                                |          
+                                     |                                |--23.36%--fq_codel_reset
+                                     |                                |          |          
+                                     |                                |          |--1.22%--codel_vars_init
+                                     |                                |          |          
+                                     |                                |           --0.79%--rtnl_kfree_skbs
+                                     |                                |          
+                                     |                                 --1.01%--printk
+                                     |                                           |          
+                                     |                                            --0.91%--vprintk_emit
+                                     |                                                      |          
+                                     |                                                       --0.61%--_raw_spin_lock
+                                     |          
+                                      --48.52%--dev_deactivate
+                                                dev_deactivate_many
+                                                |          
+                                                |--25.08%--qdisc_reset
+                                                |          hfsc_reset_qdisc
+                                                |          |          
+                                                |           --24.76%--qdisc_reset
+                                                |                     |          
+                                                |                     |--23.98%--fq_codel_reset
+                                                |                     |          |          
+                                                |                     |          |--1.08%--codel_vars_init
+                                                |                     |          |          
+                                                |                     |           --0.56%--rtnl_kfree_skbs
+                                                |                     |          
+                                                |                      --0.61%--printk
+                                                |                                |          
+                                                |                                 --0.54%--vprintk_emit
+                                                |          
+                                                 --23.44%--dev_deactivate_queue.constprop.57
+                                                           qdisc_reset
+                                                           hfsc_reset_qdisc
+                                                           |          
+                                                            --23.26%--qdisc_reset
+                                                                      |          
+                                                                      |--22.13%--fq_codel_reset
+                                                                      |          |          
+                                                                      |           --0.81%--codel_vars_init
+                                                                      |          
+                                                                       --0.87%--printk
+                                                                                 |          
+                                                                                  --0.86%--vprintk_emit
+
+    99.85%     0.00%  tc       [kernel.kallsyms]  [k] __sys_sendmsg
+            |
+            ---__sys_sendmsg
+               ___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               |          
+                --99.82%--rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                          |--51.26%--qdisc_destroy
+                          |          |          
+                          |          |--26.41%--hfsc_destroy_qdisc
+                          |          |          |          
+                          |          |          |--25.21%--hfsc_destroy_class
+                          |          |          |          |          
+                          |          |          |           --24.97%--qdisc_destroy
+                          |          |          |                     |          
+                          |          |          |                     |--22.58%--fq_codel_reset
+                          |          |          |                     |          |          
+                          |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                          |          |          |                     |          
+                          |          |          |                     |--0.99%--fq_codel_destroy
+                          |          |          |                     |          |          
+                          |          |          |                     |           --0.82%--tcf_block_put
+                          |          |          |                     |                     |          
+                          |          |          |                     |                      --0.58%--tcf_block_put_ext
+                          |          |          |                     |          
+                          |          |          |                      --0.58%--printk
+                          |          |          |                                |          
+                          |          |          |                                 --0.55%--vprintk_emit
+                          |          |          |          
+                          |          |           --0.65%--tcf_block_put
+                          |          |          
+                          |           --24.85%--hfsc_reset_qdisc
+                          |                     |          
+                          |                      --24.78%--qdisc_reset
+                          |                                |          
+                          |                                |--23.36%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--1.22%--codel_vars_init
+                          |                                |          |          
+                          |                                |           --0.79%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                 --1.01%--printk
+                          |                                           |          
+                          |                                            --0.91%--vprintk_emit
+                          |                                                      |          
+                          |                                                       --0.61%--_raw_spin_lock
+                          |          
+                           --48.52%--dev_deactivate
+                                     dev_deactivate_many
+                                     |          
+                                     |--25.08%--qdisc_reset
+                                     |          hfsc_reset_qdisc
+                                     |          |          
+                                     |           --24.76%--qdisc_reset
+                                     |                     |          
+                                     |                     |--23.98%--fq_codel_reset
+                                     |                     |          |          
+                                     |                     |          |--1.08%--codel_vars_init
+                                     |                     |          |          
+                                     |                     |           --0.56%--rtnl_kfree_skbs
+                                     |                     |          
+                                     |                      --0.61%--printk
+                                     |                                |          
+                                     |                                 --0.54%--vprintk_emit
+                                     |          
+                                      --23.44%--dev_deactivate_queue.constprop.57
+                                                qdisc_reset
+                                                hfsc_reset_qdisc
+                                                |          
+                                                 --23.26%--qdisc_reset
+                                                           |          
+                                                           |--22.13%--fq_codel_reset
+                                                           |          |          
+                                                           |           --0.81%--codel_vars_init
+                                                           |          
+                                                            --0.87%--printk
+                                                                      |          
+                                                                       --0.86%--vprintk_emit
+
+    99.85%     0.00%  tc       [kernel.kallsyms]  [k] ___sys_sendmsg
+            |
+            ---___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               |          
+                --99.82%--rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                          |--51.26%--qdisc_destroy
+                          |          |          
+                          |          |--26.41%--hfsc_destroy_qdisc
+                          |          |          |          
+                          |          |          |--25.21%--hfsc_destroy_class
+                          |          |          |          |          
+                          |          |          |           --24.97%--qdisc_destroy
+                          |          |          |                     |          
+                          |          |          |                     |--22.58%--fq_codel_reset
+                          |          |          |                     |          |          
+                          |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                          |          |          |                     |          
+                          |          |          |                     |--0.99%--fq_codel_destroy
+                          |          |          |                     |          |          
+                          |          |          |                     |           --0.82%--tcf_block_put
+                          |          |          |                     |                     |          
+                          |          |          |                     |                      --0.58%--tcf_block_put_ext
+                          |          |          |                     |          
+                          |          |          |                      --0.58%--printk
+                          |          |          |                                |          
+                          |          |          |                                 --0.55%--vprintk_emit
+                          |          |          |          
+                          |          |           --0.65%--tcf_block_put
+                          |          |          
+                          |           --24.85%--hfsc_reset_qdisc
+                          |                     |          
+                          |                      --24.78%--qdisc_reset
+                          |                                |          
+                          |                                |--23.36%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--1.22%--codel_vars_init
+                          |                                |          |          
+                          |                                |           --0.79%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                 --1.01%--printk
+                          |                                           |          
+                          |                                            --0.91%--vprintk_emit
+                          |                                                      |          
+                          |                                                       --0.61%--_raw_spin_lock
+                          |          
+                           --48.52%--dev_deactivate
+                                     dev_deactivate_many
+                                     |          
+                                     |--25.08%--qdisc_reset
+                                     |          hfsc_reset_qdisc
+                                     |          |          
+                                     |           --24.76%--qdisc_reset
+                                     |                     |          
+                                     |                     |--23.98%--fq_codel_reset
+                                     |                     |          |          
+                                     |                     |          |--1.08%--codel_vars_init
+                                     |                     |          |          
+                                     |                     |           --0.56%--rtnl_kfree_skbs
+                                     |                     |          
+                                     |                      --0.61%--printk
+                                     |                                |          
+                                     |                                 --0.54%--vprintk_emit
+                                     |          
+                                      --23.44%--dev_deactivate_queue.constprop.57
+                                                qdisc_reset
+                                                hfsc_reset_qdisc
+                                                |          
+                                                 --23.26%--qdisc_reset
+                                                           |          
+                                                           |--22.13%--fq_codel_reset
+                                                           |          |          
+                                                           |           --0.81%--codel_vars_init
+                                                           |          
+                                                            --0.87%--printk
+                                                                      |          
+                                                                       --0.86%--vprintk_emit
+
+    99.85%     0.00%  tc       [kernel.kallsyms]  [k] ____sys_sendmsg
+            |
+            ---____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               |          
+                --99.82%--rtnetlink_rcv_msg
+                          tc_get_qdisc
+                          qdisc_graft
+                          |          
+                          |--51.26%--qdisc_destroy
+                          |          |          
+                          |          |--26.41%--hfsc_destroy_qdisc
+                          |          |          |          
+                          |          |          |--25.21%--hfsc_destroy_class
+                          |          |          |          |          
+                          |          |          |           --24.97%--qdisc_destroy
+                          |          |          |                     |          
+                          |          |          |                     |--22.58%--fq_codel_reset
+                          |          |          |                     |          |          
+                          |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                          |          |          |                     |          
+                          |          |          |                     |--0.99%--fq_codel_destroy
+                          |          |          |                     |          |          
+                          |          |          |                     |           --0.82%--tcf_block_put
+                          |          |          |                     |                     |          
+                          |          |          |                     |                      --0.58%--tcf_block_put_ext
+                          |          |          |                     |          
+                          |          |          |                      --0.58%--printk
+                          |          |          |                                |          
+                          |          |          |                                 --0.55%--vprintk_emit
+                          |          |          |          
+                          |          |           --0.65%--tcf_block_put
+                          |          |          
+                          |           --24.85%--hfsc_reset_qdisc
+                          |                     |          
+                          |                      --24.78%--qdisc_reset
+                          |                                |          
+                          |                                |--23.36%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--1.22%--codel_vars_init
+                          |                                |          |          
+                          |                                |           --0.79%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                 --1.01%--printk
+                          |                                           |          
+                          |                                            --0.91%--vprintk_emit
+                          |                                                      |          
+                          |                                                       --0.61%--_raw_spin_lock
+                          |          
+                           --48.52%--dev_deactivate
+                                     dev_deactivate_many
+                                     |          
+                                     |--25.08%--qdisc_reset
+                                     |          hfsc_reset_qdisc
+                                     |          |          
+                                     |           --24.76%--qdisc_reset
+                                     |                     |          
+                                     |                     |--23.98%--fq_codel_reset
+                                     |                     |          |          
+                                     |                     |          |--1.08%--codel_vars_init
+                                     |                     |          |          
+                                     |                     |           --0.56%--rtnl_kfree_skbs
+                                     |                     |          
+                                     |                      --0.61%--printk
+                                     |                                |          
+                                     |                                 --0.54%--vprintk_emit
+                                     |          
+                                      --23.44%--dev_deactivate_queue.constprop.57
+                                                qdisc_reset
+                                                hfsc_reset_qdisc
+                                                |          
+                                                 --23.26%--qdisc_reset
+                                                           |          
+                                                           |--22.13%--fq_codel_reset
+                                                           |          |          
+                                                           |           --0.81%--codel_vars_init
+                                                           |          
+                                                            --0.87%--printk
+                                                                      |          
+                                                                       --0.86%--vprintk_emit
+
+    99.84%     0.00%  tc       [kernel.kallsyms]  [k] rtnetlink_rcv_msg
+            |
+            ---rtnetlink_rcv_msg
+               |          
+                --99.82%--tc_get_qdisc
+                          qdisc_graft
+                          |          
+                          |--51.26%--qdisc_destroy
+                          |          |          
+                          |          |--26.41%--hfsc_destroy_qdisc
+                          |          |          |          
+                          |          |          |--25.21%--hfsc_destroy_class
+                          |          |          |          |          
+                          |          |          |           --24.97%--qdisc_destroy
+                          |          |          |                     |          
+                          |          |          |                     |--22.58%--fq_codel_reset
+                          |          |          |                     |          |          
+                          |          |          |                     |           --1.57%--rtnl_kfree_skbs
+                          |          |          |                     |          
+                          |          |          |                     |--0.99%--fq_codel_destroy
+                          |          |          |                     |          |          
+                          |          |          |                     |           --0.82%--tcf_block_put
+                          |          |          |                     |                     |          
+                          |          |          |                     |                      --0.58%--tcf_block_put_ext
+                          |          |          |                     |          
+                          |          |          |                      --0.58%--printk
+                          |          |          |                                |          
+                          |          |          |                                 --0.55%--vprintk_emit
+                          |          |          |          
+                          |          |           --0.65%--tcf_block_put
+                          |          |          
+                          |           --24.85%--hfsc_reset_qdisc
+                          |                     |          
+                          |                      --24.78%--qdisc_reset
+                          |                                |          
+                          |                                |--23.36%--fq_codel_reset
+                          |                                |          |          
+                          |                                |          |--1.22%--codel_vars_init
+                          |                                |          |          
+                          |                                |           --0.79%--rtnl_kfree_skbs
+                          |                                |          
+                          |                                 --1.01%--printk
+                          |                                           |          
+                          |                                            --0.91%--vprintk_emit
+                          |                                                      |          
+                          |                                                       --0.61%--_raw_spin_lock
+                          |          
+                           --48.52%--dev_deactivate
+                                     dev_deactivate_many
+                                     |          
+                                     |--25.08%--qdisc_reset
+                                     |          hfsc_reset_qdisc
+                                     |          |          
+                                     |           --24.76%--qdisc_reset
+                                     |                     |          
+                                     |                     |--23.98%--fq_codel_reset
+                                     |                     |          |          
+                                     |                     |          |--1.08%--codel_vars_init
+                                     |                     |          |          
+                                     |                     |           --0.56%--rtnl_kfree_skbs
+                                     |                     |          
+                                     |                      --0.61%--printk
+                                     |                                |          
+                                     |                                 --0.54%--vprintk_emit
+                                     |          
+                                      --23.44%--dev_deactivate_queue.constprop.57
+                                                qdisc_reset
+                                                hfsc_reset_qdisc
+                                                |          
+                                                 --23.26%--qdisc_reset
+                                                           |          
+                                                           |--22.13%--fq_codel_reset
+                                                           |          |          
+                                                           |           --0.81%--codel_vars_init
+                                                           |          
+                                                            --0.87%--printk
+                                                                      |          
+                                                                       --0.86%--vprintk_emit
+
+    99.82%     0.00%  tc       [kernel.kallsyms]  [k] tc_get_qdisc
+            |
+            ---tc_get_qdisc
+               qdisc_graft
+               |          
+               |--51.26%--qdisc_destroy
+               |          |          
+               |          |--26.41%--hfsc_destroy_qdisc
+               |          |          |          
+               |          |          |--25.21%--hfsc_destroy_class
+               |          |          |          |          
+               |          |          |           --24.97%--qdisc_destroy
+               |          |          |                     |          
+               |          |          |                     |--22.58%--fq_codel_reset
+               |          |          |                     |          |          
+               |          |          |                     |           --1.57%--rtnl_kfree_skbs
+               |          |          |                     |          
+               |          |          |                     |--0.99%--fq_codel_destroy
+               |          |          |                     |          |          
+               |          |          |                     |           --0.82%--tcf_block_put
+               |          |          |                     |                     |          
+               |          |          |                     |                      --0.58%--tcf_block_put_ext
+               |          |          |                     |          
+               |          |          |                      --0.58%--printk
+               |          |          |                                |          
+               |          |          |                                 --0.55%--vprintk_emit
+               |          |          |          
+               |          |           --0.65%--tcf_block_put
+               |          |          
+               |           --24.85%--hfsc_reset_qdisc
+               |                     |          
+               |                      --24.78%--qdisc_reset
+               |                                |          
+               |                                |--23.36%--fq_codel_reset
+               |                                |          |          
+               |                                |          |--1.22%--codel_vars_init
+               |                                |          |          
+               |                                |           --0.79%--rtnl_kfree_skbs
+               |                                |          
+               |                                 --1.01%--printk
+               |                                           |          
+               |                                            --0.91%--vprintk_emit
+               |                                                      |          
+               |                                                       --0.61%--_raw_spin_lock
+               |          
+                --48.52%--dev_deactivate
+                          dev_deactivate_many
+                          |          
+                          |--25.08%--qdisc_reset
+                          |          hfsc_reset_qdisc
+                          |          |          
+                          |           --24.76%--qdisc_reset
+                          |                     |          
+                          |                     |--23.98%--fq_codel_reset
+                          |                     |          |          
+                          |                     |          |--1.08%--codel_vars_init
+                          |                     |          |          
+                          |                     |           --0.56%--rtnl_kfree_skbs
+                          |                     |          
+                          |                      --0.61%--printk
+                          |                                |          
+                          |                                 --0.54%--vprintk_emit
+                          |          
+                           --23.44%--dev_deactivate_queue.constprop.57
+                                     qdisc_reset
+                                     hfsc_reset_qdisc
+                                     |          
+                                      --23.26%--qdisc_reset
+                                                |          
+                                                |--22.13%--fq_codel_reset
+                                                |          |          
+                                                |           --0.81%--codel_vars_init
+                                                |          
+                                                 --0.87%--printk
+                                                           |          
+                                                            --0.86%--vprintk_emit
+
+    99.82%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_graft
+            |
+            ---qdisc_graft
+               |          
+               |--51.26%--qdisc_destroy
+               |          |          
+               |          |--26.41%--hfsc_destroy_qdisc
+               |          |          |          
+               |          |          |--25.21%--hfsc_destroy_class
+               |          |          |          |          
+               |          |          |           --24.97%--qdisc_destroy
+               |          |          |                     |          
+               |          |          |                     |--22.58%--fq_codel_reset
+               |          |          |                     |          |          
+               |          |          |                     |           --1.57%--rtnl_kfree_skbs
+               |          |          |                     |          
+               |          |          |                     |--0.99%--fq_codel_destroy
+               |          |          |                     |          |          
+               |          |          |                     |           --0.82%--tcf_block_put
+               |          |          |                     |                     |          
+               |          |          |                     |                      --0.58%--tcf_block_put_ext
+               |          |          |                     |          
+               |          |          |                      --0.58%--printk
+               |          |          |                                |          
+               |          |          |                                 --0.55%--vprintk_emit
+               |          |          |          
+               |          |           --0.65%--tcf_block_put
+               |          |          
+               |           --24.85%--hfsc_reset_qdisc
+               |                     |          
+               |                      --24.78%--qdisc_reset
+               |                                |          
+               |                                |--23.36%--fq_codel_reset
+               |                                |          |          
+               |                                |          |--1.22%--codel_vars_init
+               |                                |          |          
+               |                                |           --0.79%--rtnl_kfree_skbs
+               |                                |          
+               |                                 --1.01%--printk
+               |                                           |          
+               |                                            --0.91%--vprintk_emit
+               |                                                      |          
+               |                                                       --0.61%--_raw_spin_lock
+               |          
+                --48.52%--dev_deactivate
+                          dev_deactivate_many
+                          |          
+                          |--25.08%--qdisc_reset
+                          |          hfsc_reset_qdisc
+                          |          |          
+                          |           --24.76%--qdisc_reset
+                          |                     |          
+                          |                     |--23.98%--fq_codel_reset
+                          |                     |          |          
+                          |                     |          |--1.08%--codel_vars_init
+                          |                     |          |          
+                          |                     |           --0.56%--rtnl_kfree_skbs
+                          |                     |          
+                          |                      --0.61%--printk
+                          |                                |          
+                          |                                 --0.54%--vprintk_emit
+                          |          
+                           --23.44%--dev_deactivate_queue.constprop.57
+                                     qdisc_reset
+                                     hfsc_reset_qdisc
+                                     |          
+                                      --23.26%--qdisc_reset
+                                                |          
+                                                |--22.13%--fq_codel_reset
+                                                |          |          
+                                                |           --0.81%--codel_vars_init
+                                                |          
+                                                 --0.87%--printk
+                                                           |          
+                                                            --0.86%--vprintk_emit
+
+    92.04%    78.44%  tc       [kernel.kallsyms]  [k] fq_codel_reset
+            |          
+            |--78.44%--0xd66c28d000000000
+            |          0xc
+            |          __libc_sendmsg
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          __sys_sendmsg
+            |          ___sys_sendmsg
+            |          ____sys_sendmsg
+            |          sock_sendmsg
+            |          netlink_sendmsg
+            |          netlink_unicast
+            |          netlink_rcv_skb
+            |          rtnetlink_rcv_msg
+            |          tc_get_qdisc
+            |          qdisc_graft
+            |          |          
+            |          |--39.63%--qdisc_destroy
+            |          |          |          
+            |          |          |--20.16%--hfsc_destroy_qdisc
+            |          |          |          hfsc_destroy_class
+            |          |          |          qdisc_destroy
+            |          |          |          fq_codel_reset
+            |          |          |          
+            |          |           --19.47%--hfsc_reset_qdisc
+            |          |                     qdisc_reset
+            |          |                     fq_codel_reset
+            |          |          
+            |           --38.80%--dev_deactivate
+            |                     dev_deactivate_many
+            |                     |          
+            |                     |--19.98%--qdisc_reset
+            |                     |          hfsc_reset_qdisc
+            |                     |          qdisc_reset
+            |                     |          fq_codel_reset
+            |                     |          
+            |                      --18.82%--dev_deactivate_queue.constprop.57
+            |                                qdisc_reset
+            |                                hfsc_reset_qdisc
+            |                                qdisc_reset
+            |                                fq_codel_reset
+            |          
+             --13.60%--fq_codel_reset
+                       |          
+                       |--3.11%--codel_vars_init
+                       |          
+                       |--1.97%--rtnl_kfree_skbs
+                       |          
+                        --0.79%--memset_erms
+
+    73.36%     0.56%  tc       [kernel.kallsyms]  [k] hfsc_reset_qdisc
+            |          
+            |--72.80%--hfsc_reset_qdisc
+            |          qdisc_reset
+            |          |          
+            |          |--69.46%--fq_codel_reset
+            |          |          |          
+            |          |          |--3.11%--codel_vars_init
+            |          |          |          
+            |          |          |--1.79%--rtnl_kfree_skbs
+            |          |          |          
+            |          |           --0.79%--memset_erms
+            |          |          
+            |           --2.49%--printk
+            |                     |          
+            |                      --2.31%--vprintk_emit
+            |                                |          
+            |                                |--1.01%--_raw_spin_lock
+            |                                |          
+            |                                 --0.94%--vprintk_store
+            |                                           |          
+            |                                            --0.53%--vscnprintf
+            |                                                      vsnprintf
+            |          
+             --0.56%--0xd66c28d000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+
+    73.29%     0.61%  tc       [kernel.kallsyms]  [k] qdisc_reset
+            |          
+            |--72.68%--qdisc_reset
+            |          |          
+            |          |--48.28%--hfsc_reset_qdisc
+            |          |          |          
+            |          |           --47.78%--qdisc_reset
+            |          |                     |          
+            |          |                     |--46.10%--fq_codel_reset
+            |          |                     |          |          
+            |          |                     |          |--1.90%--codel_vars_init
+            |          |                     |          |          
+            |          |                     |           --1.01%--rtnl_kfree_skbs
+            |          |                     |          
+            |          |                      --1.48%--printk
+            |          |                                |          
+            |          |                                 --1.40%--vprintk_emit
+            |          |                                           |          
+            |          |                                            --0.74%--vprintk_store
+            |          |          
+            |          |--23.36%--fq_codel_reset
+            |          |          |          
+            |          |          |--1.22%--codel_vars_init
+            |          |          |          
+            |          |           --0.79%--rtnl_kfree_skbs
+            |          |          
+            |           --1.01%--printk
+            |                     |          
+            |                      --0.91%--vprintk_emit
+            |                                |          
+            |                                 --0.61%--_raw_spin_lock
+            |          
+             --0.61%--0xd66c28d000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+
+    51.26%     0.17%  tc       [kernel.kallsyms]  [k] qdisc_destroy
+            |          
+             --51.09%--qdisc_destroy
+                       |          
+                       |--26.24%--hfsc_destroy_qdisc
+                       |          |          
+                       |          |--25.04%--hfsc_destroy_class
+                       |          |          |          
+                       |          |           --24.80%--qdisc_destroy
+                       |          |                     |          
+                       |          |                     |--22.58%--fq_codel_reset
+                       |          |                     |          |          
+                       |          |                     |           --1.57%--rtnl_kfree_skbs
+                       |          |                     |          
+                       |          |                     |--0.99%--fq_codel_destroy
+                       |          |                     |          |          
+                       |          |                     |           --0.82%--tcf_block_put
+                       |          |                     |                     |          
+                       |          |                     |                      --0.58%--tcf_block_put_ext
+                       |          |                     |          
+                       |          |                      --0.58%--printk
+                       |          |                                |          
+                       |          |                                 --0.55%--vprintk_emit
+                       |          |          
+                       |           --0.65%--tcf_block_put
+                       |          
+                        --24.85%--hfsc_reset_qdisc
+                                  |          
+                                   --24.78%--qdisc_reset
+                                             |          
+                                             |--23.36%--fq_codel_reset
+                                             |          |          
+                                             |          |--1.22%--codel_vars_init
+                                             |          |          
+                                             |           --0.79%--rtnl_kfree_skbs
+                                             |          
+                                              --1.01%--printk
+                                                        |          
+                                                         --0.91%--vprintk_emit
+                                                                   |          
+                                                                    --0.61%--_raw_spin_lock
+
+    48.52%     0.00%  tc       [kernel.kallsyms]  [k] dev_deactivate_many
+            |          
+             --48.52%--dev_deactivate_many
+                       |          
+                       |--25.08%--qdisc_reset
+                       |          hfsc_reset_qdisc
+                       |          |          
+                       |           --24.76%--qdisc_reset
+                       |                     |          
+                       |                     |--23.98%--fq_codel_reset
+                       |                     |          |          
+                       |                     |          |--1.08%--codel_vars_init
+                       |                     |          |          
+                       |                     |           --0.56%--rtnl_kfree_skbs
+                       |                     |          
+                       |                      --0.61%--printk
+                       |                                |          
+                       |                                 --0.54%--vprintk_emit
+                       |          
+                        --23.44%--dev_deactivate_queue.constprop.57
+                                  qdisc_reset
+                                  hfsc_reset_qdisc
+                                  |          
+                                   --23.26%--qdisc_reset
+                                             |          
+                                             |--22.13%--fq_codel_reset
+                                             |          |          
+                                             |           --0.81%--codel_vars_init
+                                             |          
+                                              --0.87%--printk
+                                                        |          
+                                                         --0.86%--vprintk_emit
+
+    48.52%     0.00%  tc       [kernel.kallsyms]  [k] dev_deactivate
+            |
+            ---dev_deactivate
+               dev_deactivate_many
+               |          
+               |--25.08%--qdisc_reset
+               |          hfsc_reset_qdisc
+               |          |          
+               |           --24.76%--qdisc_reset
+               |                     |          
+               |                     |--23.98%--fq_codel_reset
+               |                     |          |          
+               |                     |          |--1.08%--codel_vars_init
+               |                     |          |          
+               |                     |           --0.56%--rtnl_kfree_skbs
+               |                     |          
+               |                      --0.61%--printk
+               |                                |          
+               |                                 --0.54%--vprintk_emit
+               |          
+                --23.44%--dev_deactivate_queue.constprop.57
+                          qdisc_reset
+                          hfsc_reset_qdisc
+                          |          
+                           --23.26%--qdisc_reset
+                                     |          
+                                     |--22.13%--fq_codel_reset
+                                     |          |          
+                                     |           --0.81%--codel_vars_init
+                                     |          
+                                      --0.87%--printk
+                                                |          
+                                                 --0.86%--vprintk_emit
+
+    26.41%     0.45%  tc       [kernel.kallsyms]  [k] hfsc_destroy_qdisc
+            |          
+             --25.96%--hfsc_destroy_qdisc
+                       |          
+                       |--25.21%--hfsc_destroy_class
+                       |          |          
+                       |           --24.97%--qdisc_destroy
+                       |                     |          
+                       |                     |--22.58%--fq_codel_reset
+                       |                     |          |          
+                       |                     |           --1.57%--rtnl_kfree_skbs
+                       |                     |          
+                       |                     |--0.99%--fq_codel_destroy
+                       |                     |          |          
+                       |                     |           --0.82%--tcf_block_put
+                       |                     |                     |          
+                       |                     |                      --0.58%--tcf_block_put_ext
+                       |                     |          
+                       |                      --0.58%--printk
+                       |                                |          
+                       |                                 --0.55%--vprintk_emit
+                       |          
+                        --0.65%--tcf_block_put
+
+    25.21%     0.00%  tc       [kernel.kallsyms]  [k] hfsc_destroy_class
+            |
+            ---hfsc_destroy_class
+               |          
+                --24.97%--qdisc_destroy
+                          |          
+                          |--22.58%--fq_codel_reset
+                          |          |          
+                          |           --1.57%--rtnl_kfree_skbs
+                          |          
+                          |--0.99%--fq_codel_destroy
+                          |          |          
+                          |           --0.82%--tcf_block_put
+                          |                     |          
+                          |                      --0.58%--tcf_block_put_ext
+                          |          
+                           --0.58%--printk
+                                     |          
+                                      --0.55%--vprintk_emit
+
+    23.44%     0.00%  tc       [kernel.kallsyms]  [k] dev_deactivate_queue.constprop.57
+            |
+            ---dev_deactivate_queue.constprop.57
+               qdisc_reset
+               hfsc_reset_qdisc
+               |          
+                --23.26%--qdisc_reset
+                          |          
+                          |--22.13%--fq_codel_reset
+                          |          |          
+                          |           --0.81%--codel_vars_init
+                          |          
+                           --0.87%--printk
+                                     |          
+                                      --0.86%--vprintk_emit
+
+     7.20%     5.82%  tc       [kernel.kallsyms]  [k] rtnl_kfree_skbs
+            |          
+            |--5.82%--0xd66c28d000000000
+            |          0xc
+            |          __libc_sendmsg
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          __sys_sendmsg
+            |          ___sys_sendmsg
+            |          ____sys_sendmsg
+            |          sock_sendmsg
+            |          netlink_sendmsg
+            |          netlink_unicast
+            |          netlink_rcv_skb
+            |          rtnetlink_rcv_msg
+            |          tc_get_qdisc
+            |          qdisc_graft
+            |          |          
+            |          |--3.19%--qdisc_destroy
+            |          |          |          
+            |          |          |--2.32%--hfsc_destroy_qdisc
+            |          |          |          hfsc_destroy_class
+            |          |          |          qdisc_destroy
+            |          |          |          fq_codel_reset
+            |          |          |          |          
+            |          |          |           --1.16%--rtnl_kfree_skbs
+            |          |          |          
+            |          |           --0.87%--hfsc_reset_qdisc
+            |          |                     qdisc_reset
+            |          |                     fq_codel_reset
+            |          |          
+            |           --2.63%--dev_deactivate
+            |                     dev_deactivate_many
+            |                     |          
+            |                     |--1.67%--qdisc_reset
+            |                     |          hfsc_reset_qdisc
+            |                     |          qdisc_reset
+            |                     |          fq_codel_reset
+            |                     |          
+            |                      --0.96%--dev_deactivate_queue.constprop.57
+            |                                qdisc_reset
+            |                                hfsc_reset_qdisc
+            |                                qdisc_reset
+            |                                fq_codel_reset
+            |          
+             --1.39%--rtnl_kfree_skbs
+
+     6.87%     6.87%  tc       [kernel.kallsyms]  [k] codel_vars_init
+            |
+            ---0xd66c28d000000000
+               0xc
+               __libc_sendmsg
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               __sys_sendmsg
+               ___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               |          
+               |--4.20%--dev_deactivate
+               |          dev_deactivate_many
+               |          |          
+               |          |--2.20%--qdisc_reset
+               |          |          hfsc_reset_qdisc
+               |          |          qdisc_reset
+               |          |          fq_codel_reset
+               |          |          |          
+               |          |           --1.08%--codel_vars_init
+               |          |          
+               |           --2.00%--dev_deactivate_queue.constprop.57
+               |                     qdisc_reset
+               |                     hfsc_reset_qdisc
+               |                     qdisc_reset
+               |                     fq_codel_reset
+               |                     |          
+               |                      --0.81%--codel_vars_init
+               |          
+                --2.66%--qdisc_destroy
+                          hfsc_reset_qdisc
+                          qdisc_reset
+                          fq_codel_reset
+                          |          
+                           --1.22%--codel_vars_init
+
+     3.07%     0.05%  tc       [kernel.kallsyms]  [k] printk
+            |          
+             --3.03%--printk
+                       |          
+                        --2.86%--vprintk_emit
+                                  |          
+                                  |--1.21%--vprintk_store
+                                  |          |          
+                                  |           --0.66%--vscnprintf
+                                  |                     vsnprintf
+                                  |          
+                                   --1.11%--_raw_spin_lock
+
+     2.86%     0.00%  tc       [kernel.kallsyms]  [k] vprintk_emit
+            |
+            ---vprintk_emit
+               |          
+               |--1.21%--vprintk_store
+               |          |          
+               |           --0.66%--vscnprintf
+               |                     vsnprintf
+               |          
+                --1.11%--_raw_spin_lock
+
+     1.47%     0.27%  tc       [kernel.kallsyms]  [k] tcf_block_put
+            |          
+             --1.20%--tcf_block_put
+                       |          
+                        --0.85%--tcf_block_put_ext
+
+     1.28%     1.18%  tc       [kernel.kallsyms]  [k] _raw_spin_lock
+            |          
+             --1.18%--0xd66c28d000000000
+                       0xc
+                       __libc_sendmsg
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __sys_sendmsg
+                       ___sys_sendmsg
+                       ____sys_sendmsg
+                       sock_sendmsg
+                       netlink_sendmsg
+                       netlink_unicast
+                       netlink_rcv_skb
+                       rtnetlink_rcv_msg
+                       tc_get_qdisc
+                       qdisc_graft
+                       |          
+                        --0.71%--qdisc_destroy
+                                  |          
+                                   --0.61%--hfsc_reset_qdisc
+                                             qdisc_reset
+                                             printk
+                                             vprintk_emit
+                                             |          
+                                              --0.58%--_raw_spin_lock
+
+     1.21%     0.10%  tc       [kernel.kallsyms]  [k] vprintk_store
+            |          
+             --1.11%--vprintk_store
+                       |          
+                        --0.66%--vscnprintf
+                                  vsnprintf
+
+     0.99%     0.00%  tc       [kernel.kallsyms]  [k] fq_codel_destroy
+            |
+            ---fq_codel_destroy
+               |          
+                --0.82%--tcf_block_put
+                          |          
+                           --0.58%--tcf_block_put_ext
+
+     0.85%     0.00%  tc       [kernel.kallsyms]  [k] tcf_block_put_ext
+            |
+            ---tcf_block_put_ext
+
+     0.79%     0.79%  tc       [kernel.kallsyms]  [k] memset_erms
+            |
+            ---0xd66c28d000000000
+               0xc
+               __libc_sendmsg
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               __sys_sendmsg
+               ___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+
+     0.66%     0.27%  tc       [kernel.kallsyms]  [k] vsnprintf
+     0.66%     0.03%  tc       [kernel.kallsyms]  [k] vscnprintf
+            |          
+             --0.63%--vscnprintf
+                       vsnprintf
+
+     0.51%     0.51%  tc       [kernel.kallsyms]  [k] kfree
+            |
+            ---0xd66c28d000000000
+               0xc
+               __libc_sendmsg
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               __sys_sendmsg
+               ___sys_sendmsg
+               ____sys_sendmsg
+               sock_sendmsg
+               netlink_sendmsg
+               netlink_unicast
+               netlink_rcv_skb
+               rtnetlink_rcv_msg
+               tc_get_qdisc
+               qdisc_graft
+               qdisc_destroy
+               hfsc_destroy_qdisc
+
+     0.41%     0.27%  tc       [kernel.kallsyms]  [k] __free_pages_ok
+     0.38%     0.17%  tc       [kernel.kallsyms]  [k] log_store.constprop.20
+     0.38%     0.00%  tc       [kernel.kallsyms]  [k] cont_flush
+     0.37%     0.00%  tc       [kernel.kallsyms]  [k] tcf_chain0_head_change_cb_del.isra.46
+     0.33%     0.10%  tc       [kernel.kallsyms]  [k] console_unlock
+     0.31%     0.20%  tc       [kernel.kallsyms]  [k] __call_rcu
+     0.27%     0.27%  tc       [kernel.kallsyms]  [k] __list_del_entry_valid
+     0.27%     0.17%  tc       [kernel.kallsyms]  [k] qdisc_reset_queue
+     0.24%     0.17%  tc       [kernel.kallsyms]  [k] log_make_free_space
+     0.21%     0.21%  tc       [kernel.kallsyms]  [k] __slab_free
+     0.21%     0.21%  tc       [kernel.kallsyms]  [k] format_decode
+     0.20%     0.17%  tc       [kernel.kallsyms]  [k] tcf_block_owner_del
+     0.17%     0.03%  tc       [kernel.kallsyms]  [k] __down_trylock_console_sem.isra.14
+     0.17%     0.00%  tc       [kernel.kallsyms]  [k] __tcf_block_put
+     0.15%     0.12%  tc       [kernel.kallsyms]  [k] number
+     0.14%     0.03%  tc       [kernel.kallsyms]  [k] down_trylock
+     0.14%     0.14%  tc       [kernel.kallsyms]  [k] free_one_page
+     0.14%     0.14%  tc       [kernel.kallsyms]  [k] vprintk_func
+     0.14%     0.14%  tc       [kernel.kallsyms]  [k] mutex_lock
+     0.13%     0.00%  tc       [kernel.kallsyms]  [k] apic_timer_interrupt
+     0.13%     0.00%  tc       [kernel.kallsyms]  [k] smp_apic_timer_interrupt
+     0.10%     0.10%  tc       [kernel.kallsyms]  [k] rcu_segcblist_enqueue
+     0.10%     0.10%  tc       [kernel.kallsyms]  [k] _raw_spin_lock_irqsave
+     0.10%     0.10%  tc       [kernel.kallsyms]  [k] native_queued_spin_lock_slowpath
+     0.10%     0.03%  tc       [kernel.kallsyms]  [k] cont_add
+     0.10%     0.07%  tc       [kernel.kallsyms]  [k] tc_indr_block_call.isra.43
+     0.10%     0.00%  tc       [kernel.kallsyms]  [k] tcf_block_offload_unbind.isra.45
+     0.10%     0.10%  tc       [kernel.kallsyms]  [k] qdisc_put
+     0.10%     0.00%  tc       [kernel.kallsyms]  [k] irq_exit
+     0.10%     0.00%  tc       [kernel.kallsyms]  [k] __softirqentry_text_start
+     0.10%     0.00%  tc       [kernel.kallsyms]  [k] rcu_core
+     0.09%     0.09%  tc       [kernel.kallsyms]  [k] __x86_indirect_thunk_rax
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] refcount_sub_and_test_checked
+     0.07%     0.00%  tc       [kernel.kallsyms]  [k] refcount_dec_and_mutex_lock
+     0.07%     0.07%  tc       [kernel.kallsyms]  [k] __printk_safe_exit
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] notify_and_destroy
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] qdisc_notify
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __sched_text_start
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] __alloc_skb
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] kmem_cache_alloc_node
+     0.04%     0.00%  tc       [kernel.kallsyms]  [k] _cond_resched
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] netlink_ack
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] memcpy
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] gen_kill_estimator
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] __perf_event_task_sched_out
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] module_put
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] __free_pages
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] irq_work_queue
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] qdisc_hash_del
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] rcu_cblist_dequeue
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] put_dec_trunc8
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] tcf_block_setup
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] vprintk_default
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] memcpy_erms
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] native_sched_clock
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] sched_clock_cpu
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] sched_clock
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] put_cpu_partial
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] unfreeze_partials.isra.79
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] available_idle_cpu
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] hrtimer_interrupt
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] __hrtimer_run_queues
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] hrtimer_wakeup
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] try_to_wake_up
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] select_task_rq_fair
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] select_idle_sibling
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] netlink_skb_set_owner_r
+     0.03%     0.00%  tc       [unknown]          [k] 0000000000000000
+     0.03%     0.00%  tc       libc-2.24.so       [.] __libc_send
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] __x64_sys_sendto
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] __sys_sendto
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] __netlink_dump_start
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] netlink_dump
+     0.03%     0.03%  tc       [kernel.kallsyms]  [k] __count_memcg_events
+     0.03%     0.00%  tc       [unknown]          [k] 0x0000000000000040
+     0.03%     0.00%  tc       ld-2.24.so         [.] _dl_sysdep_start
+     0.03%     0.00%  tc       ld-2.24.so         [.] dl_main
+     0.03%     0.00%  tc       ld-2.24.so         [.] _dl_relocate_object
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] page_fault
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] __do_page_fault
+     0.03%     0.00%  tc       [kernel.kallsyms]  [k] handle_mm_fault
+     0.02%     0.02%  tc       [kernel.kallsyms]  [k] __printk_safe_enter
+     0.02%     0.00%  tc       [kernel.kallsyms]  [k] __up_console_sem.isra.13
+     0.02%     0.02%  tc       ld-2.24.so         [.] _dl_start
+     0.02%     0.00%  tc       ld-2.24.so         [.] _dl_start_user
+     0.01%     0.01%  tc       [kernel.kallsyms]  [k] __vma_adjust
+     0.01%     0.00%  tc       [unknown]          [k] 0x00007f4d3ba22647
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] __x64_sys_execve
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] __do_execve_file.isra.37
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] search_binary_handler
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] load_elf_binary
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] setup_arg_pages
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] shift_arg_pages
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] tc_fill_qdisc
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] hfsc_dump_qdisc
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] nla_put
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] __nla_put
+     0.01%     0.00%  tc       [kernel.kallsyms]  [k] __nla_reserve
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_write_msr
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] finish_task_switch
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __perf_event_task_sched_in
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.30
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] native_write_msr
+     0.00%     0.00%  perf     [unknown]          [k] 0x00007f4d3ba22647
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] entry_SYSCALL_64_after_hwframe
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] do_syscall_64
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] __x64_sys_execve
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] __do_execve_file.isra.37
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] search_binary_handler
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] load_elf_binary
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] setup_new_exec
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] perf_event_exec
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] __intel_pmu_enable_all.constprop.30
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] end_repeat_nmi
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] native_flush_tlb_one_user
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] synchronize_rcu_expedited
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] schedule
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] apei_read
+     0.00%     0.00%  perf     [kernel.kallsyms]  [k] native_sched_clock
+     0.00%     0.00%  tc       [kernel.kallsyms]  [k] ghes_notify_nmi
+
+
+#
+# (Tip: See assembly instructions with percentage: perf annotate <symbol>)
+#
